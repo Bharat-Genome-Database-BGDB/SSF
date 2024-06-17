@@ -36,7 +36,10 @@
   align-items: center;
   font-weight: bold;
 }
+.faq-text{
+font-size: medium;
 
+}
 .accordion i {
   font-size: 1.6rem;
 }
