@@ -1,0 +1,140 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+}
+
+nav .nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+main {
+    padding: 2em 0;
+}
+
+article h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.article .author {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 1em;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.post-content p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.post-content h2 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.comments, .comment-form {
+    margin-top: 2em;
+}
+
+.comments h2, .comment-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.comment {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.comment-form input, .comment-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #575757;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
