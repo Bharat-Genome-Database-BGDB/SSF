@@ -1,0 +1,43 @@
+/* style.css */
+
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.text-box h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-box p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.text-box a {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.text-box a:hover {
+    background-color: #0056b3;
+}
