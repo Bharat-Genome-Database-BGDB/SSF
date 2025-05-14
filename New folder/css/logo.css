@@ -1,0 +1,46 @@
+/* CSS for Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    text-decoration: none;
+}
+
+/* Logo Image */
+.logo img {
+    max-width: 10%;
+    height: 10%;
+    max-height: 50px; /* Adjust the height as needed */
+}
+
+/* Logo Text */
+.logo .logo-text {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust the text color as needed */
+    margin-left: 10px; /* Space between logo image and text */
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+    }
+
+    .logo img {
+        max-height: 40px; /* Adjust the height for smaller screens */
+    }
+
+    .logo .logo-text {
+        font-size: 20px; /* Adjust the font size for smaller screens */
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
