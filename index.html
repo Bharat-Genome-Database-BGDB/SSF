@@ -488,59 +488,78 @@
 	</style>
 </head>
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
-		<div class="container">
-			<a class="navbar-brand d-flex align-items-center" href="index.html">
-				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				Sivasakthi Foundation
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="mainNav">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-						<ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-							<li><a class="dropdown-item" href="AboutUs.html">About Us</a></li>
-							<li><a class="dropdown-item" href="Vision Statement copy.html">Our Vision</a></li>
-							<li><a class="dropdown-item" href="Missionstatement.html">Mission</a></li>
-							<li><a class="dropdown-item" href="History and Background.html">History</a></li>
-							<li><a class="dropdown-item" href="Financial Transparency.html">Transparency</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="fundingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Funding</a>
-						<ul class="dropdown-menu" aria-labelledby="fundingDropdown">
-							<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">BGDB Database</a></li>
-							<li><a class="dropdown-item" href="Ai.html">AI & Deep Learning</a></li>
-							<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/Research-portal/index.html">Bioinformatics</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="advisoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Advisory</a>
-						<ul class="dropdown-menu" aria-labelledby="advisoryDropdown">
-							<li><a class="dropdown-item" href="GetInvolved.html">Sustainability Consulting</a></li>
-							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Genome DB Consulting</a></li>
-							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Bioinformatic Consulting</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Get Involved</a>
-						<ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
-							<li><a class="dropdown-item" href="GetInvolved.html">Get Involved</a></li>
-							<li><a class="dropdown-item" href="events-and-conferences.html">Events</a></li>
-							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Partnerships</a></li>
-						</ul>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
-					<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-				</ul>
-			</div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+	<div class="container">
+		<a class="navbar-brand" href="index.html">
+			<img src="logo.ico" alt="SSF Logo" />
+			Sivasakthi Foundation
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						About Us
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+						<li><a class="dropdown-item" href="./AboutUs.html">About Us</a></li>
+						<li><a class="dropdown-item" href="./Vision Statement copy.html">Our Vision</a></li>
+						<li><a class="dropdown-item" href="./Missionstatement.html">Mission Statement</a></li>
+						<li><a class="dropdown-item" href="./History and Background.html">History & Background</a></li>
+						<li><a class="dropdown-item" href="./Financial Transparency.html">Financial Transparency</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="fundingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Funding Priorities
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="fundingDropdown">
+						<li class="dropdown-submenu">
+							<a class="dropdown-item dropdown-toggle" href="#" id="rteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
+							<ul class="dropdown-menu" aria-labelledby="rteDropdown">
+								<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">BGDB Database</a></li>
+							</ul>
+						</li>
+						<li class="dropdown-submenu">
+							<a class="dropdown-item dropdown-toggle" href="#" id="emergingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Emerging Sciences</a>
+							<ul class="dropdown-menu" aria-labelledby="emergingDropdown">
+								<li><a class="dropdown-item" href="Ai.html">AI and Deep Learning</a></li>
+								<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/Research-portal/index.html">Bioinformatics</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="advisoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Strategic Advisory
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="advisoryDropdown">
+						<li><a class="dropdown-item" href="./GetInvolved.html">Sustainability Consulting</a></li>
+						<li><a class="dropdown-item" href="./Partnerships-Collaborations.html">Genome Database Consulting</a></li>
+						<li><a class="dropdown-item" href="./Partnerships-Collaborations.html">Other Bioinformatic Consulting</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Get Involved
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+						<li><a class="dropdown-item" href="./GetInvolved.html">Get Involved</a></li>
+						<li><a class="dropdown-item" href="./events-and-conferences.html">Events & Conferences</a></li>
+						<li><a class="dropdown-item" href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact-us/index.html">Contact Us</a>
+				</li>
+			</ul>
 		</div>
-	</nav>
+	</div>
+</nav>
+
 
 	<!-- Hero Section -->
 	<section class="hero-section" aria-label="Hero section">
@@ -677,60 +696,51 @@
 				<a href="https://x.com/SSF_handle" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
 				<a href="https://www.instagram.com/ssf.iinsta" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
 				<a href="https://www.youtube.com/@sivasakthifoundation" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-			</div>
-			<div>
-				<small>
-					&copy; 2024 Sivasakthi Foundation. All Rights Reserved.<br>
-					Contact: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a><br>
-					Register number: 156/IV/2024<br>
-					Mailing Address: 7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, Kerala, India<br>
-					<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
-				</small>
-			</div>
-		</div>
-	</footer>
-
-	<!-- Bootstrap JS (with Popper) -->
+	<!-- Bootstrap 5 JS bundle (required for dropdowns) -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script>
-		// Testimonials slider
-		(function() {
+		// Only run testimonials slider if testimonials exist
+		document.addEventListener('DOMContentLoaded', function () {
 			const testimonials = document.querySelectorAll('.testimonial');
 			const dots = document.querySelectorAll('.slider-dot');
-			let current = 0;
-			function showTestimonial(idx) {
-				testimonials.forEach((t, i) => {
-					t.classList.toggle('active', i === idx);
-					dots[i].classList.toggle('active', i === idx);
+			if (testimonials.length && dots.length) {
+				let current = 0;
+				function showTestimonial(idx) {
+					testimonials.forEach((t, i) => {
+						t.classList.toggle('active', i === idx);
+						dots[i].classList.toggle('active', i === idx);
+					});
+					current = idx;
+				}
+				dots.forEach((dot, idx) => {
+					dot.addEventListener('click', () => showTestimonial(idx));
+					dot.addEventListener('keydown', (e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							showTestimonial(idx);
+						}
+					});
 				});
-				current = idx;
+				setInterval(() => {
+					showTestimonial((current + 1) % testimonials.length);
+				}, 7000);
 			}
-			dots.forEach((dot, idx) => {
-				dot.addEventListener('click', () => showTestimonial(idx));
-				dot.addEventListener('keydown', (e) => {
-					if (e.key === 'Enter' || e.key === ' ') {
-						e.preventDefault();
-						showTestimonial(idx);
-					}
+		});
+
+		// Bootstrap 5 dropdown submenu support
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element){
+				element.addEventListener('click', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+					let submenu = this.nextElementSibling;
+					if(submenu) submenu.classList.toggle('show');
 				});
 			});
-			setInterval(() => {
-				showTestimonial((current + 1) % testimonials.length);
-			}, 7000);
-		})();
-
-		// Dropdown submenu for Bootstrap 5 (if needed)
-		document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element){
-			element.addEventListener('click', function (e) {
-				e.preventDefault();
-				e.stopPropagation();
-				let submenu = this.nextElementSibling;
-				if(submenu) submenu.classList.toggle('show');
-			});
-		});
-		document.addEventListener('click', function(e){
-			document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu){
-				menu.classList.remove('show');
+			document.addEventListener('click', function(e){
+				document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu){
+					menu.classList.remove('show');
+				});
 			});
 		});
 	</script>
