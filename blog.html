@@ -1,188 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bharat Genome Database | Sivasakthi Foundation</title>
+	<!-- Social Meta Tags -->
+	<meta property="og:title" content="Bharat Genome Database | Sivasakthi Foundation"/>
+	<meta property="og:image" content="images/BGDB.png"/>
+	<meta property="og:url" content="https://www.sivasakthifoundation.org/blog.html"/>
+	<meta property="og:site_name" content="Sivasakthi Foundation"/>
+	<meta property="og:description" content="Unlocking the genetic secrets of Bharat's indigenous species."/>
+	<meta name="twitter:title" content="Bharat Genome Database | Sivasakthi Foundation" />
+	<meta name="twitter:image" content="images/BGDB.png" />
+	<meta name="twitter:url" content="https://www.sivasakthifoundation.org/blog.html" />
+	<meta name="twitter:card" content="summary_large_image" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="logo.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Inter:400,600,700|Merriweather:400,700&display=swap" rel="stylesheet">
+	<style>
+		/* CSS Reset & Base */
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: 'Inter', Arial, sans-serif;
+			background: #f8fafc;
+			color: #222;
+			scroll-behavior: smooth;
+		}
+		*, *::before, *::after { box-sizing: border-box; }
 
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
-	<link rel="stylesheet" href="css/news.css">
-	<link rel="stylesheet" href="css/events.css">
+		/* Header */
+		.navbar {
+			background: #fff;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+			padding: 1rem 0;
+		}
+		.navbar-brand img {
+			height: 56px;
+			margin-right: 12px;
+			vertical-align: middle;
+		}
+		.navbar-brand {
+			font-family: 'Merriweather', serif;
+			font-weight: 700;
+			font-size: 1.5rem;
+			color: #1a202c !important;
+			display: flex;
+			align-items: center;
+		}
+		.navbar-nav .nav-link {
+			font-weight: 500;
+			color: #374151 !important;
+			margin-right: 1rem;
+			transition: color 0.2s;
+		}
+		.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+			color: #2563eb !important;
+		}
+		.navbar-nav .dropdown-menu {
+			border-radius: 0.5rem;
+			border: none;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+		}
+		.navbar-nav .dropdown-item:hover {
+			background: #f1f5f9;
+			color: #2563eb;
+		}
+		.social-icons a {
+			color: #64748b;
+			margin-left: 1rem;
+			font-size: 1.2rem;
+			transition: color 0.2s;
+		}
+		.social-icons a:hover { color: #2563eb; }
 
+		/* Main Content */
+		main {
+			padding: 3rem 0 2rem 0;
+			background: #f8fafc;
+			min-height: 80vh;
+		}
+		article {
+			background: #fff;
+			border-radius: 1rem;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+			padding: 2.5rem 2rem;
+			margin-bottom: 2rem;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			transition: box-shadow 0.2s;
+		}
+		article:hover {
+			box-shadow: 0 6px 32px rgba(37,99,235,0.08);
+		}
+		article h1 {
+			font-family: 'Merriweather', serif;
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+			color: #1e293b;
+			letter-spacing: -1px;
+		}
+		.author {
+			color: #64748b;
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+		.post-image img {
+			width: 100%;
+			max-height: 400px;
+			object-fit: cover;
+			border-radius: 0.75rem;
+			margin-bottom: 2rem;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+			transition: transform 0.2s;
+		}
+		.post-image img:hover {
+			transform: scale(1.02);
+		}
+		.post-content h2 {
+			font-family: 'Merriweather', serif;
+			font-size: 1.4rem;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+			color: #2563eb;
+			font-weight: 700;
+		}
+		.post-content p {
+			line-height: 1.7;
+			margin-bottom: 1.2rem;
+			font-size: 1.08rem;
+		}
+		.post-content a {
+			color: #2563eb;
+			text-decoration: underline;
+			transition: color 0.2s;
+		}
+		.post-content a:hover {
+			color: #1e40af;
+		}
 
-	<link rel="stylesheet" href="css/style.css">
+		/* Comment Form */
+		.comment-form {
+			background: #fff;
+			border-radius: 1rem;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+			padding: 2rem;
+			max-width: 700px;
+			margin: 0 auto 2rem auto;
+		}
+		.comment-form h2 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			margin-bottom: 1.2rem;
+			color: #1e293b;
+		}
+		.comment-form label {
+			font-weight: 500;
+			margin-top: 1rem;
+			color: #374151;
+		}
+		.comment-form input, .comment-form textarea {
+			width: 100%;
+			border: 1px solid #e5e7eb;
+			border-radius: 0.5rem;
+			padding: 0.75rem;
+			margin-top: 0.3rem;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+			background: #f1f5f9;
+			transition: border 0.2s;
+		}
+		.comment-form input:focus, .comment-form textarea:focus {
+			border-color: #2563eb;
+			outline: none;
+			background: #fff;
+		}
+		.comment-form button {
+			background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+			color: #fff;
+			border: none;
+			border-radius: 0.5rem;
+			padding: 0.7rem 2rem;
+			font-weight: 600;
+			font-size: 1rem;
+			transition: background 0.2s, box-shadow 0.2s;
+			margin-top: 0.5rem;
+			box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+		}
+		.comment-form button:hover {
+			background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+			box-shadow: 0 4px 16px rgba(37,99,235,0.12);
+		}
 
-	<link rel="stylesheet" href="css/logo.css"
-
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
-						<a href="./blog.html">Blog</a>
-						<a href="contact-us/index.html">Contact</a>
-					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-						<a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-						<a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-					</div>
+		/* Footer */
+		footer {
+			background: #1e293b;
+			color: #cbd5e1;
+			padding: 2.5rem 0 1.5rem 0;
+			font-size: 1rem;
+		}
+		.footer-content {
+			max-width: 900px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.footer-content .social-icons a {
+			color: #cbd5e1;
+			margin: 0 0.7rem;
+			font-size: 1.3rem;
+			transition: color 0.2s;
+		}
+		.footer-content .social-icons a:hover {
+			color: #38bdf8;
+		}
+		.footer-content a {
+			color: #38bdf8;
+			text-decoration: underline;
+			transition: color 0.2s;
+		}
+		.footer-content a:hover {
+			color: #fff;
+		}
+		@media (max-width: 767px) {
+			main, article, .comment-form {
+				padding: 1.2rem !important;
+			}
+			article {
+				padding: 1.5rem 1rem;
+			}
+			.navbar-brand img {
+				height: 40px;
+			}
+			.navbar-brand {
+				font-size: 1.1rem;
+			}
+			footer {
+				font-size: 0.95rem;
+			}
+		}
+		::-webkit-scrollbar {
+			width: 8px;
+			background: #e5e7eb;
+		}
+		::-webkit-scrollbar-thumb {
+			background: #cbd5e1;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Header/Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
+				Sivasakthi Foundation
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNavbar">
+				<ul class="navbar-nav ml-auto align-items-lg-center">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							About Us
+						</a>
+						<div class="dropdown-menu" aria-labelledby="aboutDropdown">
+							<a class="dropdown-item" href="./AboutUs.html">About Us</a>
+							<a class="dropdown-item" href="./History and Background.html">History & Background</a>
+							<a class="dropdown-item" href="./Missionstatement.html">Our Mission</a>
+							<a class="dropdown-item" href="./Vision Statement copy.html">Our Vision</a>
+							<a class="dropdown-item" href="./Financial Transparency.html">Financial Transparency</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Projects
+						</a>
+						<div class="dropdown-menu" aria-labelledby="projectsDropdown">
+							<a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a>
+							<a class="dropdown-item" href="Ai.html">AI and Deep Learning</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Get Involved
+						</a>
+						<div class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+							<a class="dropdown-item" href="./GetInvolved.html">Get Involved</a>
+							<a class="dropdown-item" href="./events-and-conferences.html">Events & Conferences</a>
+							<a class="dropdown-item" href="./Partnerships-Collaborations.html">Partnerships & Collabs</a>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
+				</ul>
+				<div class="social-icons d-none d-lg-flex ml-3">
+					<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 				</div>
 			</div>
 		</div>
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-					<h1 id="fh5co-logo">
-						<a href="index.html">
-							<img src="images/logo.png" alt="Sivasakthi Foundation Logo" style="height: 90px; vertical-align: middle;">
-							Sivasakthi Foundation
-						</a>
-					</h1>
-						<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-              <li style="padding-top:3rem;">
-                <a href="#" class="fh5co-sub-ddown">About Us</a>
-                <ul class="fh5co-sub-menu">
-									<li><a href="./AboutUs.html">About Us</a></li>
-									<li><a href="./History and Background.html">History & Background</a></li>
-									<li><a href="./Missionstatement.html">Our Mission</a></li>
-									<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-									<li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                </ul>
-              </li>
-              <li style="padding-top:3rem;">
-								<a href="#" class="fh5co-sub-ddown">Projects</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-									 <li><a href="Ai.html">AI and Deep Learning  </a></li>
-								</ul>
-							</li>
-              <li style="padding-top:3rem;">
-								<a href="#" class="fh5co-sub-ddown">Get Involved</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="./GetInvolved.html">Get Involved</a></li>
-									<li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-									<li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-								</ul>
-							</li>
-							<!--<li><a href="blog.html">About</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="FAQ.html">FAQ</a></li>-->
+	</nav>
 
-              <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-
-              <!-- Search box -->
-              <!--
-							<form class="form-inline my-2 my-lg-0">
-								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-								<button class="btn btn-outline-success my-1 my-sm-2	" type="submit">Search</button>
-							  </form>
-              -->
-						</ul>
-					</nav>
+	<main>
+		<div class="container">
+			<article>
+				<h1>Bharat Genome Database</h1>
+				<p class="author">by <a href="#">Editorial Team</a> | <time datetime="2023-06-28">June 28, 2023</time></p>
+				<div class="post-image">
+					<img src="images/BGDB.png" alt="Bharat Genome Database">
 				</div>
-			</div>
-		</header>
+				<div class="post-content">
+					<p>
+						At the Bharat Genome Database, we are on a mission to unlock the genetic secrets of Bharat's most diverse and unique life forms – our indigenous species. Our commitment to preserving the biological heritage of our planet is rooted in a deep reverence for the natural world and a profound understanding of its interconnectedness.
+					</p>
+					<p>
+						<strong>Our Vision</strong><br>
+						Our vision is to create a comprehensive and accessible repository of genomic information for indigenous species from every corner of Bharat. We believe that by unraveling the genetic code of these remarkable organisms, we can contribute to the preservation of biodiversity, foster scientific discovery, and support conservation efforts worldwide.
+					</p>
+					<h2>Why Indigenous Species Matter</h2>
+					<p>
+						Indigenous species are the bedrock of our ecosystems. They have evolved over millennia, adapting to their unique environments and playing crucial roles in maintaining ecological balance. However, these species are facing unprecedented challenges, from habitat loss and climate change to poaching and invasive species.
+					</p>
+					<p>
+						Understanding the genomes of indigenous species is pivotal to their conservation. It equips us with the knowledge needed to develop effective conservation strategies, mitigate threats, and restore ecosystems that have been disrupted.
+					</p>
+					<h2>Join Us in Preserving Our Planet's Genetic Heritage</h2>
+					<p>
+						We invite you to explore our database, engage with our research, and join us in our commitment to preserving the genetic heritage of indigenous species. Together, we can make a difference and ensure a more sustainable and harmonious future for our planet.
+					</p>
+					<p>
+						Thank you for being a part of our journey towards a world where indigenous species thrive, and their genetic legacy is protected for generations to come. If you have any questions, suggestions, or would like to collaborate, please don't hesitate to mail us at <a href="mailto:research@bgdb.org">research@bgdb.org</a>.
+					</p>
+				</div>
+			</article>
 
-    <main>
-        <div class="container">
-            <article>
-                <h1>Bharat Genome Database</h1>
-                <p class="author">by <a href="#">Author Name</a> | <time datetime="2023-06-28">June 28, 2023</time></p>
-                <div class="post-image">
-                    <img src="images/BGDB.png" alt="Blog Post Image" height="500px"  width="800px">
-                </div>
-                <div class="post-content">
-					<p>At the Bharat Genome Database, we are on a mission to unlock the genetic secrets of Bharat's most diverse and unique life forms – our indigenous species. Our commitment to preserving the biological heritage of our planet is rooted in a deep reverence for the natural world and a profound understanding of its interconnectedness. Our Vision Our vision is to create a comprehensive and accessible repository of genomic information for indigenous species from every corner of Bharat. We believe that by unraveling the genetic code of these remarkable organisms, we can contribute to the preservation of biodiversity, foster scientific discovery, and support conservation efforts worldwide. </p>                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur nec lacinia lacus, a interdum nisi. Etiam nec nulla id orci condimentum condimentum. Donec tincidunt enim ac dui placerat, nec lacinia nisl pretium. Integer et urna auctor, vehicula eros ut, egestas eros. Nulla facilisi.</p>
-                    <h2>Why Indigenous Species Matter</h2>
-					<p>Indigenous species are the bedrock of our ecosystems. They have evolved over millennia, adapting to their unique environments and playing crucial roles in maintaining ecological balance. However, these species are facing unprecedented challenges, from habitat loss and climate change to poaching and invasive species. Understanding the genomes of indigenous species is pivotal to their conservation. It equips us with the knowledge needed to develop effective conservation strategies, mitigate threats, and restore ecosystems that have been disrupted. </p>
-					<h2>Join Us in Preserving Our Planet's Genetic Heritage </h2>
-					<p>We invite you to explore our database, engage with our research, and join us in our commitment to preserving the genetic heritage of indigenous species. Together, we can make a difference and ensure a more sustainable and harmonious future for our planet. Thank you for being a part of our journey towards a world where indigenous species thrive, and their genetic legacy is protected for generations to come. If you have any questions, suggestions, or would like to collaborate, please don't hesitate to mail us on Email: research@bgdb.org. Together, let's decode the stories written in the genes of Bharat's most extraordinary life forms</p>
-                </div>
-            </article>
+			<section class="comment-form">
+				<h2>Leave a Comment</h2>
+				<form id="commentForm" action="#" method="post" autocomplete="off">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required>
 
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
 
+					<label for="comment">Comment</label>
+					<textarea id="comment" name="comment" rows="4" required></textarea>
 
-            <section class="comment-form">
-                <h2>Leave a Comment</h2>
-                <form action="#">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="comment">Comment</label>
-                    <textarea id="comment" name="comment" rows="4" required></textarea>
-					<br>
-
-                    <button type="submit">Post Comment</button>
-                </form>
-            </section>
-        </div>
-    </main>
+					<button type="submit">Post Comment</button>
+					<div id="commentSuccess" style="display:none;color:#2563eb;margin-top:1rem;font-weight:600;">
+						Thank you for your comment!
+					</div>
+				</form>
+			</section>
+		</div>
+	</main>
 
 	<footer>
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center">
-						<p class="fh5co-social-icons">
-							<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-							<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-							<a href="https://www.youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-						</p>
-						<p>Copyright 2024 Sivasakthi Foundation <a href="#"></a>. All Rights Reserved.
-		  <p>
-			Contact Us: Email: info@sivasakthifoundation.org
-			<br>
-			Register number: [156/IV/2024] <br>
-			<p>Mailing Address: 7, Belhaven Gardens, Kawdiar<br>
-				Thiruvananthapuram, Kerala<br>
-				India
-		  </p>
-							 <!--Privacy Policy-->
-							  <a href="./Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-					</div>
-				</div>
+		<div class="footer-content">
+			<div class="social-icons mb-3">
+				<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+				<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+				<a href="https://www.youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 			</div>
+			<p>
+				&copy; 2024 Sivasakthi Foundation. All Rights Reserved.<br>
+				Contact: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a><br>
+				Register number: 156/IV/2024<br>
+				Mailing Address: 7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, Kerala, India
+			</p>
+			<p>
+				<a href="./Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
+			</p>
 		</div>
 	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script>
+		// Simple comment form UX improvement (no backend)
+		$('#commentForm').on('submit', function(e) {
+			e.preventDefault();
+			$('#commentSuccess').fadeIn();
+			this.reset();
+			setTimeout(function() {
+				$('#commentSuccess').fadeOut();
+			}, 3500);
+		});
+	</script>
 </body>
 </html>

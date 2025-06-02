@@ -1,159 +1,342 @@
 <!DOCTYPE html>
-<html class="no-js"> 
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Board of Trustees | Sivasakthi Science Foundation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="logo.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNhU263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary: #0077b6;
+            --secondary: #023e8a;
+            --accent: #ffd166;
+            --bg: #f8fafc;
+            --card-bg: #fff;
+            --footer-bg: #22223b;
+            --text: #222;
+            --muted: #555;
+            --radius: 1.2rem;
+            --shadow: 0 4px 24px rgba(0,0,0,0.07);
+        }
+        html, body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+        .header-top {
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.98rem;
+            padding: 0.6rem 0;
+        }
+        .header-top a {
+            color: #fff;
+            margin-right: 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .header-top a:hover { opacity: 1; text-decoration: underline; }
+        .fh5co-social a {
+            color: #fff;
+            margin-left: 1rem;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+        }
+        .fh5co-social a:hover { color: var(--accent); }
 
-    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+        }
+        .navbar-brand img {
+            height: 48px;
+            margin-right: 10px;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--text) !important;
+            letter-spacing: 0.01em;
+            transition: color 0.2s;
+        }
+        .nav-link:hover, .nav-link:focus { color: var(--primary) !important; }
+        .dropdown-menu {
+            border-radius: 0.7rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            border: none;
+        }
+        .dropdown-item:active { background: var(--primary); color: #fff; }
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Superfish -->
-    <link rel="stylesheet" href="css/superfish.css">
-    <link rel="stylesheet" href="css/news.css">
-    <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/logo.css">
+        .main-section {
+            padding: 3.5rem 0 2.5rem 0;
+        }
+        .main-section h2 {
+            font-weight: 700;
+            font-size: 2.7rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+            letter-spacing: -1px;
+        }
+        .main-section .lead {
+            color: var(--muted);
+            font-size: 1.25rem;
+            margin-bottom: 2.2rem;
+        }
+        .trustee-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.7rem 2rem 1.7rem;
+            margin-bottom: 2rem;
+            transition: transform 0.18s, box-shadow 0.18s;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .trustee-card:hover {
+            transform: translateY(-6px) scale(1.015);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+        }
+        .trustee-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1.1rem;
+            border: 3px solid #e0e7ef;
+            background: #f1f3f6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .trustee-card h3 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+        .trustee-card strong {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+        }
+        .trustee-card p {
+            color: var(--muted);
+            font-size: 1.04rem;
+            margin-bottom: 0.6rem;
+        }
+        .trustee-card:last-child { margin-bottom: 0; }
 
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+        .footer {
+            background: var(--footer-bg);
+            color: #fff;
+            padding: 2.2rem 0 1.2rem 0;
+            margin-top: 3.5rem;
+        }
+        .footer a {
+            color: var(--accent);
+            margin: 0 0.6rem;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+        }
+        .footer a:hover { color: #fff; }
+        .footer .copyright {
+            font-size: 1rem;
+            margin-top: 1.2rem;
+            color: #bfc0c0;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(32px);
+            animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) forwards;
+        }
+        .fade-in.delay-1 { animation-delay: 0.18s; }
+        .fade-in.delay-2 { animation-delay: 0.36s; }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: none; }
+        }
+
+        @media (max-width: 991px) {
+            .main-section { padding: 2.2rem 0 1.2rem 0; }
+            .trustee-card { min-height: unset; padding: 1.5rem 1rem; }
+            .main-section h2 { font-size: 2.1rem; }
+        }
+        @media (max-width: 767px) {
+            .main-section { padding: 1.3rem 0 0.7rem 0; }
+            .trustee-card { padding: 1.1rem 0.7rem; }
+            .main-section h2 { font-size: 1.5rem; }
+            .footer { padding: 1.2rem 0 0.7rem 0; }
+        }
+    </style>
 </head>
 <body>
-    <div id="fh5co-wrapper">
-    <div id="fh5co-page">
+    <!-- Header Top Bar -->
     <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                    <a href="./blog.html">Blog</a>
-                    <a href="contact-us/index.html">Contact</a>
-                </div>
-                <div class="col-md-6 col-sm-6 text-right fh5co-social">
-                    <a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-                    <a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-                </div>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <a href="./blog.html">Blog</a>
+                <a href="contact-us/index.html">Contact</a>
+            </div>
+            <div class="fh5co-social">
+                <a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </div>
-    <header id="fh5co-header-section" class="sticky-banner">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <div class="nav-header">
-                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-                <h1 id="fh5co-logo">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="Sivasakthi Foundation Logo" style="height: 90px; vertical-align: middle;">
-                        Sivasakthi Foundation
-                    </a>
-                </h1>
-                <!-- START #fh5co-menu-wrap -->
-                <nav id="fh5co-menu-wrap" role="navigation">
-                    <ul class="sf-menu" id="fh5co-primary-menu">
-                        <li style="padding-top:3rem;">
-                            <a href="#" class="fh5co-sub-ddown">About Us</a>
-                            <ul class="fh5co-sub-menu">
-                                <li><a href="./AboutUs.html">About Us</a></li>
-                                <li><a href="./History and Background.html">History & Background</a></li>
-                                <li><a href="./Missionstatement.html">Our Mission</a></li>
-                                <li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                                <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                            </ul>
-                        </li>
-                        <li style="padding-top:3rem;">
-                            <a href="#" class="fh5co-sub-ddown">Projects</a>
-                            <ul class="fh5co-sub-menu">
-                                <li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-                                <li><a href="Ai.html">AI and Deep Learning  </a></li>
-                            </ul>
-                        </li>
-                        <li style="padding-top:3rem;">
-                            <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                            <ul class="fh5co-sub-menu">
-                                <li><a href="./GetInvolved.html">Get Involved</a></li>
-                                <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                                <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                            </ul>
-                        </li>
-                        <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-                    </ul>
-                </nav>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Sivasakthi Foundation Logo" loading="lazy">
+                <span class="fw-bold fs-5">Sivasakthi Foundation</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="./AboutUs.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="./History and Background.html">History & Background</a></li>
+                            <li><a class="dropdown-item" href="./Missionstatement.html">Our Mission</a></li>
+                            <li><a class="dropdown-item" href="./Vision Statement copy.html">Our Vision</a></li>
+                            <li><a class="dropdown-item" href="./Financial Transparency.html">Financial Transparency</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
+                            <li><a class="dropdown-item" href="Ai.html">AI and Deep Learning</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+                            <li><a class="dropdown-item" href="./GetInvolved.html">Get Involved</a></li>
+                            <li><a class="dropdown-item" href="./events-and-conferences.html">Events & Conferences</a></li>
+                            <li><a class="dropdown-item" href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us/index.html">Contact Us</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div id="fh5co-board-of-trustees">
+    <!-- Main Section -->
+    <section class="main-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-center">Board of Trustees</h2>
-                    <p class="text-center">Our Leadership Team</p>
-                    <p>The Board of Trustees of our foundation comprises a diverse group of distinguished individuals who bring a wealth of experience and expertise in science, education, and non-profit management. Their collective vision and leadership guide our foundation’s mission to support science research, training, and education.</p>
-                    <hr>
-                    <div class="trustee">
+            <div class="text-center mb-4 fade-in">
+                <h2>Board of Trustees</h2>
+                <p class="lead">Our Leadership Team</p>
+            </div>
+            <div class="row justify-content-center mb-4 fade-in delay-1">
+                <div class="col-lg-10">
+                    <p>
+                        The Board of Trustees of our foundation comprises a diverse group of distinguished individuals who bring a wealth of experience and expertise in science, education, and non-profit management. Their collective vision and leadership guide our foundation’s mission to support science research, training, and education.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 fade-in delay-1">
+                    <div class="trustee-card text-center">
+                        <img src="images/trustees/sabarinath.jpg" alt="Dr. Sabarinath Subramaniam" class="trustee-img" loading="lazy" onerror="this.style.display='none'">
                         <h3>Dr. Sabarinath Subramaniam</h3>
                         <p><strong>Chairperson</strong></p>
-                        <p>Dr. Subramaniam is a renowned scientist with over 30 years of experience in life sciences. As Chairperson of the Board, Dr. Subramaniam provides strategic oversight and ensures that the foundation remains true to its mission. Dr. Subramaniam has previously served in leadership roles at Phoenix Bioinformatics, where he spearheaded several groundbreaking research initiatives.</p>
+                        <p>
+                            Dr. Subramaniam is a renowned scientist with over 30 years of experience in life sciences. As Chairperson of the Board, Dr. Subramaniam provides strategic oversight and ensures that the foundation remains true to its mission. Dr. Subramaniam has previously served in leadership roles at Phoenix Bioinformatics, where he spearheaded several groundbreaking research initiatives.
+                        </p>
                     </div>
-                    <hr>
-                    <div class="trustee">
+                </div>
+                <div class="col-md-6 fade-in delay-2">
+                    <div class="trustee-card text-center">
+                        <img src="images/trustees/rajkumari.jpg" alt="Dr. Rajkumari Kylas" class="trustee-img" loading="lazy" onerror="this.style.display='none'">
                         <h3>Dr. Rajkumari Kylas</h3>
                         <p><strong>Vice Chairperson</strong></p>
-                        <p>Dr. Kylas is a leading expert in Microbiology, with an extensive background in both academia and industry. As Vice Chairperson, Dr. Kylas supports the Chairperson in strategic planning and governance. Dr. Kylas is also a faculty member at a prestigious institution, where she focuses on advancing research in her specific area of expertise.</p>
+                        <p>
+                            Dr. Kylas is a leading expert in Microbiology, with an extensive background in both academia and industry. As Vice Chairperson, Dr. Kylas supports the Chairperson in strategic planning and governance. Dr. Kylas is also a faculty member at a prestigious institution, where she focuses on advancing research in her specific area of expertise.
+                        </p>
                     </div>
-                    <hr>
-                    <p>Our Board of Trustees is committed to advancing the foundation’s mission and ensuring that our programs and initiatives have a lasting impact on the scientific community and society. Each trustee brings a unique perspective and set of skills, making our board a dynamic and effective governing body.</p>
-                    <p>We are grateful for their dedication and leadership, and we look forward to continuing our journey under their guidance.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4 fade-in delay-2">
+                <div class="col-lg-10">
+                    <p>
+                        Our Board of Trustees is committed to advancing the foundation’s mission and ensuring that our programs and initiatives have a lasting impact on the scientific community and society. Each trustee brings a unique perspective and set of skills, making our board a dynamic and effective governing body.
+                    </p>
+                    <p>
+                        We are grateful for their dedication and leadership, and we look forward to continuing our journey under their guidance.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    </div>
-    </div>
-    <footer>
-        <div id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                        <p class="fh5co-social-icons">
-                            <a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-                            <a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-                            <a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-                        </p>
-                        <p>Copyright 2024 Sivasakthi Foundation <a href="#"></a>. All Rights Reserved.
-                             <!--Privacy Policy-->
-                              <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div>
+                <a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="copyright mt-3">
+                &copy; 2024 Sivasakthi Foundation. All Rights Reserved.
+                <span class="mx-2">|</span>
+                <a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
             </div>
         </div>
     </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animate fade-in elements on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeEls.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>

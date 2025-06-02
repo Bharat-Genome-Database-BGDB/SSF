@@ -1,535 +1,738 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sivasakthi Foundation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="logo.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/superfish.css">
-  <link rel="stylesheet" href="css/news.css">
-  <link rel="stylesheet" href="css/events.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/textbox.css">
-  <link rel="stylesheet" href="css/sub.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sivasakthi Foundation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="logo.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+	<style>
+		:root {
+			--primary: #2d4059;
+			--accent: #ea5455;
+			--bg-light: #f9f9f9;
+			--bg-dark: #222831;
+			--text-dark: #222831;
+			--text-light: #fff;
+			--shadow: 0 4px 24px rgba(0,0,0,0.07);
+			--radius: 18px;
+			--transition: 0.2s cubic-bezier(.4,0,.2,1);
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+		body {
+			font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+			background: var(--bg-light);
+			color: var(--text-dark);
+			margin: 0;
+			padding: 0;
+			line-height: 1.7;
+		}
+		/* Navbar */
+		.navbar {
+			background: var(--bg-dark);
+			box-shadow: var(--shadow);
+			padding: 0.7rem 0;
+			transition: background var(--transition);
+		}
+		.navbar-brand img {
+			height: 44px;
+			margin-right: 10px;
+		}
+		.navbar-brand, .navbar-nav .nav-link {
+			color: var(--text-light) !important;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			font-size: 1.08rem;
+		}
+		.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+			color: var(--accent) !important;
+			transition: color var(--transition);
+		}
+		.navbar-toggler {
+			border: none;
+		}
+		/* Hero Section */
+		.hero-section {
+			background: linear-gradient(120deg, rgba(34,40,49,0.85) 60%, rgba(234,84,85,0.7)), url('images/tengyart-zLETygkHMvQ-unsplash.jpg') center/cover no-repeat;
+			color: var(--text-light);
+			padding: 110px 0 90px 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+		}
+		.hero-section .container {
+			position: relative;
+			z-index: 2;
+		}
+		.hero-section h1 {
+			font-size: 3rem;
+			font-weight: 800;
+			margin-bottom: 18px;
+			letter-spacing: 1.2px;
+			text-shadow: 0 2px 16px rgba(0,0,0,0.18);
+			animation: fadeInDown 1s;
+		}
+		.hero-section p {
+			font-size: 1.35rem;
+			margin-bottom: 36px;
+			max-width: 650px;
+			margin-left: auto;
+			margin-right: auto;
+			opacity: 0.96;
+			animation: fadeInUp 1.2s;
+		}
+		.hero-section .btn-main {
+			font-size: 1.15rem;
+			padding: 14px 38px;
+			border-radius: 30px;
+			background: var(--accent);
+			border: none;
+			color: #fff;
+			font-weight: 700;
+			box-shadow: 0 2px 16px rgba(234,84,85,0.13);
+			margin-right: 12px;
+			transition: background var(--transition), transform var(--transition);
+			animation: fadeInUp 1.4s;
+		}
+		.hero-section .btn-main:hover, .hero-section .btn-main:focus {
+			background: #d32f2f;
+			transform: translateY(-2px) scale(1.04);
+			color: #fff;
+		}
+		.hero-section .btn-outline {
+			background: transparent;
+			border: 2px solid #fff;
+			color: #fff;
+			font-weight: 600;
+			padding: 14px 38px;
+			border-radius: 30px;
+			transition: background var(--transition), color var(--transition);
+		}
+		.hero-section .btn-outline:hover, .hero-section .btn-outline:focus {
+			background: #fff;
+			color: var(--primary);
+		}
+		/* Section Titles */
+		.section-title {
+			font-size: 2.1rem;
+			font-weight: 700;
+			margin: 56px 0 28px 0;
+			color: var(--primary);
+			text-align: center;
+			letter-spacing: 0.5px;
+			position: relative;
+			z-index: 1;
+		}
+		.section-title::after {
+			content: '';
+			display: block;
+			width: 60px;
+			height: 4px;
+			background: var(--accent);
+			margin: 18px auto 0 auto;
+			border-radius: 2px;
+			opacity: 0.7;
+		}
+		/* About Cards */
+		.about-card {
+			background: #fff;
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 36px 28px 32px 28px;
+			margin-bottom: 32px;
+			text-align: center;
+			transition: box-shadow var(--transition), transform var(--transition);
+			min-height: 340px;
+			position: relative;
+			overflow: hidden;
+		}
+		.about-card:hover {
+			box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+			transform: translateY(-4px) scale(1.02);
+		}
+		.about-card i {
+			font-size: 2.7rem;
+			color: var(--accent);
+			margin-bottom: 14px;
+			transition: color var(--transition), transform var(--transition);
+		}
+		.about-card:hover i {
+			color: var(--primary);
+			transform: scale(1.12) rotate(-6deg);
+		}
+		.about-card h3 {
+			font-size: 1.32rem;
+			font-weight: 700;
+			margin-bottom: 12px;
+			color: var(--primary);
+		}
+		.about-card p {
+			font-size: 1.04rem;
+			color: #444;
+			margin-bottom: 18px;
+		}
+		.about-card .btn-link {
+			color: var(--accent);
+			font-weight: 600;
+			text-decoration: none;
+			transition: color var(--transition);
+		}
+		.about-card .btn-link:hover, .about-card .btn-link:focus {
+			color: var(--primary);
+			text-decoration: underline;
+		}
+		/* Project Section */
+		.project-section {
+			background: #fff;
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 48px 28px 40px 28px;
+			margin: 48px 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+		}
+		.project-section img {
+			max-width: 1000px;
+			width: 100vw;
+			min-height: 320px;
+			border-radius: 12px;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+			margin: 18px 0 20px 0;
+			object-fit: cover;
+			animation: fadeIn 1.2s;
+		}
+		.project-section .btn {
+			font-size: 1.18rem;
+			padding: 16px 44px;
+			border-radius: 30px;
+			background: var(--accent);
+			border: none;
+			color: #fff;
+			font-weight: 700;
+			margin-top: 10px;
+			margin-bottom: 18px;
+			transition: background var(--transition), transform var(--transition);
+		}
+		.project-section .btn:hover, .project-section .btn:focus {
+			background: #d32f2f;
+			transform: translateY(-2px) scale(1.04);
+			color: #fff;
+		}
+		/* Feature List */
+		.feature-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 28px;
+			justify-content: center;
+			margin-top: 38px;
+		}
+		.feature-item {
+			flex: 1 1 260px;
+			background: var(--bg-light);
+			border-radius: 14px;
+			box-shadow: var(--shadow);
+			padding: 28px 22px;
+			min-width: 260px;
+			max-width: 400px;
+			text-align: center;
+			transition: box-shadow var(--transition), transform var(--transition);
+			font-size: 1.13rem;
+			opacity: 0;
+			transform: translateY(30px);
+			animation: fadeInUp 1s forwards;
+		}
+		.feature-item:nth-child(1) { animation-delay: 0.2s; }
+		.feature-item:nth-child(2) { animation-delay: 0.4s; }
+		.feature-item:nth-child(3) { animation-delay: 0.6s; }
+		.feature-item h4 {
+			color: var(--primary);
+			font-weight: 700;
+			margin-bottom: 10px;
+			font-size: 1.35rem;
+		}
+		.feature-item p {
+			color: #444;
+			font-size: 1.05rem;
+		}
+		/* Get Involved Section */
+		.get-involved-section .about-card {
+			min-height: 320px;
+		}
+		/* Testimonials */
+		.testimonial-section {
+			background: var(--bg-dark);
+			color: var(--text-light);
+			padding: 56px 0 48px 0;
+			margin-top: 48px;
+		}
+		.testimonial-slider {
+			max-width: 900px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.testimonial {
+			display: none;
+			text-align: center;
+			padding: 24px 18px;
+			border-radius: 14px;
+			background: rgba(255,255,255,0.06);
+			box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+			min-height: 160px;
+			transition: opacity var(--transition);
+		}
+		.testimonial.active {
+			display: block;
+			animation: fadeIn 0.8s;
+		}
+		.testimonial .quote {
+			font-size: 1.18rem;
+			font-style: italic;
+			margin-bottom: 12px;
+		}
+		.testimonial .author {
+			font-weight: 600;
+			color: var(--accent);
+			font-size: 1.05rem;
+		}
+		.testimonial-slider .slider-controls {
+			margin-top: 18px;
+			text-align: center;
+		}
+		.slider-dot {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			background: #fff;
+			border-radius: 50%;
+			margin: 0 6px;
+			opacity: 0.5;
+			cursor: pointer;
+			transition: opacity var(--transition), background var(--transition);
+			border: 2px solid var(--accent);
+		}
+		.slider-dot.active {
+			background: var(--accent);
+			opacity: 1;
+		}
+		/* Footer */
+		.footer {
+			background: var(--bg-dark);
+			color: var(--text-light);
+			padding: 44px 0 22px 0;
+			margin-top: 60px;
+			font-size: 1rem;
+		}
+		.footer a {
+			color: var(--accent);
+			text-decoration: none;
+			transition: color var(--transition);
+		}
+		.footer a:hover, .footer a:focus {
+			color: #fff;
+			text-decoration: underline;
+		}
+		.footer .social-icons a {
+			color: var(--text-light);
+			font-size: 1.6rem;
+			margin: 0 12px;
+			transition: color var(--transition), transform var(--transition);
+		}
+		.footer .social-icons a:hover, .footer .social-icons a:focus {
+			color: var(--accent);
+			transform: scale(1.15) rotate(-8deg);
+		}
+		/* Animations */
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+		@keyframes fadeInUp {
+			from { opacity: 0; transform: translateY(30px);}
+			to { opacity: 1; transform: translateY(0);}
+		}
+		@keyframes fadeInDown {
+			from { opacity: 0; transform: translateY(-30px);}
+			to { opacity: 1; transform: translateY(0);}
+		}
+		/* Responsive */
+		@media (max-width: 992px) {
+			.feature-list {
+				flex-direction: column;
+				gap: 18px;
+			}
+			.project-section img {
+				min-height: 200px;
+			}
+		}
+		@media (max-width: 768px) {
+			.hero-section {
+				padding: 70px 0 40px 0;
+			}
+			.hero-section h1 {
+				font-size: 2.1rem;
+			}
+			.section-title {
+				font-size: 1.4rem;
+			}
+			.about-card, .feature-item {
+				padding: 22px 12px;
+			}
+			.project-section {
+				padding: 28px 8px 24px 8px;
+			}
+			.testimonial-section {
+				padding: 36px 0 28px 0;
+			}
+		}
+		@media (max-width: 576px) {
+			.navbar-brand img {
+				height: 34px;
+			}
+			.footer {
+				font-size: 0.95rem;
+			}
+		}
+		/* Accessibility: Focus outline */
+		a:focus, button:focus, .btn:focus {
+			outline: 2px solid var(--accent);
+			outline-offset: 2px;
+		}
+				@media (max-width: 1200px) {
+			.hero-section h1 { font-size: 2.4rem; }
+			.section-title { font-size: 1.7rem; }
+			.project-section img { min-height: 220px; }
+		}
+		@media (max-width: 992px) {
+			.feature-list {
+				flex-direction: column;
+				gap: 18px;
+			}
+			.project-section img {
+				min-height: 180px;
+			}
+			.about-card, .feature-item {
+				min-width: 220px;
+			}
+		}
+		@media (max-width: 768px) {
+			.hero-section {
+				padding: 60px 0 30px 0;
+			}
+			.hero-section h1 {
+				font-size: 1.7rem;
+			}
+			.hero-section p {
+				font-size: 1.05rem;
+			}
+			.section-title {
+				font-size: 1.15rem;
+			}
+			.about-card, .feature-item {
+				padding: 16px 6px;
+				min-width: 160px;
+			}
+			.project-section {
+				padding: 18px 2px 14px 2px;
+			}
+			.testimonial-section {
+				padding: 24px 0 18px 0;
+			}
+			.project-section img {
+				min-height: 120px;
+			}
+		}
+		@media (max-width: 576px) {
+			.navbar-brand img {
+				height: 28px;
+			}
+			.footer {
+				font-size: 0.92rem;
+				padding: 28px 0 12px 0;
+			}
+			.hero-section {
+				padding: 32px 0 18px 0;
+			}
+			.hero-section h1 {
+				font-size: 1.15rem;
+			}
+			.hero-section .btn-main,
+			.hero-section .btn-outline {
+				padding: 10px 18px;
+				font-size: 0.98rem;
+			}
+			.section-title {
+				margin: 32px 0 16px 0;
+			}
+			.about-card, .feature-item {
+				padding: 10px 2px;
+				font-size: 0.98rem;
+			}
+			.project-section img {
+				min-height: 80px;
+			}
+		}
+		@media (max-width: 400px) {
+			.hero-section h1 {
+				font-size: 1rem;
+			}
+			.section-title {
+				font-size: 1rem;
+			}
+		}
 
-
-  <link rel="stylesheet" href="css/logo.css">
-  <script src="js/modernizr-2.6.2.min.js"></script>
-  <!-- FOR IE9 below -->
-  <!--[if lt IE 9]>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
-  <style>
-    .text-box {
-      border: 2px solid #2d4059;
-      padding: 20px;
-      margin: 20px;
-      font-size: 16px;
-      line-height: 1.5;
-      background-color: #f9f9f9;
-    }
-  </style>
+	</style>
 </head>
 <body>
-  <div id="fh5co-wrapper">
-    <div id="fh5co-page">
-      <div class="header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 text-left fh5co-link">
-              <a href="./blog.html">Blog</a>
-              <a href="contact-us/index.html">Contact</a>
-			</div>
-            <div class="col-md-6 col-sm-6 text-right fh5co-social">
-              <a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-              <a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Foundation Logo" style="height: 90px; vertical-align: middle;">
-                Sivasakthi Foundation 	
-              </a>
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="https://www.bharatgenomedatabase.org/Research-portal/index.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">
-					  <li><a href="./GetInvolved.html">Sustainability Consulting</a></li>
-					  <li><a href="./Partnerships-Collaborations.html">Genome Database <br> Consulting</a></li>
-					  <li><a href="./Partnerships-Collaborations.html">Other Bioinformatic <br>  Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <div class="fh5co-hero">
-        <div class="fh5co-overlay"></div>
-        <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/tengyart-zLETygkHMvQ-unsplash.jpg);">
-          <div class="desc animate-box">
-            <h2><strong>Science</strong> Education <strong>& Research</strong></h2>
-            <span><a href="Missionstatement.html" target="_blank" class="fh5co-site-name">Mission Statement</a></span>
-            <span><a class="btn btn-primary btn-lg" href="./GetInvolved.html">Call To Action</a></span>
-          </div>
-        </div>
-      </div>
-
-	  <div class="container-custom">
-        <div class="text-box-custom">
-            <h1>SivaSakthi Science Foundation</h1>
-            <p>At SivaSakthi Science Foundation, our vision is a world where the power of science and education knows no boundaries, where every individual has the opportunity to reach their fullest potential, and where knowledge catalyzes positive global change. Our unwavering mission is to ignite a brighter future through the relentless promotion of science and education. We are driven by the belief that knowledge is the cornerstone of progress, and access to quality education and scientific exploration is the key to unlocking the boundless potential within every individual and society.</p>
-            <a href="AboutUs.html">Read More</a>
-        </div>
-    </div>
-</div>
-</div>
-
-				<!---->
-				<div id="fh5co-portfolio">
-					<div id="events"></div>
-					<div class="container">
-		
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
-								<h3>Our Latest Project</h3>
-								<p>Our latest endeavor is the <strong>Bharat Genome Database</strong> , a comprehensive resource created by Indians to catalog and explore India's rich and diverse genomic landscape.</p>					</div>
-							</div>
-						</div>
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-12 text-center animate-box">
-						<p><a href="https://www.bharatgenomedatabase.org/"><img src="images/BGDB.png" alt="Bharat Genome Database" class="img-responsive"></a></p>
-					</div>
-					<!--
-					<div class="col-md-6 text-center animate-box">
-						<p><img src="images/2.png" alt="Bharat Genome Database" class="img-responsive"></p>-->
-					</div>
-					<div class="col-md-6 text-center animate-box">
-						<p><img src="#" alt="" class="img-responsive"></p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Our Mission</h3>
-							<p>At the Bharat Genome Database, we are on a mission to unlock the genetic secrets of Bharat's most diverse and unique life forms – our indigenous species</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Our commitment</h3>
-							<p>We believe in equal access to quality education. Our programs bridge the gap for underprivileged communities, ensuring everyone has the opportunity to learn and thrive.</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-text">
-							<h3>Our Vision</h3>
-							<p>Our vision is to create a comprehensive and accessible repository of genomic information for indigenous species from every corner of Bharat. </p>
-						</div>
-					</div>
-				</div>
-
-				
-			</div>
-		</div>
-    </div>
-    </div>
-
-
-
-		
-	<!--	<div id="fh5co-portfolio">
-			<div id="events"></div>
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
-						<h3>Our Upcoming Events</h3>
-						<p>We are currently engaged in various educational projects aimed at enhancing education and research. These initiatives include the Bharat Genome Database and CoGe testing.</p>					</div>
-					</div>
-				</div>
-				
-				
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-12">
-						<ul id="fh5co-portfolio-list">
-
-							<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/BGDB.png); ">
-								<a href="https://www.bharatgenomedatabase.org/" class="color-3">
-									<div class="case-studies-summary">
-										<span>BGDB.ORG Meet (PlaceHolder)</span>
-										<h2>(PlaceHolder)</h2>
-									</div>
-								</a>
-							</li>
-						
-							<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/2.png); ">
-								<a href="https://www.bharatgenomedatabase.org/Research-portal/index.html" class="color-4">
-									<div class="case-studies-summary">
-										<span> Research Team Meet </span>
-										<h2>(PlaceHolder) </h2>
-									</div>
-								</a>
-							</li>
-
-							<!--<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(#); "> 
-								<a href="#" class="color-5">
-									<div class="case-studies-summary">
-										<span></span>
-										<h2>  </h2>
-									</div>
-								</a>
-							</li>-->
-							<!--li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
-								<a href="#" class="color-6">
-									<div class="case-studies-summary">
-										<span>Give Love</span>
-										<h2>Donation is caring</h2>
-									</div>
-								</a>
-							</li> -->
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+		<div class="container">
+			<a class="navbar-brand d-flex align-items-center" href="index.html">
+				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
+				Sivasakthi Foundation
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+						<ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+							<li><a class="dropdown-item" href="AboutUs.html">About Us</a></li>
+							<li><a class="dropdown-item" href="Vision Statement copy.html">Our Vision</a></li>
+							<li><a class="dropdown-item" href="Missionstatement.html">Mission</a></li>
+							<li><a class="dropdown-item" href="History and Background.html">History</a></li>
+							<li><a class="dropdown-item" href="Financial Transparency.html">Transparency</a></li>
 						</ul>
-					</div>
-				</div>
-
-          <!--<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">See Gallery</a>
-					</div>
-				</div>-->
-
-				
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="fundingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Funding</a>
+						<ul class="dropdown-menu" aria-labelledby="fundingDropdown">
+							<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">BGDB Database</a></li>
+							<li><a class="dropdown-item" href="Ai.html">AI & Deep Learning</a></li>
+							<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/Research-portal/index.html">Bioinformatics</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="advisoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Advisory</a>
+						<ul class="dropdown-menu" aria-labelledby="advisoryDropdown">
+							<li><a class="dropdown-item" href="GetInvolved.html">Sustainability Consulting</a></li>
+							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Genome DB Consulting</a></li>
+							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Bioinformatic Consulting</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Get Involved</a>
+						<ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+							<li><a class="dropdown-item" href="GetInvolved.html">Get Involved</a></li>
+							<li><a class="dropdown-item" href="events-and-conferences.html">Events</a></li>
+							<li><a class="dropdown-item" href="Partnerships-Collaborations.html">Partnerships</a></li>
+						</ul>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+				</ul>
 			</div>
 		</div>
-		
+	</nav>
 
-		<!--Philanthropist--><!--
-		<div id="fh5co-content-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Our Philantrophist</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
+	<!-- Hero Section -->
+	<section class="hero-section" aria-label="Hero section">
+		<div class="container">
+			<h1>Empowering Science, Inspiring Change</h1>
+			<p>
+				At Sivasakthi Foundation, we believe in a world where science and education unlock limitless potential. Join us in catalyzing positive change through knowledge, research, and opportunity for all.
+			</p>
+			<a href="Missionstatement.html" class="btn btn-main" target="_blank" aria-label="Read our Mission Statement">Our Mission</a>
+			<a href="GetInvolved.html" class="btn btn-outline" aria-label="Get Involved">Get Involved</a>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<div class="container">
+		<div class="section-title">About Sivasakthi Foundation</div>
+		<div class="row justify-content-center">
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+					<h3>Our Vision</h3>
+					<p>Empowering individuals through science and education, fostering a world where knowledge drives positive change and opportunity for all.</p>
+					<a href="AboutUs.html" class="btn btn-link mt-2" aria-label="Read more about our vision">Read More</a>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_1.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>Jean Doe, XYZ Co.</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_2.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>John Doe, XYZ Co.</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-testimonial text-center animate-box">
-							<figure>
-								<img src="images/person_3.jpg" alt="user">
-							</figure>
-							<blockquote>
-								<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-							</blockquote>
-							<span>John Doe, XYZ Co.</span>
-						</div>
-					</div>
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-flask" aria-hidden="true"></i>
+					<h3>Programs & Initiatives</h3>
+					<p>Innovative programs supporting science research, training, and education for underprivileged communities and the scientific community.</p>
+					<a href="Programs & Initiatives.html" class="btn btn-link mt-2" aria-label="Learn more about our programs">Learn More</a>
 				</div>
-			</div>-->
-		</div>
-		<!-- fh5co-content-section -->
-
-		<div id="fh5co-services-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>About Us</h3>
-						<p></p>
-					</div>
-				</div>
-			
-
-					
-					<!--<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-heart"></i></span>
-							<h3>History</h3>
-							<p></p>-->
-				
-
-
-
-
-
-				<!--End of section-->
-
-				
-
-								<div class="col-md-4 col-sm-4">
-						<a href="AboutUs.html"> <div class="services animate-box">
-							<span><i class="icon-documents"></i></span>
-							<h3>About us</h3>
-							<p> our vision is a world where the power of science and education knows no boundaries, where every individual has the opportunity to reach their fullest potential.</p></a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<a href="History and Background.html"> <div class="services animate-box">
-							<span><i class="icon-notebook"></i></span>
-							<h3>History and Background</h3>
-							<p>The journey of our foundation began with a shared vision among a group of passionate scientists, educators, and researchers for meaningful contribution to scientific community.</p>
-						</a></div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<a href="Programs & Initiatives.html"> <div class="services animate-box">
-							<span><i class="icon-lab-flask"></i></span>
-							<h3>Programs & Initiatives</h3>
-							<p>At Sivasakthi Science Foundation, we are dedicated to supporting and advancing science research, training, and education through a variety of innovative programs and initiatives. </p>
-						</a>
-						</div>
-					</div>
-					
+			</div>
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-book" aria-hidden="true"></i>
+					<h3>History & Background</h3>
+					<p>Founded by passionate scientists and educators, our journey is rooted in a commitment to meaningful scientific contribution.</p>
+					<a href="History and Background.html" class="btn btn-link mt-2" aria-label="Read our story">Our Story</a>
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-services-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Get Involved</h3>
-						<p></p>
-					</div>
-				</div>
-		<div class="col-md-4 col-sm-4">
-			<a href="events-and-conferences.html"> <div class="services animate-box">
-				<span><i class="icon-trophy"></i></span>
-				<h3>Events-and-conferences</h3>
-				<p>The Events-and-conferences provide opportunities for networking, learning, and collaboration, and they play a crucial role in advancing our mission to support science research, training, and education</p>
-			</a>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-4">
-			<a href="GetInvolved.html"> <div class="services animate-box">
-				<span><i class="icon-flag"></i></span>
-				<h3>Call to Action</h3>
-				<p>At Sivasakthi Science Foundation, we believe that everyone has a role to play in advancing science research, training, and education. </p>
-			</a>
-		</div>
-		</div>
-		<div class="col-md-4 col-sm-4">
-			<a href="resources-and-publications.html"> <div class="services animate-box">
-				<span><i class="icon-clipboard"></i></span>
-				<h3> Resources and Publications</h3>
-				<p>At Sivasakthi Science Foundation, we are committed to providing valuable resources and publications that support science research, training, and education.</p>
-			</a>
-			</div>
-		</div>
-		
 	</div>
-</div>
-</div>
 
-		<!-- END What we do -->
-
-<!--BLOG Section--><!--
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Recent From Blog</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
+	<!-- Latest Project Section -->
+	<div class="container-fluid px-0">
+		<div class="project-section mt-5" style="border-radius:0; box-shadow:none; padding-left:0; padding-right:0; max-width:100vw;">
+			<div class="section-title mb-2" style="font-size:2.2rem;">Our Latest Project</div>
+			<div class="d-flex justify-content-center">
+				<img src="images/BGDB.png" alt="Bharat Genome Database Screenshot" class="img-fluid" style="max-width:1000px; width:100vw; min-height:320px; display:block;">
+			</div>
+			<p class="mt-3 mb-4" style="max-width:1200px; margin-left:auto; margin-right:auto; font-size:1.25rem;">
+				Our latest endeavor is the <strong>Bharat Genome Database</strong>, a comprehensive resource created by Indians to catalog and explore India's rich and diverse genomic landscape.
+			</p>
+			<a href="https://www.bharatgenomedatabase.org/" class="btn" target="_blank" style="font-size:1.18rem; padding:16px 44px;" aria-label="Visit Bharat Genome Database">Visit BGDB</a>
+			<div class="feature-list mt-5" style="max-width:1400px; margin-left:auto; margin-right:auto;">
+				<div class="feature-item">
+					<h4>Our Mission</h4>
+					<p>Unlocking the genetic secrets of Bharat's most diverse and unique life forms – our indigenous species.</p>
+				</div>
+				<div class="feature-item">
+					<h4>Our Commitment</h4>
+					<p>Equal access to quality education, bridging the gap for underprivileged communities, and enabling everyone to thrive.</p>
+				</div>
+				<div class="feature-item">
+					<h4>Our Vision</h4>
+					<p>Creating a comprehensive and accessible repository of genomic information for indigenous species from every corner of Bharat.</p>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-					</div>
-				</div>
-
-			</div>
-		</div>-->
-	
-		<!-- fh5co-blog-section -->
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://www.youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Foundation <a href="#"></a>. All Rights Reserved.
-              <p>
-                Contact Us: Email: info@sivasakthifoundation.org
-                <br>
-                Register number: [156/IV/2024] <br>
-				<p>Mailing Address: 7, Belhaven Gardens, Kawdiar<br>
-					Thiruvananthapuram, Kerala<br>
-					India
-              </p>
-								 <!--Privacy Policy-->
-								  <a href="./Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	
-
+		</div>
 	</div>
-	<!-- END fh5co-page -->
 
+	<!-- Get Involved Section -->
+	<div class="container get-involved-section">
+		<div class="section-title">Get Involved</div>
+		<div class="row justify-content-center">
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+					<h3>Events & Conferences</h3>
+					<p>Opportunities for networking, learning, and collaboration to advance science research, training, and education.</p>
+					<a href="events-and-conferences.html" class="btn btn-link mt-2" aria-label="See upcoming events">See Events</a>
+				</div>
+			</div>
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+					<h3>Call to Action</h3>
+					<p>Everyone has a role in advancing science research, training, and education. Join us in making a difference.</p>
+					<a href="GetInvolved.html" class="btn btn-link mt-2" aria-label="Get involved">Get Involved</a>
+				</div>
+			</div>
+			<div class="col-md-4 mb-4">
+				<div class="about-card h-100">
+					<i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+					<h3>Resources & Publications</h3>
+					<p>Access valuable resources and publications supporting science research, training, and education.</p>
+					<a href="resources-and-publications.html" class="btn btn-link mt-2" aria-label="Explore resources">Explore Resources</a>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!-- END fh5co-wrapper -->
 
-	<!-- jQuery -->
+	<!-- Testimonials Section 
+	<section class="testimonial-section" aria-label="Testimonials">
+		<div class="container">
+			<div class="section-title" style="color:#fff;">What People Say</div>
+			<div class="testimonial-slider" id="testimonialSlider">
+				<div class="testimonial active">
+					<div class="quote">"Sivasakthi Foundation's commitment to science education is truly inspiring. Their programs have opened doors for so many."</div>
+					<div class="author">– Dr. Anjali Menon, Researcher</div>
+				</div>
+				<div class="testimonial">
+					<div class="quote">"The Bharat Genome Database is a game-changer for Indian genomics. Proud to see such innovation from our own community."</div>
+					<div class="author">– Prof. Rajeev Kumar, Genomics Expert</div>
+				</div>
+				<div class="testimonial">
+					<div class="quote">"I found volunteering with Sivasakthi Foundation deeply rewarding. Their impact on underprivileged students is remarkable."</div>
+					<div class="author">– Priya S., Volunteer</div>
+				</div>
+				<div class="slider-controls" aria-label="Testimonial navigation">
+					<span class="slider-dot active" tabindex="0" aria-label="Show testimonial 1"></span>
+					<span class="slider-dot" tabindex="0" aria-label="Show testimonial 2"></span>
+					<span class="slider-dot" tabindex="0" aria-label="Show testimonial 3"></span>
+				</div>
+			</div>
+		</div>
+	</section>-->
 
+	<!-- Footer -->
+	<footer class="footer mt-5" aria-label="Footer">
+		<div class="container text-center">
+			<div class="social-icons mb-3">
+				<a href="https://x.com/SSF_handle" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+				<a href="https://www.instagram.com/ssf.iinsta" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+				<a href="https://www.youtube.com/@sivasakthifoundation" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+			</div>
+			<div>
+				<small>
+					&copy; 2024 Sivasakthi Foundation. All Rights Reserved.<br>
+					Contact: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a><br>
+					Register number: 156/IV/2024<br>
+					Mailing Address: 7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, Kerala, India<br>
+					<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
+				</small>
+			</div>
+		</div>
+	</footer>
 
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
+	<!-- Bootstrap JS (with Popper) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script>
+		// Testimonials slider
+		(function() {
+			const testimonials = document.querySelectorAll('.testimonial');
+			const dots = document.querySelectorAll('.slider-dot');
+			let current = 0;
+			function showTestimonial(idx) {
+				testimonials.forEach((t, i) => {
+					t.classList.toggle('active', i === idx);
+					dots[i].classList.toggle('active', i === idx);
+				});
+				current = idx;
+			}
+			dots.forEach((dot, idx) => {
+				dot.addEventListener('click', () => showTestimonial(idx));
+				dot.addEventListener('keydown', (e) => {
+					if (e.key === 'Enter' || e.key === ' ') {
+						e.preventDefault();
+						showTestimonial(idx);
+					}
+				});
+			});
+			setInterval(() => {
+				showTestimonial((current + 1) % testimonials.length);
+			}, 7000);
+		})();
 
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-	
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+		// Dropdown submenu for Bootstrap 5 (if needed)
+		document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function(element){
+			element.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				let submenu = this.nextElementSibling;
+				if(submenu) submenu.classList.toggle('show');
+			});
+		});
+		document.addEventListener('click', function(e){
+			document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(function(menu){
+				menu.classList.remove('show');
+			});
+		});
+	</script>
+</body>
 </html>
-
