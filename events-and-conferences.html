@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Events and Conferences - Sivasakthi Science Foundation</title>
+	<title>Events & Conferences | Sivasakthi Science Foundation</title>
+	<meta name="description" content="Events and conferences at Sivasakthi Science Foundation">
 	<meta property="og:title" content="Events and Conferences - Sivasakthi Science Foundation"/>
 	<meta property="og:image" content="images/logo.png"/>
 	<meta property="og:url" content="https://sivasakthifoundation.org/events-and-conferences.html"/>
@@ -13,109 +14,145 @@
 	<meta name="twitter:image" content="images/logo.png" />
 	<meta name="twitter:url" content="https://sivasakthifoundation.org/events-and-conferences.html" />
 	<meta name="twitter:card" content="summary_large_image" />
-
 	<link rel="shortcut icon" href="logo.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 	<link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
 	<style>
-		/* CSS Reset */
-		*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-		html, body { height: 100%; font-family: 'Inter', Arial, sans-serif; background: #f8fafc; color: #222; }
-		body { min-height: 100vh; display: flex; flex-direction: column; }
-
+		:root {
+			--primary: #2563eb;
+			--primary-dark: #1e40af;
+			--secondary: #38bdf8;
+			--bg: #f8fafc;
+			--white: #fff;
+			--text: #222;
+			--text-light: #374151;
+			--border: #e5e7eb;
+			--footer-bg: #1e293b;
+			--footer-text: #cbd5e1;
+			--radius: 1.25rem;
+			--transition: 0.2s cubic-bezier(.4,0,.2,1);
+		}
+		*, *::before, *::after { box-sizing: border-box; }
+		html, body { height: 100%; }
+		body {
+			min-height: 100vh;
+			font-family: 'Inter', Arial, sans-serif;
+			background: var(--bg);
+			color: var(--text);
+			display: flex;
+			flex-direction: column;
+		}
+		a { color: inherit; text-decoration: none; transition: color var(--transition); }
+		img { max-width: 100%; display: block; }
 		/* Header */
 		header {
-			background: #fff;
+			background: var(--white);
 			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 			position: sticky;
 			top: 0;
 			z-index: 100;
 		}
-		.navbar {
-			max-width: 1200px;
+		.container {
+			max-width: 1100px;
 			margin: 0 auto;
-			padding: 1.5rem 1rem;
+			padding: 0 1.5rem;
+		}
+		.navbar {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			padding: 1.25rem 0;
 		}
 		.navbar-logo {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
-			text-decoration: none;
-			color: #1a202c;
+			gap: 0.75rem;
 			font-weight: 700;
 			font-size: 1.5rem;
+			color: var(--primary);
 			letter-spacing: -1px;
+			transition: color var(--transition);
 		}
 		.navbar-logo img {
-			height: 56px;
-			width: auto;
+			height: 48px;
+			width: 48px;
 			border-radius: 8px;
+			background: var(--bg);
+			box-shadow: 0 2px 8px rgba(56,189,248,0.08);
 		}
-		nav ul {
+		nav {
+			flex: 1;
+			margin-left: 2rem;
+		}
+		.nav-menu {
 			display: flex;
+			align-items: center;
 			gap: 2rem;
 			list-style: none;
+			font-weight: 500;
+			font-size: 1rem;
 		}
-		nav ul li {
+		.nav-menu > li {
 			position: relative;
 		}
-		nav ul li ul {
+		.nav-menu > li > a {
+			padding: 0.5em 0.2em;
+			color: var(--text-light);
+			border-radius: 0.5em;
+			transition: background var(--transition), color var(--transition);
+		}
+		.nav-menu > li > a:hover,
+		.nav-menu > li > a:focus {
+			color: var(--primary);
+			background: #f1f5f9;
+		}
+		.nav-menu li ul {
 			display: none;
 			position: absolute;
 			top: 2.2em;
 			left: 0;
-			background: #fff;
+			background: var(--white);
 			box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 			border-radius: 0.5em;
-			padding: 0.5em 0;
 			min-width: 200px;
-			z-index: 10;
 			flex-direction: column;
-			gap: 0;
+			z-index: 10;
+			padding: 0.5em 0;
+			animation: fadeIn 0.2s;
 		}
-		nav ul li:hover > ul, nav ul li:focus-within > ul {
+		.nav-menu li:focus-within > ul,
+		.nav-menu li:hover > ul {
 			display: flex;
 		}
-		nav ul li ul li {
-			width: 100%;
-		}
-		nav ul li ul a {
+		.nav-menu li ul li a {
 			padding: 0.75em 1.5em;
-			display: block;
-			color: #374151;
-			font-size: 1rem;
-			white-space: nowrap;
+			color: var(--text-light);
+			border-radius: 0.5em;
+			transition: background var(--transition), color var(--transition);
 		}
-		nav ul li ul a:hover, nav ul li ul a:focus {
+		.nav-menu li ul li a:hover,
+		.nav-menu li ul li a:focus {
 			background: #f1f5f9;
-			color: #2563eb;
-		}
-		nav a {
-			text-decoration: none;
-			color: #374151;
-			font-weight: 500;
-			font-size: 1rem;
-			transition: color 0.2s;
-			position: relative;
-		}
-		nav a:hover, nav a:focus {
-			color: #2563eb;
+			color: var(--primary);
 		}
 		.navbar-social {
 			display: flex;
 			gap: 1rem;
+			margin-left: 2rem;
 		}
 		.navbar-social a {
 			color: #64748b;
 			font-size: 1.25rem;
-			transition: color 0.2s;
+			border-radius: 50%;
+			padding: 0.4em;
+			transition: background var(--transition), color var(--transition), transform var(--transition);
 		}
-		.navbar-social a:hover { color: #2563eb; }
-
-		/* Hamburger Menu for Mobile */
+		.navbar-social a:hover {
+			color: var(--primary);
+			background: #e0e7ef;
+			transform: translateY(-2px) scale(1.1);
+		}
+		/* Hamburger */
 		.hamburger {
 			display: none;
 			flex-direction: column;
@@ -124,90 +161,56 @@
 			height: 36px;
 			cursor: pointer;
 			gap: 6px;
+			margin-left: 1rem;
 		}
 		.hamburger span {
 			display: block;
 			height: 4px;
 			width: 100%;
-			background: #2563eb;
+			background: var(--primary);
 			border-radius: 2px;
-			transition: all 0.3s;
+			transition: all var(--transition);
 		}
-		@media (max-width: 900px) {
-			.navbar, main { max-width: 100%; }
-			main { margin-top: -2rem; }
-		}
-		@media (max-width: 900px) {
-			nav ul {
-				position: absolute;
-				top: 100%;
-				right: 1rem;
-				background: #fff;
-				flex-direction: column;
-				gap: 0.5rem;
-				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-				border-radius: 0.75em;
-				padding: 1em 0;
-				display: none;
-				min-width: 220px;
-			}
-			nav ul.open {
-				display: flex;
-			}
-			.hamburger {
-				display: flex;
-			}
-		}
-		@media (max-width: 700px) {
-			.navbar { flex-direction: column; gap: 1.5rem; align-items: stretch; }
-			.navbar-logo img { height: 44px; }
-			.hero { padding: 2.5rem 1rem 2rem 1rem; }
-			main { padding: 1.5rem 0.5rem 2rem 0.5rem; }
-		}
-		@media (max-width: 500px) {
-			.hero h1 { font-size: 1.5rem; }
-			main { border-radius: 0.5rem; }
-		}
-
 		/* Hero */
 		.hero {
-			background: linear-gradient(120deg, #2563eb 0%, #38bdf8 100%);
-			color: #fff;
+			background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+			color: var(--white);
 			text-align: center;
 			padding: 4rem 1rem 3rem 1rem;
 			position: relative;
 			overflow: hidden;
 		}
 		.hero h1 {
-			font-size: 2.5rem;
-			font-weight: 700;
+			font-size: 3.5rem;
+			font-weight: 800;
 			margin-bottom: 1rem;
-			letter-spacing: -1px;
+			letter-spacing: -1.5px;
+			line-height: 1.05;
+			text-shadow: 0 4px 24px rgba(30,64,175,0.13);
 		}
 		.hero p {
 			font-size: 1.25rem;
 			max-width: 600px;
 			margin: 0 auto;
-			opacity: 0.95;
+			opacity: 0.97;
 		}
 		.hero::after {
 			content: "";
 			background: url('images/bg-events-and-conferences.jpg') center/cover no-repeat;
-			opacity: 0.15;
+			opacity: 0.13;
 			position: absolute;
 			inset: 0;
 			z-index: 0;
 		}
 		.hero > * { position: relative; z-index: 1; }
-
-		/* Main Content */
+		/* Main */
 		main {
 			flex: 1;
 			max-width: 900px;
 			margin: 0 auto;
-			padding: 2.5rem 1rem 3rem 1rem;
-			background: #fff;
-			border-radius: 1.25rem;
+			padding: 2.5rem 1.5rem 3rem 1.5rem;
+			background: var(--white);
+			border-radius: var(--radius);
 			box-shadow: 0 4px 32px rgba(0,0,0,0.06);
 			margin-top: -3rem;
 			position: relative;
@@ -216,7 +219,7 @@
 		section + section { margin-top: 2.5rem; }
 		h2, h3, h4 {
 			font-weight: 700;
-			color: #2563eb;
+			color: var(--primary);
 			margin-bottom: 0.75rem;
 			letter-spacing: -0.5px;
 		}
@@ -226,12 +229,12 @@
 		p, ul, li {
 			font-size: 1.05rem;
 			line-height: 1.7;
-			color: #374151;
+			color: var(--text-light);
 		}
 		ul { margin-left: 1.5rem; margin-bottom: 1rem; }
 		hr {
 			border: none;
-			border-top: 1px solid #e5e7eb;
+			border-top: 1px solid var(--border);
 			margin: 2rem 0;
 		}
 		.event-img {
@@ -239,13 +242,16 @@
 			border-radius: 0.75rem;
 			margin: 1.5rem 0 0.5rem 0;
 			box-shadow: 0 2px 16px rgba(56,189,248,0.08);
-			transition: transform 0.2s;
+			transition: transform var(--transition), box-shadow var(--transition);
 		}
-		.event-img:hover { transform: scale(1.02); }
+		.event-img:hover {
+			transform: scale(1.025);
+			box-shadow: 0 6px 24px rgba(56,189,248,0.14);
+		}
 		.btn {
 			display: inline-block;
-			background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
-			color: #fff;
+			background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+			color: var(--white);
 			font-weight: 600;
 			padding: 0.75em 2em;
 			border-radius: 2em;
@@ -253,13 +259,14 @@
 			text-decoration: none;
 			font-size: 1rem;
 			margin-top: 1.25em;
-			transition: background 0.2s, box-shadow 0.2s;
+			transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
 			box-shadow: 0 2px 8px rgba(37,99,235,0.08);
 			cursor: pointer;
 		}
 		.btn:hover, .btn:focus {
-			background: linear-gradient(90deg, #1e40af 60%, #0ea5e9 100%);
+			background: linear-gradient(90deg, var(--primary-dark) 60%, #0ea5e9 100%);
 			box-shadow: 0 4px 16px rgba(37,99,235,0.12);
+			transform: translateY(-2px) scale(1.04);
 		}
 		.info-list {
 			margin: 1rem 0 1.5rem 0;
@@ -284,23 +291,45 @@
 			outline: none;
 			width: 220px;
 			max-width: 100%;
+			transition: border var(--transition);
+		}
+		.newsletter input[type="email"]:focus {
+			border: 1.5px solid var(--primary);
 		}
 		.newsletter button {
-			background: #2563eb;
-			color: #fff;
+			background: var(--primary);
+			color: var(--white);
 			border: none;
 			border-radius: 2em;
 			padding: 0.5em 1.5em;
 			font-weight: 600;
 			cursor: pointer;
-			transition: background 0.2s;
+			transition: background var(--transition), transform var(--transition);
 		}
-		.newsletter button:hover { background: #1e40af; }
-
+		.newsletter button:hover { background: var(--primary-dark); transform: scale(1.04);}
+		.newsletter .social-links {
+			margin-top: 1em;
+			display: flex;
+			justify-content: center;
+			gap: 1.2rem;
+		}
+		.newsletter .social-links a {
+			color: var(--primary);
+			font-size: 1.4rem;
+			border-radius: 50%;
+			padding: 0.4em;
+			background: #e0e7ef;
+			transition: background var(--transition), color var(--transition), transform var(--transition);
+		}
+		.newsletter .social-links a:hover {
+			background: var(--primary);
+			color: var(--white);
+			transform: scale(1.1);
+		}
 		/* Footer */
 		footer {
-			background: #1e293b;
-			color: #cbd5e1;
+			background: var(--footer-bg);
+			color: var(--footer-text);
 			padding: 2rem 1rem 1rem 1rem;
 			text-align: center;
 			margin-top: auto;
@@ -312,163 +341,139 @@
 			gap: 1.5rem;
 		}
 		.footer-social a {
-			color: #38bdf8;
+			color: var(--secondary);
 			font-size: 1.5rem;
-			transition: color 0.2s;
+			border-radius: 50%;
+			padding: 0.4em;
+			transition: background var(--transition), color var(--transition), transform var(--transition);
 		}
-		.footer-social a:hover { color: #fff; }
+		.footer-social a:hover {
+			color: var(--white);
+			background: var(--primary);
+			transform: scale(1.1);
+		}
 		.footer-links {
 			margin-top: 0.5rem;
 			font-size: 0.98rem;
 		}
 		.footer-links a {
-			color: #cbd5e1;
+			color: var(--footer-text);
 			text-decoration: underline;
 			margin: 0 0.5em;
-			transition: color 0.2s;
+			transition: color var(--transition);
 		}
-		.footer-links a:hover { color: #38bdf8; }
+		.footer-links a:hover { color: var(--secondary); }
+		/* Responsive */
+		@media (max-width: 900px) {
+			.container, main { max-width: 100%; }
+			.navbar { flex-direction: column; align-items: stretch; gap: 1rem; }
+			nav { margin-left: 0; }
+			.navbar-social { margin-left: 0; justify-content: flex-end; }
+			main { padding: 1.5rem 0.5rem 2rem 0.5rem; }
+		}
+		@media (max-width: 800px) {
+			.nav-menu {
+				position: absolute;
+				top: 100%;
+				right: 1.5rem;
+				background: var(--white);
+				flex-direction: column;
+				gap: 0.5rem;
+				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+				border-radius: 0.75em;
+				padding: 1em 0;
+				display: none;
+				min-width: 220px;
+				z-index: 100;
+			}
+			.nav-menu.open { display: flex; }
+			.hamburger { display: flex; }
+			nav { position: relative; }
+		}
+		@media (max-width: 600px) {
+			.hero { padding: 2.5rem 1rem 2rem 1rem; }
+			.hero h1 { font-size: 2rem; }
+			main { border-radius: 0.5rem; }
+			.navbar-logo img { height: 36px; width: 36px; }
+		}
+		@keyframes fadeIn {
+			from { opacity: 0; transform: translateY(10px);}
+			to { opacity: 1; transform: none;}
+		}
+		/* Upcoming Events Main Heading */
+		.upcoming-main-heading {
+			font-size: 2.5rem;
+			font-weight: 800;
+			color: var(--primary-dark);
+			margin-bottom: 1.2rem;
+			letter-spacing: -1.2px;
+			text-align: center;
+		}
+		@media (max-width: 600px) {
+			.upcoming-main-heading {
+				font-size: 1.5rem;
+			}
+		}
 	</style>
 </head>
 <body>
 	<header>
-		<div class="navbar">
-			<a href="index.html" class="navbar-logo">
-				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				Sivasakthi Foundation
-			</a>
-			<nav aria-label="Main navigation">
-				<div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
-					<span></span>
-					<span></span>
-					<span></span>
+		<div class="container">
+			<div class="navbar">
+				<a href="index.html" class="navbar-logo">
+					<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
+					Sivasakthi Foundation
+				</a>
+				<nav aria-label="Main navigation">
+					<div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<ul class="nav-menu" id="main-menu">
+						<li>
+							<a href="#" aria-haspopup="true" aria-expanded="false">About Us</a>
+							<ul>
+								<li><a href="./AboutUs.html">About Us</a></li>
+								<li><a href="./History and Background.html">History & Background</a></li>
+								<li><a href="./Missionstatement.html">Our Mission</a></li>
+								<li><a href="./Vision Statement copy.html">Our Vision</a></li>
+								<li><a href="./Financial Transparency.html">Financial Transparency</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" aria-haspopup="true" aria-expanded="false">Projects</a>
+							<ul>
+								<li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
+								<li><a href="Ai.html">AI and Deep Learning</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" aria-haspopup="true" aria-expanded="false">Get Involved</a>
+							<ul>
+								<li><a href="./GetInvolved.html">Get Involved</a></li>
+								<li><a href="./events-and-conferences.html">Events & Conferences</a></li>
+								<li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
+							</ul>
+						</li>
+						<li><a href="contact-us/index.html">Contact Us</a></li>
+					</ul>
+				</nav>
+				<div class="navbar-social">
+					<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 				</div>
-<<<<<<< HEAD
-				<ul id="main-menu">
-					<li>
-						<a href="#" aria-haspopup="true" aria-expanded="false">About Us</a>
-						<ul>
-							<li><a href="./AboutUs.html">About Us</a></li>
-							<li><a href="./History and Background.html">History & Background</a></li>
-							<li><a href="./Missionstatement.html">Our Mission</a></li>
-							<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-							<li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" aria-haspopup="true" aria-expanded="false">Projects</a>
-						<ul>
-							<li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-							<li><a href="Ai.html">AI and Deep Learning</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" aria-haspopup="true" aria-expanded="false">Get Involved</a>
-						<ul>
-							<li><a href="./GetInvolved.html">Get Involved</a></li>
-							<li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-							<li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-						</ul>
-					</li>
-					<li><a href="contact-us/index.html">Contact Us</a></li>
-				</ul>
-			</nav>
-			<div class="navbar-social">
-				<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-				<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-				<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 			</div>
 		</div>
 	</header>
-=======
-				<div class="col-md-6 col-sm-6 text-right fh5co-social">
-					<!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-					<a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-					<a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-					<a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-<header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
 
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-	
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
-
-	<div class="hero">
+	<section class="hero">
 		<h1>Events and Conferences</h1>
 		<p>
 			Fostering a vibrant community of scientists, educators, and enthusiasts through impactful events and conferences.
 		</p>
-	</div>
+	</section>
 
 	<main>
 		<section>
@@ -479,12 +484,13 @@
 
 		<hr>
 
+		<!-- New Upcoming Events Page Section -->
 		<section>
-			<h2>Upcoming Events</h2>
-			<p>
+			<h1 class="upcoming-main-heading">Upcoming Events</h1>
+			<p style="text-align:center;">
 				Stay informed about our upcoming events and mark your calendars. Join us to engage with leading experts, participate in workshops, and stay updated on the latest developments in science.
 			</p>
-			<ul class="info-list">
+			<ul class="info-list" style="text-align:center; list-style: none; padding-left: 0;">
 				<li><strong>No upcoming events at this time.</strong> Please check back soon or follow us on social media for updates.</li>
 			</ul>
 		</section>
@@ -556,14 +562,7 @@
 			<h2>Stay Updated</h2>
 			<div class="newsletter">
 				<p><strong>Newsletter Sign-Up:</strong> Coming soon</p>
-				<!--
-				<form>
-					<input type="email" placeholder="Your email address" required>
-					<button type="submit">Subscribe</button>
-				</form>
-				-->
-				<div style="margin-top:1em;">
-					<strong>Follow us:</strong>
+				<div class="social-links">
 					<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
 					<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
 					<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -578,7 +577,6 @@
 			<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
 			<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 		</div>
-<<<<<<< HEAD
 		<div>
 			&copy; 2024 Sivasakthi Foundation. All Rights Reserved.
 		</div>
@@ -606,241 +604,4 @@
 		});
 	</script>
 </body>
-=======
-
-        <div id="fh5co-blog-section" class="fh5co-section-gray">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                <div>
-                  <p style="text-align: justify;">At Sivasakthi Science Foundation, we are dedicated
-                    to fostering a vibrant community of scientists, educators, and enthusiasts
-                    through our events and conferences. These gatherings provide opportunities
-                    for networking, learning, and collaboration, and they play a crucial role in
-                    advancing our mission to support science research, training, and education.</p>
-                  <hr>
-
-                  <h3>Past Events</h3>
-                  <p style="text-align: justify;">Take a look at some of our past events to see the impact
-                    and reach of our initiatives. We have hosted numerous conferences, workshops, and
-                    seminars that have brought together the brightest minds in science and education.</p>
-                  <h4>1. BGDB at PAG31</h4>
-                  <a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html">
-                    <img src="./images/pag31-poster.png" alt="PAG31 poster" width="100%">
-                  </a>
-                  <a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html" class="btn btn-primary" style="margin-top: 2em">Click to learn more</a>
-                  <hr>
-
-                  <h3>Stay Updated</h3>
-                  <p style="text-align: justify;">Subscribe to our newsletter and follow us on social
-                    media to receive the latest updates on our events and conferences.</p>
-                  <ul style="text-align: justify;">
-                    <li><strong>Newsletter Sign-Up:</strong> Coming soon</li>
-                    <li><strong>Twitter:</strong> <a href="https://x.com/SSF_handle">Link</a></li>
-                  </ul>
-                  <hr>
-
-                </div>
-
-                <!--
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>-->
-              </div>
-            </div>
-			</div><!--
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-					</div>
-				</div>
-
-			</div>-->
-		</div>
-		<!-- fh5co-blog-section -->
-
-
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Science Foundation <a href="#"></a>. All Rights Reserved.
-								 <!--Privacy Policy-->
-								  <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-
-	</div>
-	<!-- END fh5co-page -->
-
-	</div>
-	<!-- END fh5co-wrapper -->
-
-	<!-- jQuery -->
-
-
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
-
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
-	</body>
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
 </html>

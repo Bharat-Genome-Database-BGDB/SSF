@@ -1,439 +1,390 @@
-
 <!DOCTYPE html>
-<html class="no-js"> 
-	<head>
-		<title>Partnerships and Collaborations - Sivasakthi Science Foundation</title>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Partners & Collaborators - Sivasakthi Science Foundation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<style>
+		:root {
+			--primary: #1a237e;
+			--accent: #ffd600;
+			--bg: #f7f9fb;
+			--white: #fff;
+			--shadow: 0 4px 24px rgba(26,35,126,0.10);
+			--radius: 18px;
+			--font-main: 'Montserrat', Arial, sans-serif;
+		}
+		body {
+			font-family: var(--font-main);
+			background: var(--bg);
+			color: #23233b;
+			margin: 0;
+			padding: 0;
+		}
+		.navbar {
+			background: var(--primary);
+			box-shadow: var(--shadow);
+			padding: 0.7rem 0;
+		}
+		.navbar-brand {
+			display: flex;
+			align-items: center;
+			font-weight: 700;
+			font-size: 1.2rem;
+			color: var(--white);
+			text-decoration: none;
+			letter-spacing: 1px;
+		}
+		.navbar-brand img {
+			height: 44px;
+			margin-right: 12px;
+		}
+		.navbar-nav {
+			display: flex;
+			gap: 1.2rem;
+			margin-left: auto;
+		}
+		.nav-link {
+			color: var(--white);
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.2s;
+			padding: 0.3rem 0.7rem;
+			border-radius: 8px;
+		}
+		.nav-link:hover, .nav-item.active .nav-link {
+			background: var(--accent);
+			color: var(--primary);
+		}
 
- <!-- Facebook and Twitter integration -->
- <meta property="og:title" content=""/>
- <meta property="og:image" content=""/>
- <meta property="og:url" content=""/>
- <meta property="og:site_name" content=""/>
- <meta property="og:description" content=""/>
- <meta name="twitter:title" content="" />
- <meta name="twitter:image" content="" />
- <meta name="twitter:url" content="" />
- <meta name="twitter:card" content="" />
+		/* Hero Section */
+		.hero-section {
+			background: linear-gradient(rgba(26,35,126,0.85), rgba(26,35,126,0.85)), url('images/partnership-handshake-innovation-corporate-business-concept.jpg') center/cover no-repeat;
+			color: var(--white);
+			padding: 110px 0 100px 0;
+			text-align: center;
+			position: relative;
+		}
+		.hero-section h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			letter-spacing: 2px;
+			margin-bottom: 18px;
+		}
+		.hero-section p {
+			font-size: 1.25rem;
+			max-width: 700px;
+			margin: 0 auto 32px auto;
+			line-height: 1.7;
+			color: #e3e6f3;
+		}
+		.hero-section .btn {
+			background: var(--accent);
+			color: var(--primary);
+			font-weight: 700;
+			border-radius: 30px;
+			padding: 14px 38px;
+			font-size: 1.1rem;
+			box-shadow: 0 2px 10px rgba(26,35,126,0.10);
+			border: none;
+			transition: background 0.2s, color 0.2s, transform 0.2s;
+			cursor: pointer;
+			margin-top: 10px;
+			outline: none;
+		}
+		.hero-section .btn:hover {
+			background: #fff176;
+			color: var(--primary);
+			transform: translateY(-2px) scale(1.04);
+		}
 
- <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
- <link rel="shortcut icon" href="logo.ico">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		/* Partners Grid */
+		.partners-section {
+			max-width: 1200px;
+			margin: 40px auto 0 auto;
+			padding: 0 20px 60px 20px;
+			position: relative;
+			z-index: 2;
+		}
+		.section-title {
+			font-size: 2.2rem;
+			font-weight: 700;
+			margin: 40px 0 18px 0;
+			text-align: center;
+			color: var(--primary);
+			letter-spacing: 1px;
+		}
+		.partners-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 32px;
+			margin-top: 32px;
+		}
+		.partner-card {
+			background: var(--white);
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 32px 22px 24px 22px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			transition: box-shadow 0.2s, transform 0.2s;
+			position: relative;
+			overflow: hidden;
+		}
+		.partner-card:hover {
+			box-shadow: 0 8px 32px rgba(26,35,126,0.16);
+			transform: translateY(-6px) scale(1.03);
+		}
+		.partner-logo {
+			width: 90px;
+			height: 90px;
+			object-fit: contain;
+			margin-bottom: 18px;
+			border-radius: 12px;
+			background: #f3f3f3;
+			box-shadow: 0 2px 10px rgba(26,35,126,0.06);
+			transition: filter 0.2s;
+			filter: grayscale(0.18);
+			padding: 8px;
+		}
+		.partner-card:hover .partner-logo {
+			filter: grayscale(0) drop-shadow(0 2px 12px #b3b3b3);
+		}
+		.partner-name {
+			font-size: 1.18rem;
+			font-weight: 700;
+			color: var(--primary);
+			margin-bottom: 8px;
+		}
+		.partner-desc {
+			font-size: 1rem;
+			color: #444;
+			margin-bottom: 12px;
+			min-height: 48px;
+		}
+		.partner-link {
+			color: var(--accent);
+			font-weight: 600;
+			text-decoration: underline;
+			font-size: 0.98rem;
+			transition: color 0.2s;
+		}
+		.partner-link:hover {
+			color: #ffea00;
+		}
 
- <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
- 
- <!-- Animate.css -->
- <link rel="stylesheet" href="css/animate.css">
- <!-- Icomoon Icon Fonts-->
- <link rel="stylesheet" href="css/icomoon.css">
- <!-- Bootstrap  -->
- <link rel="stylesheet" href="css/bootstrap.css">
- <!-- Superfish -->
- <link rel="stylesheet" href="css/superfish.css">
- <link rel="stylesheet" href="css/news.css">
- <link rel="stylesheet" href="css/events.css">
+		/* Call to Action */
+		.cta-section {
+			background: linear-gradient(90deg, var(--primary) 60%, #3949ab 100%);
+			color: var(--white);
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 44px 30px 36px 30px;
+			max-width: 700px;
+			margin: 0 auto 40px auto;
+			text-align: center;
+			margin-top: 30px;
+		}
+		.cta-section .cta-title {
+			font-size: 2rem;
+			font-weight: 700;
+			color: var(--accent);
+			margin-bottom: 16px;
+		}
+		.cta-section a {
+			color: var(--accent);
+			font-weight: bold;
+			text-decoration: underline;
+			font-size: 1.08rem;
+		}
 
+		/* Footer */
+		.footer {
+			background: var(--primary);
+			color: var(--white);
+			padding: 32px 0 12px 0;
+			text-align: center;
+			border-top-left-radius: 32px;
+			border-top-right-radius: 32px;
+			margin-top: 60px;
+		}
+		.footer .social-icons a {
+			color: var(--white);
+			margin: 0 12px;
+			font-size: 1.6rem;
+			transition: color 0.2s;
+		}
+		.footer .social-icons a:hover {
+			color: var(--accent);
+		}
+		.footer a {
+			color: var(--accent);
+			text-decoration: underline;
+		}
 
- <link rel="stylesheet" href="css/style.css">
+		/* Responsive */
+		@media (max-width: 900px) {
+			.partners-grid {
+				grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+				gap: 22px;
+			}
+			.hero-section h1 {
+				font-size: 2.1rem;
+			}
+			.hero-section {
+				padding: 70px 0 40px 0;
+			}
+		}
+		@media (max-width: 600px) {
+			.partners-section {
+				padding: 0 4px 40px 4px;
+			}
+			.partners-grid {
+				grid-template-columns: 1fr;
+				gap: 14px;
+			}
+			.partner-card {
+				padding: 22px 8px 18px 8px;
+			}
+			.hero-section {
+				padding: 48px 0 24px 0;
+			}
+		}
+	</style>
+</head>
+<body>
 
- <link rel="stylesheet" href="css/logo.css"
-
-
- <!-- Modernizr JS -->
- <script src="js/modernizr-2.6.2.min.js"></script>
- <!-- FOR IE9 below -->
- <!--[if lt IE 9]>
- <script src="js/respond.min.js"></script>
- <![endif]-->
- </head>
- <body>
-	 <div id="fh5co-wrapper">
-	 <div id="fh5co-page">
-	 <div class="header-top">
-		 <div class="container">
-			 <div class="row">
-				 <div class="col-md-6 col-sm-6 text-left fh5co-link">
-					 <a href="./blog.html">Blog</a>
-					 <a href="contact-us/index.html">Contact</a>
-				 </div>
-				 <div class="col-md-6 col-sm-6 text-right fh5co-social">
-					 <!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-					 <a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-					 <a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-					 <a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-				 </div>
-			 </div>
-		 </div>
-	 </div>
-<header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
-
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-		
-
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/partnership-handshake-innovation-corporate-business-concept.jpg);">
-				<div class="desc animate-box">
-					<h2><strong>Partnerships and Collaborations </strong></h2>
-					<!--<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
-					<span><a class="btn btn-primary btn-lg" href="#">blog-text</a></span>-->
-				</div>
-			</div>
-
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="SSF Logo">
+				Sivasakthi Science Foundation
+			</a>
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="./AboutUs.html">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="./GetInvolved.html">Get Involved</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#">Partners</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
+			</ul>
 		</div>
-		
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<div>
-							<h2 style="text-align: center;">Partnerships and Collaborations</h2>
-							<h3 style="text-align: center;">Building Strong Alliances for Impactful Science</h3>
-							<p style="text-align: justify;">At Sivasakthi Science Foundation, we believe that collaboration and partnership are key to advancing scientific research, training, and education. Our foundation actively seeks to build strong alliances with a diverse range of organizations, including academic institutions, research centers, non-profits, government agencies, and private sector companies. These partnerships enable us to leverage collective expertise, resources, and networks to drive impactful initiatives and achieve our mission.</p>
-							<hr>
-							<h3 style="text-align: center;">Current Partners and Alliances</h3>
-							<p style="text-align: center;"><a href="https://www.berkeley.edu"><img src="images/UCB.png" alt="Cal Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.arizona.edu"><img src="images/UA.png" alt="University of Arizona Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.cornell.edu"><img src="images/cornell.png" alt="Cornell University Logo" style="height: 180px; vertical-align:middle;"></a></p>
-							<p style="text-align: center;"><a href="https://www.wsu.edu"><img src="images/WSU.png" alt="WSU Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.cyverse.org"><img src="images/cyverse.png" alt="CyVerse Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.mcgill.ca"><img src="images/mcgill.png" alt="McGill University Logo" style="height: 180px; vertical-align:middle;"></a></p>
-							<p style="text-align: center;"><a href="https://rkmshospitalvrindavan.rkmm.org/"><img src="images/rk.jpeg" alt="RK Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://vit.ac.in/"><img src="images/vit.png" alt="VIT Logo" style="height: 180px; vertical-align:middle;"></a>&nbsp;&nbsp;&nbsp;<a href="https://www.amrita.edu/school/biotechnology/"><img src="images/AmUni.png" alt="Amrita University Logo" style="height: 180px; vertical-align:middle;"></a></p>
+	</nav>
 
-							&nbsp;&nbsp;&nbsp;
-							<!--<h3 style="text-align: center;">Academic Institutions</h3>
-							<p style="text-align: justify;">We collaborate with leading universities and colleges to support cutting-edge research and develop innovative educational programs. Our academic partners provide invaluable expertise, facilities, and talent, helping us to create opportunities for students, researchers, and educators.</p>
-							<!--<p style="text-align: justify;">Our academic partners include:</p>
-							<ul style="text-align: justify;">
-								<li>[University Name]</li>
-								<li>[College Name]</li>
-								<li>[Research Institute Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">Research Centers</h3>
-							<p style="text-align: justify;">Our partnerships with research centers focus on advancing scientific discoveries and technological innovations. By working together, we can tackle complex challenges and translate research findings into practical applications that benefit society.</p>
-							<!--<p style="text-align: justify;">Our research center partners include:</p>
-							<ul style="text-align: justify;">
-								<li>[Research Center Name]</li>
-								<li>[Institute Name]</li>
-								<li>[Laboratory Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">Non-Profit Organizations</h3>
-							<p style="text-align: justify;">We join forces with other non-profit organizations to amplify our impact and reach a broader audience. These collaborations enable us to share knowledge, best practices, and resources, and to advocate for policies that support science and education.</p>
-							<!--<p style="text-align: justify;">Our non-profit partners include:</p>
-							<ul style="text-align: justify;">
-								<li>[Non-Profit Organization Name]</li>
-								<li>[Charity Name]</li>
-								<li>[Foundation Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">Government Agencies</h3>
-							<p style="text-align: justify;">Our foundation works closely with government agencies to align our initiatives with national and regional priorities in science and education. These partnerships help us to secure funding, influence policy, and implement programs that have a lasting impact on communities.</p>
-							<!--<p style="text-align: justify;">Our government partners include:</p>
-							<!--<ul style="text-align: justify;">
-								<li>[Government Agency Name]</li>
-								<li>[Ministry/Department Name]</li>
-								<li>[Local Government Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">Private Sector Companies</h3>
-							<p style="text-align: justify;">Engaging with private sector companies allows us to harness industry expertise, technology, and funding to advance our mission. These collaborations often involve joint research projects, educational initiatives, and the development of innovative solutions to real-world problems.</p>
-							<!--<p style="text-align: justify;">Our private sector partners include:</p>
-							<!--<ul style="text-align: justify;">
-								<li>[Company Name]</li>
-								<li>[Corporation Name]</li>
-								<li>[Tech Firm Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">International Collaborations</h3>
-							<p style="text-align: justify;">Recognizing the global nature of science, we actively pursue international collaborations to foster cross-border knowledge exchange and address global challenges. These partnerships enhance our ability to contribute to the global scientific community and promote international scientific cooperation.</p>
-							<!--<p style="text-align: justify;">Our international partners include:</p>
-							<!--<ul style="text-align: justify;">
-								<li>[International Organization Name]</li>
-								<li>[Foreign University Name]</li>
-								<li>[Global Research Consortium Name]</li>
-							</ul>--
-							<hr>
-							<h3 style="text-align: center;">Partnership Opportunities</h3>
-							<p style="text-align: justify;">We are always looking to expand our network of partners and collaborators. If your organization shares our commitment to advancing science research, training, and education, we invite you to join us in our mission. Together, we can create a brighter future through science.</p>
-							<p style="text-align: justify;">Benefits of partnering with us include:</p>
-							<ul style="text-align: justify;">
-								<li>Access to our extensive network of experts and resources</li>
-								<li>Opportunities for joint research and innovation</li>
-								<li>Participation in educational and training programs</li>
-								<li>Enhanced visibility and recognition within the scientific community</li>
-							</ul>
-							<hr>
-							<h3 style="text-align: center;">Contact Us</h3>
-							<p style="text-align: justify;">To learn more about partnership opportunities or to discuss potential collaborations, please contact us at partnerships@ssf.org. We look forward to exploring how we can work together to make a meaningful impact.</p>
-						</div>
-						
-						<!--
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>-->
-					</div>
-				</div>
-			</div><!--
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-				</div>
+	<!-- Hero Section -->
+	<section class="hero-section">
+		<h1>Partners & Collaborators</h1>
+		<p>
+			Building strong alliances for impactful science.<br>
+			We believe in the power of collaboration to advance research, training, and education. Our partners span leading universities, research centers, non-profits, government, and industry.
+		</p>
+		<a href="#cta" class="btn">Become a Partner</a>
+	</section>
 
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-					</div>
-				</div>
-
+	<!-- Partners Grid Section -->
+	<section class="partners-section">
+		<div class="section-title">Our Esteemed Partners</div>
+		<div class="partners-grid">
+			<!-- Partner Card 1 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/UCB.png" alt="UC Berkeley Logo" />
+				<div class="partner-name">UC Berkeley</div>
+				<div class="partner-desc">World-leading research university fostering innovation and global impact.</div>
+				<a class="partner-link" href="https://www.berkeley.edu" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 2 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/UA.png" alt="University of Arizona Logo" />
+				<div class="partner-name">University of Arizona</div>
+				<div class="partner-desc">Pioneering research and education in science and technology.</div>
+				<a class="partner-link" href="https://www.arizona.edu" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 3 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/cornell.png" alt="Cornell University Logo" />
+				<div class="partner-name">Cornell University</div>
+				<div class="partner-desc">Ivy League institution advancing knowledge and societal progress.</div>
+				<a class="partner-link" href="https://www.cornell.edu" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 4 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/WSU.png" alt="Washington State University Logo" />
+				<div class="partner-name">Washington State University</div>
+				<div class="partner-desc">Driving innovation and research for a better tomorrow.</div>
+				<a class="partner-link" href="https://www.wsu.edu" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 5 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/cyverse.png" alt="CyVerse Logo" />
+				<div class="partner-name">CyVerse</div>
+				<div class="partner-desc">Empowering life science research with advanced cyberinfrastructure.</div>
+				<a class="partner-link" href="https://www.cyverse.org" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 6 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/mcgill.png" alt="McGill University Logo" />
+				<div class="partner-name">McGill University</div>
+				<div class="partner-desc">Global leader in research, teaching, and innovation.</div>
+				<a class="partner-link" href="https://www.mcgill.ca" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 7 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/rk.jpeg" alt="Ramakrishna Mission Hospital Logo" />
+				<div class="partner-name">Ramakrishna Mission Hospital</div>
+				<div class="partner-desc">Delivering compassionate healthcare and community service.</div>
+				<a class="partner-link" href="https://rkmshospitalvrindavan.rkmm.org/" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 8 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/vit.png" alt="VIT Logo" />
+				<div class="partner-name">VIT</div>
+				<div class="partner-desc">Excellence in technical education and research innovation.</div>
+				<a class="partner-link" href="https://vit.ac.in/" target="_blank">Visit Website</a>
+			</div>
+			<!-- Partner Card 9 -->
+			<div class="partner-card">
+				<img class="partner-logo" src="images/AmUni.png" alt="Amrita University Logo" />
+				<div class="partner-name">Amrita University</div>
+				<div class="partner-desc">Advancing biotechnology and interdisciplinary research.</div>
+				<a class="partner-link" href="https://www.amrita.edu/school/biotechnology/" target="_blank">Visit Website</a>
+			</div>
+			<!-- Example Placeholder Partner
+			<div class="partner-card">
+				<img class="partner-logo" src="https://via.placeholder.com/90x90?text=Logo" alt="Partner Logo" />
+				<div class="partner-name">Your Organization</div>
+				<div class="partner-desc">Join us as a partner and make a difference in science and society.</div>
+				<a class="partner-link" href="#cta">Become a Partner</a> -->
 			</div>
 		</div>
-		<!-- fh5co-blog-section -->
-</div>
-</div>
-</div>
-		
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Science Foundation <a href="#"></a>. All Rights Reserved.
-								 <!--Privacy Policy-->
-								  <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	
+	</section>
 
-	</div>
-	<!-- END fh5co-page -->
+	<!-- Call to Action Section -->
+	<section id="cta" class="cta-section">
+		<div class="cta-title">Let's Collaborate!</div>
+		<p>
+			Interested in partnering or collaborating with us?<br>
+			Email us at <a href="mailto:partnerships@ssf.org">partnerships@ssf.org</a> or use our <a href="contact-us/index.html">contact form</a>.<br>
+			Together, we can create a brighter future through science.
+		</p>
+		<a href="mailto:partnerships@ssf.org" class="btn" style="margin-top:18px;background:var(--accent);color:var(--primary);padding:12px 32px;border-radius:30px;display:inline-block;font-weight:700;text-decoration:none;">Contact Us</a>
+	</section>
 
-	</div>
-	<!-- END fh5co-wrapper -->
-
-	<!-- jQuery -->
-
-
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
-
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-	
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="social-icons mb-2">
+			<a href="https://x.com/SSF_handle" target="_blank" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+			<a href="https://www.instagram.com/ssf.iinsta" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+			<a href="https://youtube.com/@sivasakthifoundation" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+		</div>
+		<div>
+			&copy; 2024 Sivasakthi Science Foundation. All Rights Reserved.<br>
+			<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms</a>
+		</div>
+	</footer>
+</body>
 </html>
-
