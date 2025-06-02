@@ -13,14 +13,13 @@
 	<link rel="shortcut icon" href="logo.ico">
 	<style>
 		:root {
-			--violet-dark: #2a1240;
-			--violet-light: #5f2c82;
-			--violet-bg: linear-gradient(135deg, #2a1240 0%, #5f2c82 100%);
-			--white: #f7f6fb;
+			--main-bg: #222831;
+			--main-bg-gradient: linear-gradient(135deg, #222831 0%, #393e46 100%);
 			--accent: #ffd600;
-			--gray-bg: #2a1240;
-			--info-bg: linear-gradient(120deg, #3d1d5c 60%, #5f2c82 100%);
-			--footer-bg: #1a0d28;
+			--white: #f7f6fb;
+			--gray-bg: #393e46;
+			--info-bg: linear-gradient(120deg, #232931 60%, #393e46 100%);
+			--footer-bg: #181c22;
 			--footer-text: #e0d7f7;
 		}
 		html, body {
@@ -28,14 +27,14 @@
 			margin: 0;
 			padding: 0;
 			font-family: 'Montserrat', Arial, sans-serif;
-			background: var(--violet-bg), url('images/GetInvolved.jpg') center/cover no-repeat fixed;
+			background: var(--main-bg-gradient), url('images/GetInvolved.jpg') center/cover no-repeat fixed;
 			background-blend-mode: multiply;
 			color: var(--white);
 			min-height: 100vh;
 		}
 		.navbar {
-			background: var(--violet-dark);
-			box-shadow: 0 2px 12px rgba(95,44,130,0.07);
+			background: var(--main-bg);
+			box-shadow: 0 2px 12px rgba(34,40,49,0.07);
 			padding: 0.7rem 0;
 		}
 		.navbar-brand img {
@@ -52,26 +51,13 @@
 		.navbar-nav .nav-link:hover {
 			color: var(--accent);
 		}
-		.dropdown-menu {
-			background: var(--violet-dark);
-			border: none;
-		}
-		.dropdown-item {
-			color: var(--white);
-		}
-		.dropdown-item.active,
-		.dropdown-item:active,
-		.dropdown-item:hover {
-			background: var(--violet-light);
-			color: var(--accent);
-		}
 		.hero-section {
-			background: rgba(42,18,64,0.96);
+			background: rgba(34,40,49,0.96);
 			color: var(--white);
-			padding: 80px 0 40px 0;
+			padding: 70px 0 30px 0;
 			text-align: center;
 			border-radius: 0 0 32px 32px;
-			box-shadow: 0 8px 32px rgba(42,18,64,0.18);
+			box-shadow: 0 8px 32px rgba(34,40,49,0.18);
 			margin-bottom: 0;
 		}
 		.hero-section h1 {
@@ -79,7 +65,7 @@
 			font-size: 2.5rem;
 			margin-bottom: 18px;
 			letter-spacing: 1px;
-			text-shadow: 0 2px 8px rgba(95,44,130,0.18);
+			text-shadow: 0 2px 8px rgba(34,40,49,0.18);
 		}
 		.hero-section .lead {
 			font-size: 1.2rem;
@@ -89,54 +75,69 @@
 		}
 		.btn-primary {
 			background: var(--accent);
-			color: var(--violet-dark);
+			color: var(--main-bg);
 			border: none;
 			border-radius: 30px;
 			padding: 10px 32px;
 			font-weight: 600;
 			transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-			box-shadow: 0 2px 8px rgba(95,44,130,0.13);
+			box-shadow: 0 2px 8px rgba(34,40,49,0.13);
 		}
 		.btn-primary:hover {
-			background: var(--violet-light);
+			background: var(--gray-bg);
 			color: var(--accent);
-			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
+			box-shadow: 0 4px 16px rgba(34,40,49,0.18);
 		}
-		.main-content {
-			max-width: 900px;
-			margin: -40px auto 0 auto;
-			background: #2a1240;
+		.layout-section {
+			max-width: 1200px;
+			margin: 40px auto 0 auto;
+			background: var(--main-bg);
 			border-radius: 24px;
-			box-shadow: 0 4px 32px rgba(42,18,64,0.25);
+			box-shadow: 0 4px 32px rgba(34,40,49,0.25);
 			padding: 40px 32px 32px 32px;
 			position: relative;
 			z-index: 2;
 		}
-		.section-title {
-			font-size: 1.4rem;
+		.section-header {
+			font-size: 2rem;
 			font-weight: 700;
 			color: var(--accent);
-			margin: 32px 0 18px 0;
-			text-align: left;
+			margin-bottom: 20px;
+			text-align: center;
 			letter-spacing: 0.5px;
 		}
-		.info-block {
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 32px;
+			margin-top: 32px;
+		}
+		.card-custom {
 			background: var(--info-bg);
 			border-radius: 18px;
-			box-shadow: 0 2px 12px rgba(42,18,64,0.18);
-			padding: 28px 24px;
-			margin-bottom: 28px;
-			transition: box-shadow 0.2s;
+			box-shadow: 0 2px 12px rgba(34,40,49,0.18);
+			padding: 32px 24px;
 			color: var(--white);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			transition: box-shadow 0.2s;
+			min-height: 340px;
 		}
-		.info-block:hover {
-			box-shadow: 0 6px 24px rgba(164,80,139,0.18);
+		.card-custom:hover {
+			box-shadow: 0 6px 24px rgba(255,214,0,0.10);
 		}
-		ul {
+		.card-title {
+			font-size: 1.3rem;
+			font-weight: 700;
+			color: var(--accent);
+			margin-bottom: 12px;
+		}
+		.card-custom ul {
 			margin-bottom: 1.3rem;
 			padding-left: 1.2rem;
 		}
-		ul li {
+		.card-custom ul li {
 			margin-bottom: 0.5rem;
 			font-size: 1.05rem;
 		}
@@ -154,16 +155,16 @@
 			width: 44px;
 			height: 44px;
 			border-radius: 50%;
-			background: #3d1d5c;
+			background: var(--gray-bg);
 			color: var(--accent);
 			font-size: 1.5rem;
 			transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-			box-shadow: 0 2px 8px rgba(95,44,130,0.08);
+			box-shadow: 0 2px 8px rgba(34,40,49,0.08);
 		}
 		.social-list a:hover {
 			background: var(--accent);
-			color: var(--violet-dark);
-			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
+			color: var(--main-bg);
+			box-shadow: 0 4px 16px rgba(255,214,0,0.18);
 		}
 		.footer {
 			background: var(--footer-bg);
@@ -172,7 +173,7 @@
 			text-align: center;
 			border-radius: 32px 32px 0 0;
 			margin-top: 60px;
-			box-shadow: 0 -2px 16px rgba(42,18,64,0.18);
+			box-shadow: 0 -2px 16px rgba(34,40,49,0.18);
 		}
 		.footer a {
 			color: var(--accent);
@@ -197,25 +198,29 @@
 			color: #fff;
 		}
 		@media (max-width: 991px) {
-			.main-content {
+			.layout-section {
 				padding: 24px 8px 18px 8px;
 			}
 			.hero-section {
 				padding: 50px 0 20px 0;
 			}
+			.grid-container {
+				gap: 18px;
+			}
 		}
 		@media (max-width: 767px) {
-			.main-content {
+			.layout-section {
 				padding: 12px 2px 8px 2px;
 			}
 			.hero-section h1 {
 				font-size: 1.5rem;
 			}
-			.section-title {
-				font-size: 1.1rem;
+			.section-header {
+				font-size: 1.2rem;
 			}
-			.info-block {
+			.card-custom {
 				padding: 16px 8px;
+				min-height: unset;
 			}
 			.social-list a {
 				width: 36px;
@@ -283,19 +288,21 @@
 	</section>
 
 	<!-- Main Content -->
-	<div class="main-content">
-		<div class="info-block">
-			<div class="section-title">Why Get Involved?</div>
-			<p style="text-align:justify;">
-				Sivasakthi Science Foundation welcomes individuals and organizations committed to the progress of science. Whether you are a researcher, educator, student, or supporter, your involvement is vital to our mission of promoting scientific research, training, and education.
-			</p>
-		</div>
-
-		<div class="row g-4">
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Volunteer Opportunities</div>
-					<p style="text-align:justify;">
+	<div class="layout-section">
+		<div class="section-header">Ways to Get Involved</div>
+		<div class="grid-container">
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Why Get Involved?</div>
+					<p>
+						Sivasakthi Science Foundation welcomes individuals and organizations committed to the progress of science. Whether you are a researcher, educator, student, or supporter, your involvement is vital to our mission of promoting scientific research, training, and education.
+					</p>
+				</div>
+			</div>
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Volunteer Opportunities</div>
+					<p>
 						Support our initiatives by volunteering your expertise and time. Volunteers play a key role in the successful execution of our programs.
 					</p>
 					<ul>
@@ -306,10 +313,10 @@
 					<p><strong>Areas:</strong> Event Coordination, Administrative Support, Outreach, Research Assistance.</p>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Partnerships</div>
-					<p style="text-align:justify;">
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Partnerships</div>
+					<p>
 						We collaborate with organizations that share our dedication to scientific advancement. Partnership opportunities include joint research, educational programs, and event sponsorship.
 					</p>
 					<ul>
@@ -320,19 +327,19 @@
 					<p>For partnership inquiries: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></p>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Events and Conferences</div>
-					<p style="text-align:justify;">
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Events and Conferences</div>
+					<p>
 						Participate in our events and conferences to engage with the scientific community, expand your knowledge, and contribute to ongoing discussions in science and education.
 					</p>
-					<a href="./events-and-conferences.html" class="btn btn-primary mt-2">Upcoming Events</a>
+					<a href="./events-and-conferences.html" class="btn btn-primary mt-2" style="background: var(--main-bg); color: var(--accent); border: 2px solid var(--accent);">Upcoming Events</a>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Outreach and Awareness</div>
-					<p style="text-align:justify;">
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Outreach and Awareness</div>
+					<p>
 						Help us extend our reach by sharing our mission and activities within your network and on social media platforms.
 					</p>
 					<div class="social-list">
@@ -342,18 +349,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Internships and Fellowships</div>
-					<p style="text-align:justify;">
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Internships and Fellowships</div>
+					<p>
 						We offer structured internship and fellowship programs for students and early-career professionals seeking experience in scientific research, education, and non-profit management.
 					</p>
 					<p><em>Application details will be announced soon.</em></p>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="info-block h-100">
-					<div class="section-title">Contact Information</div>
+			<div class="card-custom">
+				<div>
+					<div class="card-title">Contact Information</div>
 					<ul>
 						<li>Email: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></li>
 						<li>Mailing Address: 7, Belhaven Gardens, Kawdiar,<br> Thiruvananthapuram, Kerala, India</li>
@@ -361,8 +368,7 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="text-center mt-4" style="text-align:justify;">
+		<div class="text-center mt-5" style="text-align:justify;">
 			<strong>Thank you for your interest in Sivasakthi Science Foundation.<br>
 			Together, we can advance the frontiers of scientific research, training, and education.</strong>
 		</div>
