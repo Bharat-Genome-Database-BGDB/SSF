@@ -12,94 +12,115 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 	<link rel="shortcut icon" href="logo.ico">
 	<style>
-		body {
-			font-family: 'Montserrat', Arial, sans-serif;
-			background: #f4f7fb;
-			color: #222;
+		:root {
+			--violet-dark: #5f2c82;
+			--violet-light: #a4508b;
+			--violet-bg: linear-gradient(135deg, #5f2c82 0%, #a4508b 100%);
+			--white: #fff;
+			--accent: #ffd600;
+			--gray-bg: #f7f6fb;
+		}
+		html, body {
+			height: 100%;
 			margin: 0;
 			padding: 0;
+			font-family: 'Montserrat', Arial, sans-serif;
+			background: var(--violet-bg), url('images/GetInvolved.jpg') center/cover no-repeat fixed;
+			background-blend-mode: multiply;
+			color: #222;
+			min-height: 100vh;
 		}
 		.navbar {
-			background: #fff;
-			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+			background: var(--white);
+			box-shadow: 0 2px 12px rgba(95,44,130,0.07);
+			padding: 0.7rem 0;
 		}
 		.navbar-brand img {
-			height: 48px;
+			height: 44px;
 			margin-right: 10px;
 		}
-		.hero-section {
-			background: linear-gradient(rgba(26,35,126,0.7),rgba(26,35,126,0.7)), url('images/GetInvolved.jpg') center/cover no-repeat;
-			color: #fff;
-			padding: 90px 0 60px 0;
-			text-align: center;
-			position: relative;
-		}
-		.hero-section h1 {
-			font-weight: 700;
-			font-size: 2.7rem;
-			margin-bottom: 18px;
-			letter-spacing: 1px;
-		}
-		.hero-section .lead {
-			font-size: 1.25rem;
-			font-weight: 400;
-			margin-bottom: 24px;
-		}
-		.section-title {
-			font-size: 1.7rem;
-			font-weight: 700;
-			margin: 36px 0 18px 0;
-			color: #1a237e;
-			text-align: center;
+		.navbar-nav .nav-link {
+			color: var(--violet-dark);
+			font-weight: 600;
 			letter-spacing: 0.5px;
-		}
-		.content-section {
-			background: #fff;
-			border-radius: 18px;
-			box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-			padding: 38px 28px;
-			margin-bottom: 34px;
-			max-width: 900px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		ul {
-			margin-bottom: 1.3rem;
-		}
-		ul li {
-			margin-bottom: 0.5rem;
-		}
-		.footer {
-			background: #1a237e;
-			color: #fff;
-			padding: 38px 0 18px 0;
-			text-align: center;
-		}
-		.footer a {
-			color: #fff;
-			margin: 0 12px;
-			font-size: 1.35rem;
 			transition: color 0.2s;
 		}
-		.footer a:hover {
-			color: #ffd600;
+		.navbar-nav .nav-link.active,
+		.navbar-nav .nav-link:hover {
+			color: var(--accent);
 		}
-		.footer .copyright {
-			margin-top: 18px;
-			font-size: 0.97rem;
-			color: #c5cae9;
+		.hero-section {
+			background: rgba(95,44,130,0.92);
+			color: var(--white);
+			padding: 80px 0 40px 0;
+			text-align: center;
+			border-radius: 0 0 32px 32px;
+			box-shadow: 0 8px 32px rgba(95,44,130,0.12);
+			margin-bottom: 0;
+		}
+		.hero-section h1 {
+			font-weight: 800;
+			font-size: 2.5rem;
+			margin-bottom: 18px;
+			letter-spacing: 1px;
+			text-shadow: 0 2px 8px rgba(95,44,130,0.18);
+		}
+		.hero-section .lead {
+			font-size: 1.2rem;
+			font-weight: 400;
+			margin-bottom: 28px;
+			color: #e0d7f7;
 		}
 		.btn-primary {
-			background: #1a237e;
+			background: var(--violet-dark);
 			border: none;
 			border-radius: 30px;
 			padding: 10px 32px;
 			font-weight: 600;
-			transition: background 0.2s;
-			box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+			transition: background 0.2s, box-shadow 0.2s;
+			box-shadow: 0 2px 8px rgba(95,44,130,0.13);
 		}
 		.btn-primary:hover {
-			background: #3949ab;
+			background: var(--violet-light);
+			color: var(--white);
+			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
+		}
+		.main-content {
+			max-width: 900px;
+			margin: -40px auto 0 auto;
+			background: var(--white);
+			border-radius: 24px;
+			box-shadow: 0 4px 32px rgba(95,44,130,0.10);
+			padding: 40px 32px 32px 32px;
+			position: relative;
+			z-index: 2;
+		}
+		.section-title {
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: var(--violet-dark);
+			margin: 32px 0 18px 0;
+			text-align: left;
+			letter-spacing: 0.5px;
+		}
+		.info-block {
+			background: linear-gradient(120deg, #f7f6fb 60%, #ece2f7 100%);
+			border-radius: 18px;
+			box-shadow: 0 2px 12px rgba(95,44,130,0.06);
+			padding: 28px 24px;
+			margin-bottom: 28px;
+			transition: box-shadow 0.2s;
+		}
+		.info-block:hover {
+			box-shadow: 0 6px 24px rgba(95,44,130,0.13);
+		}
+		ul {
+			margin-bottom: 1.3rem;
+			padding-left: 1.2rem;
+		}
+		ul li {
+			margin-bottom: 0.5rem;
+			font-size: 1.05rem;
 		}
 		.social-list {
 			display: flex;
@@ -112,45 +133,83 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 40px;
-			height: 40px;
+			width: 44px;
+			height: 44px;
 			border-radius: 50%;
-			background: #e8eaf6;
-			color: #1a237e;
-			font-size: 1.3rem;
-			transition: background 0.2s, color 0.2s;
+			background: #ece2f7;
+			color: var(--violet-dark);
+			font-size: 1.5rem;
+			transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+			box-shadow: 0 2px 8px rgba(95,44,130,0.08);
 		}
 		.social-list a:hover {
-			background: #1a237e;
-			color: #ffd600;
+			background: var(--violet-dark);
+			color: var(--accent);
+			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
+		}
+		.footer {
+			background: var(--violet-dark);
+			color: var(--white);
+			padding: 38px 0 18px 0;
+			text-align: center;
+			border-radius: 32px 32px 0 0;
+			margin-top: 60px;
+			box-shadow: 0 -2px 16px rgba(95,44,130,0.10);
+		}
+		.footer a {
+			color: var(--white);
+			margin: 0 12px;
+			font-size: 1.35rem;
+			transition: color 0.2s;
+			text-decoration: underline;
+		}
+		.footer a:hover {
+			color: var(--accent);
+		}
+		.footer .copyright {
+			margin-top: 18px;
+			font-size: 0.97rem;
+			color: #e0d7f7;
+		}
+		@media (max-width: 991px) {
+			.main-content {
+				padding: 24px 8px 18px 8px;
+			}
+			.hero-section {
+				padding: 50px 0 20px 0;
+			}
 		}
 		@media (max-width: 767px) {
-			.hero-section {
-				padding: 60px 0 30px 0;
+			.main-content {
+				padding: 12px 2px 8px 2px;
 			}
-			.content-section {
-				padding: 22px 7px;
+			.hero-section h1 {
+				font-size: 1.5rem;
 			}
 			.section-title {
-				font-size: 1.2rem;
+				font-size: 1.1rem;
+			}
+			.info-block {
+				padding: 16px 8px;
 			}
 			.social-list a {
-				width: 34px;
-				height: 34px;
+				width: 36px;
+				height: 36px;
 				font-size: 1.1rem;
+			}
+			.footer {
+				padding: 22px 0 10px 0;
 			}
 		}
 	</style>
 </head>
 <body>
-
-<<<<<<< HEAD
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center" href="index.html">
 				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				<span class="fw-bold">Sivasakthi Foundation</span>
+				<span class="fw-bold" style="color:var(--violet-dark);">Sivasakthi Foundation</span>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
 				<span class="navbar-toggler-icon"></span>
@@ -188,487 +247,99 @@
 			</div>
 		</div>
 	</nav>
-=======
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
-	<link rel="stylesheet" href="css/news.css">
-	<link rel="stylesheet" href="css/events.css">
-
-
-	<link rel="stylesheet" href="css/style.css">
-
-	<link rel="stylesheet" href="css/logo.css"
-
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
-						<a href="./blog.html">Blog</a>
-						<a href="contact-us/index.html">Contact</a>
-					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-						<a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-						<a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-              <header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
-
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-		
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/GetInvolved.jpg);">
-				<div class="desc animate-box">
-					<h2><strong>Make a Difference with Sivasakthi Science Foundation </strong></h2>
-					<!--<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
-					<span><a class="btn btn-primary btn-lg" href="#">blog-text</a></span>-->
-				</div>
-			</div>
-
-		</div>
-		
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<div>
-							<p style="text-align: justify;">At Sivasakthi Science Foundation, we believe that everyone has a role to play in advancing science research, training, and education. Whether you are a scientist, educator, student, or someone passionate about making a positive impact, there are many ways you can get involved and support our mission.</p>
-							
-							<hr>
-							
-							<h2 style="text-align: center;">Volunteer Opportunities</h2>
-							<p style="text-align: justify;">Join our team of dedicated volunteers who contribute their time and skills to support our programs and initiatives. Volunteering with us is a rewarding experience that allows you to make a tangible difference in the scientific community.</p>
-						<!--	<p><strong>How to Volunteer:</strong></p>
-							<ul style="text-align: justify;">
-								<li>Step 1: Fill out our volunteer application form[Link to Form].</li>
-								<li>Step 2: Attend a volunteer orientation session.</li>
-								<li>Step 3: Start contributing to projects that match your interests and skills.</li>
-							</ul>-->
-							<p><strong>Volunteer Roles:</strong></p>
-							<ul style="text-align: justify;">
-								<li>Event Planning and Support</li>
-								<li>Administrative Assistance</li>
-								<li>Outreach and Education</li>
-								<li>Research Assistance</li>
-							</ul>
-							<p>Contact Us: To discuss volunteer opportunities, please email us at info@sivasakthifoundation.org</p>							
-							<hr>
-							
-							<h2 style="text-align: center;">Partner with Us</h2>
-							<p style="text-align: justify;">We are always looking to build partnerships with organizations that share our commitment to science research, training, and education. By partnering with us, you can help amplify our impact and reach a broader audience.</p>
-							<p><strong>Partnership Opportunities:</strong></p>
-							<ul style="text-align: justify;">
-								<li>Collaborative Research Projects</li>
-								<li>Educational Programs and Workshops</li>
-								<li>Sponsorship of Events and Conferences</li>
-							</ul>
-							<p>Contact Us: To discuss partnership opportunities, please email us at info@sivasakthifoundation.org</p>
-							
-							
-							<!--
-							    <hr>
-							    <h2 style="text-align: center;">Attend Our Events</h2>
-							<p style="text-align: justify;">Participate in our events and conferences to learn, network, and contribute to the scientific community. Our events provide a platform for knowledge exchange and collaboration among researchers, educators, and students.</p>
-							<p><strong>Upcoming Events:</strong></p>
-							<ul style="text-align: justify;">
-								<li>[Event Name] on [Date] - [Link to Event Page]</li>
-								<li>[Event Name] on [Date] - [Link to Event Page]</li>
-							</ul
-							
-							<hr>
-							
-							<h2 style="text-align: center;">Join Our Mailing List</h2>
-							<p style="text-align: justify;">Stay informed about our latest news, events, and opportunities by joining our mailing list. Subscribers receive our monthly newsletter and special announcements.</p>
-							<p>Sign Up: Coming soon</p>
-							
-							<hr>
-							
-							<h2 style="text-align: center;">Spread the Word</h2>
-							<p style="text-align: justify;">Help us raise awareness about our mission and work by sharing our content on social media and with your network. Follow us on our social media channels and engage with our posts to increase our reach.</p>
-							<p><strong>Follow Us:</strong></p>
-							<ul style="text-align: justify;">
-								<li>Twitter: <a href="https://x.com/SSF_handle">Link</a></li>
-								<li>Instagram: <a href="https://www.instagram.com/ssf.iinsta">Link</a></li>
-							</ul>
-							>
-							
-							<hr>
-							
-							<h2 style="text-align: center;">Internships and Fellowships</h2>
-							<p style="text-align: justify;">We offer internship and fellowship opportunities for students and early-career professionals to gain hands-on experience in science research, education, and non-profit management.</p>
-             
-							<p><strong>How to Apply:</strong></p>
-							<ul style="text-align: justify;">
-								<li>Check our current openings [Link to Internship/Fellowship Page].</li>
-								<li>Submit your application through our online portal [Link to Application Portal].</li>
-							</ul>
-              -->
-							
-							<hr>
-							
-							<h2 style="text-align: center;">Contact Us</h2>
-							<p style="text-align: justify;">For more information on how you can get involved, please contact us at info@sivasakthifoundation.org</p>
-							
-							<hr>
-							
-							<p style="text-align: justify;">Thank you for your interest in supporting Sivasakthi Science Foundation. Together, we can advance the frontiers of science research, training, and education.</p>
-						</div>
-						
-						<!--
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>-->
-					</div>
-				</div>
-			</div><!--
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-				</div>
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
 
 	<!-- Hero Section -->
 	<section class="hero-section">
 		<div class="container">
-			<h1>Make a Difference with Sivasakthi Science Foundation</h1>
-			<p class="lead">Advance science research, training, and education. Join us and be part of the change.</p>
+			<h1>Get Involved with Sivasakthi Science Foundation</h1>
+			<p class="lead">Contribute to the advancement of scientific research, training, and education. Join us in making a meaningful impact.</p>
 			<a href="mailto:info@sivasakthifoundation.org" class="btn btn-primary mt-3">Contact Us</a>
 		</div>
 	</section>
 
-<<<<<<< HEAD
 	<!-- Main Content -->
-	<div class="container my-5">
-		<div class="content-section">
-			<p class="mb-4" style="text-align:justify;">
-				At Sivasakthi Science Foundation, everyone can play a role in advancing science research, training, and education. Whether you are a scientist, educator, student, or simply passionate about making a positive impact, there are many ways to get involved and support our mission.
+	<div class="main-content">
+		<div class="info-block">
+			<div class="section-title">Why Get Involved?</div>
+			<p style="text-align:justify;">
+				Sivasakthi Science Foundation welcomes individuals and organizations committed to the progress of science. Whether you are a researcher, educator, student, or supporter, your involvement is vital to our mission of promoting scientific research, training, and education.
 			</p>
-			<hr>
-			<div>
-				<div class="section-title">Volunteer Opportunities</div>
-				<p style="text-align:justify;">
-					Join our team of dedicated volunteers and contribute your time and skills to support our programs and initiatives. Volunteering with us is a rewarding experience that allows you to make a tangible difference in the scientific community.
-				</p>
-				<ul>
-					<li><strong>Step 1:</strong> Fill out our volunteer application form (coming soon).</li>
-					<li><strong>Step 2:</strong> Attend a volunteer orientation session.</li>
-					<li><strong>Step 3:</strong> Start contributing to projects that match your interests and skills.</li>
-				</ul>
-				<p><strong>Volunteer Roles:</strong></p>
-				<ul>
-					<li>Event Planning and Support</li>
-					<li>Administrative Assistance</li>
-					<li>Outreach and Education</li>
-					<li>Research Assistance</li>
-				</ul>
-			</div>
-			<hr>
-			<div>
-				<div class="section-title">Partner with Us</div>
-				<p style="text-align:justify;">
-					We are always looking to build partnerships with organizations that share our commitment to science research, training, and education. By partnering with us, you can help amplify our impact and reach a broader audience.
-				</p>
-				<ul>
-					<li>Collaborative Research Projects</li>
-					<li>Educational Programs and Workshops</li>
-					<li>Sponsorship of Events and Conferences</li>
-				</ul>
-				<p>Contact us: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></p>
-			</div>
-			<hr>
-			<div>
-				<div class="section-title">Attend Our Events</div>
-				<p style="text-align:justify;">
-					Participate in our events and conferences to learn, network, and contribute to the scientific community. Our events provide a platform for knowledge exchange and collaboration among researchers, educators, and students.
-				</p>
-				<a href="./events-and-conferences.html" class="btn btn-primary mt-2">View Upcoming Events</a>
-			</div>
-			<hr>
-			<div>
-				 <!-- <div class="section-title">Join Our Mailing List</div>
-				<p style="text-align:justify;">
-					Stay informed about our latest news, events, and opportunities by joining our mailing list. Subscribers receive our monthly newsletter and special announcements.
-				</p> 
-				<form class="row g-2" style="max-width:400px;margin:auto;">
-					<div class="col-8">
-						<input type="email" class="form-control" placeholder="Your email" disabled>
-=======
-		
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Science Foundation <a href="#"></a>. All Rights Reserved.
-								 <!--Privacy Policy-->
-								  <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
-					</div>
-					<div class="col-4">
-						<button class="btn btn-primary w-100" type="button" disabled>Sign Up (Coming Soon)</button>
-					</div>
-				</form> -->
-			</div>
-			<hr>
-			<div>
-				<div class="section-title">Spread the Word</div>
-				<p style="text-align:justify;">
-					Help us raise awareness about our mission and work by sharing our content on social media and with your network. Follow us and engage with our posts to increase our reach.
-				</p>
-				<div class="social-list">
-					<a href="https://x.com/SSF_handle" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-					<a href="https://www.instagram.com/ssf.iinsta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-					<a href="https://youtube.com/@sivasakthifoundation" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+		</div>
+
+		<div class="row g-4">
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Volunteer Opportunities</div>
+					<p style="text-align:justify;">
+						Support our initiatives by volunteering your expertise and time. Volunteers play a key role in the successful execution of our programs.
+					</p>
+					<ul>
+						<li><strong>Step 1:</strong> Complete the volunteer application form (available soon).</li>
+						<li><strong>Step 2:</strong> Attend an orientation session.</li>
+						<li><strong>Step 3:</strong> Engage in projects aligned with your skills and interests.</li>
+					</ul>
+					<p><strong>Areas:</strong> Event Coordination, Administrative Support, Outreach, Research Assistance.</p>
 				</div>
 			</div>
-			<hr>
-			<div>
-				<div class="section-title">Internships and Fellowships</div>
-				<p style="text-align:justify;">
-					We offer internship and fellowship opportunities for students and early-career professionals to gain hands-on experience in science research, education, and non-profit management.
-				</p>
-				<p><em>Application details coming soon.</em></p>
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Partnerships</div>
+					<p style="text-align:justify;">
+						We collaborate with organizations that share our dedication to scientific advancement. Partnership opportunities include joint research, educational programs, and event sponsorship.
+					</p>
+					<ul>
+						<li>Collaborative Research Initiatives</li>
+						<li>Educational Workshops and Programs</li>
+						<li>Event and Conference Sponsorship</li>
+					</ul>
+					<p>For partnership inquiries: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></p>
+				</div>
 			</div>
-			<hr>
-			<div>
-				<div class="section-title">Contact Us</div>
-				<p style="text-align:justify;">
-					For more information on how you can get involved, please contact us at:
-				</p>
-				<ul>
-					<li>Email: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></li>
-					<li>Mailing Address: 7, Belhaven Gardens, Kawdiar,<br> Thiruvananthapuram, Kerala, India</li>
-				</ul>
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Events and Conferences</div>
+					<p style="text-align:justify;">
+						Participate in our events and conferences to engage with the scientific community, expand your knowledge, and contribute to ongoing discussions in science and education.
+					</p>
+					<a href="./events-and-conferences.html" class="btn btn-primary mt-2">Upcoming Events</a>
+				</div>
 			</div>
-			<hr>
-			<p class="text-center mt-4" style="text-align:justify;">
-				Thank you for your interest in supporting Sivasakthi Science Foundation. Together, we can advance the frontiers of science research, training, and education.
-			</p>
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Outreach and Awareness</div>
+					<p style="text-align:justify;">
+						Help us extend our reach by sharing our mission and activities within your network and on social media platforms.
+					</p>
+					<div class="social-list">
+						<a href="https://x.com/SSF_handle" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="https://www.instagram.com/ssf.iinsta" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+						<a href="https://youtube.com/@sivasakthifoundation" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Internships and Fellowships</div>
+					<p style="text-align:justify;">
+						We offer structured internship and fellowship programs for students and early-career professionals seeking experience in scientific research, education, and non-profit management.
+					</p>
+					<p><em>Application details will be announced soon.</em></p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="info-block h-100">
+					<div class="section-title">Contact Information</div>
+					<ul>
+						<li>Email: <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></li>
+						<li>Mailing Address: 7, Belhaven Gardens, Kawdiar,<br> Thiruvananthapuram, Kerala, India</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center mt-4" style="text-align:justify;">
+			<strong>Thank you for your interest in Sivasakthi Science Foundation.<br>
+			Together, we can advance the frontiers of scientific research, training, and education.</strong>
 		</div>
 	</div>
 
@@ -681,7 +352,7 @@
 		</div>
 		<div class="copyright mt-3">
 			&copy; 2024 Sivasakthi Foundation. All Rights Reserved.<br>
-			<a href="Privacy Policy and Terms of Use.html" style="color:#ffd600;">Privacy Policy & Terms and Conditions</a>
+			<a href="Privacy Policy and Terms of Use.html" style="color:var(--accent);">Privacy Policy & Terms and Conditions</a>
 		</div>
 	</footer>
 
