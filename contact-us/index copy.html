@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivasakthi Science Foundation | Home</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a356e;
+            --secondary: #f7f9fb;
+            --accent: #e6ecf7;
+            --text: #23272f;
+            --muted: #6b7280;
+            --highlight: #f5b041;
+            --radius: 14px;
+            --shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        nav.navbar {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+        .navbar .nav-logo img {
+            height: 44px;
+            border-radius: 8px;
+        }
+        .navbar .nav-logo span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 10px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border 0.2s;
+        }
+        .navbar ul li a.active,
+        .navbar ul li a:hover {
+            color: var(--primary);
+            border-bottom: 2px solid var(--highlight);
+        }
+        @media (max-width: 900px) {
+            nav.navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 14px;
+            }
+            .navbar ul {
+                gap: 18px;
+            }
+        }
+        @media (max-width: 600px) {
+            nav.navbar {
+                min-height: 48px;
+                padding: 0 6px;
+            }
+            .navbar .nav-logo img {
+                height: 30px;
+            }
+            .navbar .nav-logo span {
+                font-size: 1rem;
+            }
+            .navbar ul {
+                gap: 10px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            padding: 60px 32px 40px 32px;
+            background: linear-gradient(120deg, #e6ecf7 60%, #fff 100%);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 350px;
+            min-width: 300px;
+        }
+        .hero-content h1 {
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+        .hero-content p {
+            font-size: 1.18rem;
+            color: var(--muted);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-content .cta-btn {
+            background: var(--primary);
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 16px 38px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(44, 62, 80, 0.09);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .hero-content .cta-btn:hover, .hero-content .cta-btn:focus {
+            background: #10224a;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .hero-image {
+            flex: 1 1 350px;
+            min-width: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            box-shadow: 0 6px 32px rgba(44, 62, 80, 0.13);
+            object-fit: cover;
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                gap: 32px;
+                padding: 36px 10px 24px 10px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 1.3rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 32px 40px 32px;
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+        .services-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .services-header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+        .services-list {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex: 1 1 300px;
+            min-width: 260px;
+            max-width: 350px;
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 36px rgba(44, 62, 80, 0.13);
+        }
+        .service-card .icon {
+            font-size: 2.2rem;
+            color: var(--highlight);
+            margin-bottom: 18px;
+        }
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        @media (max-width: 900px) {
+            .services-list {
+                flex-direction: column;
+                gap: 18px;
+                align-items: center;
+            }
+            .service-card {
+                max-width: 100%;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 1100px;
+            margin: 0 auto 40px auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .about-content {
+            flex: 2 1 350px;
+            min-width: 280px;
+        }
+        .about-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .about-content p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-bottom: 0;
+        }
+        .about-image {
+            flex: 1 1 220px;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(44, 62, 80, 0.09);
+            object-fit: cover;
+        }
+        @media (max-width: 900px) {
+            .about-section {
+                flex-direction: column;
+                gap: 24px;
+                padding: 0 10px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            border-top: 1px solid #e6ecf7;
+            padding: 32px 0 18px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+        .footer-social {
+            margin-bottom: 12px;
+        }
+        .footer-social a {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin: 0 10px;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .footer-social a:hover {
+            color: var(--highlight);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-logo" aria-label="Home">
+            <img src="assets/logo.png" alt="Sivasakthi Science Foundation Logo">
+            <span>Sivasakthi Science Foundation</span>
+        </a>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact-us/index.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero Section">
+        <div class="hero-content">
+            <h1>Empowering Science, Inspiring Innovation</h1>
+            <p>
+                Sivasakthi Science Foundation is dedicated to advancing scientific knowledge, fostering research, and nurturing the next generation of innovators. Join us in our mission to make a lasting impact through education, outreach, and collaborative projects.
+            </p>
+            <a href="contact-us/index.html" class="cta-btn" aria-label="Get Involved">Get Involved</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/hero-professional.jpg" alt="Professional science team collaborating" />
+        </div>
+    </section>
+
+    <!-- Services/Features Section -->
+    <section class="services-section" aria-label="Key Services">
+        <div class="services-header">
+            <h2>Our Key Initiatives</h2>
+            <p>We drive progress through impactful programs and collaborative efforts in science and technology.</p>
+        </div>
+        <div class="services-list">
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-flask"></i></div>
+                <h3>Research & Innovation</h3>
+                <p>
+                    Supporting groundbreaking research and fostering an environment where innovative ideas thrive.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>STEM Education</h3>
+                <p>
+                    Delivering high-quality educational programs and workshops to inspire young minds in science and technology.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h3>Community Outreach</h3>
+                <p>
+                    Engaging with communities to promote scientific literacy and encourage public participation in science.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" aria-label="About Us">
+        <div class="about-content">
+            <h2>About Sivasakthi Science Foundation</h2>
+            <p>
+                Established with a vision to bridge the gap between science and society, Sivasakthi Science Foundation brings together passionate professionals, educators, and students. Our commitment is to foster curiosity, support research, and create opportunities for learning and collaboration. We believe in the transformative power of science to shape a better future for all.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="assets/about-elegant.jpg" alt="Elegant science foundation workspace" />
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social" aria-label="Social Media Links">
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        &copy; 2024 Sivasakthi Science Foundation. All rights reserved.
+    </footer>
+</body>
+</html>

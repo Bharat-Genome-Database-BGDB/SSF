@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-=======
-`<html lang="en">
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,34 +9,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary: #2d6cdf;
-            --secondary: #f5f7fa;
-            --accent: #f3f6fd;
-            --text: #222;
-            --muted: #6b7280;
-            --radius: 12px;
-            --shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+            --primary: #1a356e;
+            --secondary: #f7f9fc;
+            --accent: #e9eef7;
+            --highlight: #e3b04b;
+            --text: #23272f;
+            --muted: #7a869a;
+            --radius: 14px;
+            --shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+            --transition: 0.2s cubic-bezier(.4,0,.2,1);
         }
-        * {
-            box-sizing: border-box;
-        }
-        body {
+        * { box-sizing: border-box; }
+        html, body {
+            margin: 0;
+            padding: 0;
             font-family: 'Inter', Arial, sans-serif;
             background: var(--secondary);
             color: var(--text);
-            margin: 0;
-            padding: 0;
         }
-        /* Navbar styles */
+        body {
+            min-height: 100vh;
+        }
+        /* Navbar */
         nav.navbar {
             width: 100%;
             background: #fff;
             box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
-            padding: 0 32px;
+            padding: 0 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 64px;
+            min-height: 70px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -48,70 +47,158 @@
         .navbar .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
         }
         .navbar .nav-logo img {
-            height: 38px;
-            border-radius: 6px;
+            height: 44px;
+            border-radius: 8px;
         }
         .navbar .nav-logo span {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--primary);
+            letter-spacing: 0.5px;
         }
         .navbar ul {
             list-style: none;
             display: flex;
-            gap: 28px;
+            gap: 34px;
             margin: 0;
             padding: 0;
-        }
-        .navbar ul li {
-            display: inline-block;
         }
         .navbar ul li a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 1.05rem;
             padding: 8px 0;
-            transition: color 0.2s;
             border-bottom: 2px solid transparent;
+            transition: color var(--transition), border var(--transition);
         }
         .navbar ul li a.active,
         .navbar ul li a:hover {
             color: var(--primary);
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 2px solid var(--highlight);
         }
-        @media (max-width: 900px) {
-            nav.navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0 12px;
-            }
-            .navbar ul {
-                gap: 16px;
-            }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #e9eef7 60%, #fff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 64px 0 48px 0;
+            min-height: 340px;
+            position: relative;
         }
-        @media (max-width: 600px) {
-            nav.navbar {
-                min-height: 48px;
-                padding: 0 6px;
-            }
-            .navbar .nav-logo img {
-                height: 28px;
-            }
-            .navbar .nav-logo span {
-                font-size: 0.95rem;
-            }
-            .navbar ul {
-                gap: 10px;
-            }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            max-width: 1100px;
+            width: 100%;
+            padding: 0 24px;
         }
+        .hero-text {
+            flex: 1 1 340px;
+            min-width: 280px;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 18px 0;
+            letter-spacing: 0.5px;
+        }
+        .hero-text p {
+            font-size: 1.18rem;
+            color: var(--muted);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .hero-text .cta-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 15px 38px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.09);
+            transition: background var(--transition), transform var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .hero-text .cta-btn:hover, .hero-text .cta-btn:focus {
+            background: var(--highlight);
+            color: var(--primary);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .hero-image {
+            flex: 1 1 340px;
+            min-width: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-image img {
+            width: 340px;
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+            object-fit: cover;
+        }
+        /* Services/Features Section */
+        .features-section {
+            max-width: 1100px;
+            margin: 0 auto 36px auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex: 1 1 260px;
+            min-width: 220px;
+            max-width: 340px;
+            padding: 32px 26px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            transition: box-shadow var(--transition), transform var(--transition);
+        }
+        .feature-card:hover {
+            box-shadow: 0 12px 36px rgba(44, 62, 80, 0.13);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--highlight);
+        }
+        .feature-card h4 {
+            margin: 0;
+            font-size: 1.18rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .feature-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        /* Contact Section */
         .contact-wrapper {
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 40px auto 48px auto;
             background: #fff;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -131,7 +218,6 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 32px;
-            animation: fadeInLeft 1s;
         }
         .contact-info .logo {
             display: flex;
@@ -143,13 +229,14 @@
             border-radius: 8px;
         }
         .contact-info h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 600;
             margin: 0 0 8px 0;
+            color: var(--primary);
         }
         .contact-info h3 {
-            font-size: 1.2rem;
-            color: var(--primary);
+            font-size: 1.1rem;
+            color: var(--highlight);
             margin: 0 0 24px 0;
             font-weight: 500;
         }
@@ -176,10 +263,10 @@
         .social-links a {
             color: var(--primary);
             font-size: 1.4rem;
-            transition: color 0.2s;
+            transition: color var(--transition);
         }
         .social-links a:hover {
-            color: #1a3e8a;
+            color: var(--highlight);
         }
         .map-container {
             margin-top: 24px;
@@ -187,16 +274,21 @@
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
         }
+        .map-container iframe {
+            width: 100%;
+            height: 180px;
+            border: 0;
+        }
         .contact-form-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            animation: fadeInRight 1s;
         }
         .contact-form-section h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 8px;
+            color: var(--primary);
         }
         .contact-form-section p {
             color: var(--muted);
@@ -223,7 +315,7 @@
             border-radius: 7px;
             font-size: 1rem;
             background: #fafbfc;
-            transition: border 0.2s;
+            transition: border var(--transition);
             font-family: inherit;
             resize: none;
         }
@@ -244,17 +336,42 @@
             font-weight: 600;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
-            transition: background 0.2s, transform 0.2s;
+            transition: background var(--transition), transform var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
         .submit-btn:hover, .submit-btn:focus {
-            background: #1a3e8a;
+            background: var(--highlight);
+            color: var(--primary);
             transform: translateY(-2px) scale(1.03);
         }
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero-content, .features-section, .contact-wrapper {
+                max-width: 98vw;
+            }
+        }
         @media (max-width: 900px) {
+            nav.navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 12px;
+            }
+            .navbar ul {
+                gap: 16px;
+            }
+            .hero-content {
+                flex-direction: column;
+                gap: 32px;
+                text-align: center;
+            }
+            .features-section {
+                flex-direction: column;
+                gap: 24px;
+                align-items: center;
+            }
             .contact-wrapper {
                 flex-direction: column;
                 min-height: unset;
@@ -264,24 +381,35 @@
             }
         }
         @media (max-width: 600px) {
+            nav.navbar {
+                min-height: 48px;
+                padding: 0 6px;
+            }
+            .navbar .nav-logo img {
+                height: 28px;
+            }
+            .navbar .nav-logo span {
+                font-size: 0.95rem;
+            }
+            .navbar ul {
+                gap: 10px;
+            }
+            .hero {
+                padding: 36px 0 24px 0;
+            }
+            .hero-image img {
+                width: 100%;
+                min-width: 0;
+            }
             .contact-info .logo img {
                 height: 50px;
             }
             .contact-info h2 {
-                font-size: 1.3rem;
-            }
-            .contact-form-section h3 {
                 font-size: 1.1rem;
             }
-        }
-        /* Animations */
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px);}
-            to { opacity: 1; transform: translateX(0);}
-        }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px);}
-            to { opacity: 1; transform: translateX(0);}
+            .contact-form-section h3 {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -302,7 +430,44 @@
         </ul>
     </nav>
     <!-- Navbar End -->
-    <main>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Contact Hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Connect with Sivasakthi Science Foundation</h1>
+                <p>
+                    We are committed to advancing science and education. Reach out to us for collaborations, project inquiries, or to learn more about our initiatives. Our team is ready to assist you.
+                </p>
+                <a href="#contact" class="cta-btn">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/2.png" alt="Professional team collaborating" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features/Services Section -->
+    <section class="features-section" aria-label="Key Services">
+        <div class="feature-card">
+            <i class="fas fa-flask"></i>
+            <h4>Research Collaboration</h4>
+            <p>Partner with us on innovative science projects and research initiatives that make a real-world impact.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4>STEM Education</h4>
+            <p>Engage in our educational programs, workshops, and events designed to inspire the next generation of scientists.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-hands-helping"></i>
+            <h4>Community Outreach</h4>
+            <p>Join our outreach efforts to promote scientific literacy and empower communities through knowledge.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <main id="contact">
         <div class="contact-wrapper" role="main">
             <!-- Left: Info & Map -->
             <section class="contact-info" aria-label="Contact Information">
@@ -313,13 +478,13 @@
                         </a>
                         <span style="font-size:1.2rem;font-weight:600;">Sivasakthi Science Foundation</span>
                     </div>
-                    <h2>Get in Touch</h2>
-                    <h3>We'd love to hear from you!</h3>
+                    <!-- <h2>Contact Details</h2>
+                    <h3>We're here to help</h3>
                     <div class="contact-details">
-                        <!-- <div><i class="fas fa-map-marker-alt"></i> <span>123 Science Ave, Chennai, India</span></div>
+                        <div><i class="fas fa-map-marker-alt"></i> <span>123 Science Ave, Chennai, India</span></div>
                         <div><i class="fas fa-envelope"></i> <a href="mailto:info@ssf.org" style="color:inherit;text-decoration:none;">info@ssf.org</a></div>
-                        <div><i class="fas fa-phone"></i> <a href="tel:+911234567890" style="color:inherit;text-decoration:none;">+91 12345 67890</a></div> -->
-                    </div>
+                        <div><i class="fas fa-phone"></i> <a href="tel:+911234567890" style="color:inherit;text-decoration:none;">+91 12345 67890</a></div>
+                    </div> -->
                     <div>
                         <span style="font-weight:500;">Follow Us:</span>
                         <div class="social-links" aria-label="Social Media Links">
@@ -330,17 +495,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="map-container" aria-label="Location Map">
-                    <!-- <iframe
+                <!-- <div class="map-container" aria-label="Location Map">
+                    <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.123456789!2d80.2200000!3d13.0500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267b8c0b0b0b0%3A0x123456789abcdef!2sChennai%2C%20India!5e0!3m2!1sen!2sin!4v1710000000000"
-                        width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="SSF Location"></iframe> -->
-                </div>
+                        allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="SSF Location"></iframe>
+                </div> -->
             </section>
             <!-- Right: Contact Form -->
             <section class="contact-form-section" aria-label="Contact Form">
-                <h3>Contact Us</h3>
-                <p>Fill out the form below and our team will get back to you soon.</p>
+                <h3>Send Us a Message</h3>
+                <p>Fill out the form and our team will respond promptly.</p>
                 <form action="https://api.web3forms.com/submit" method="POST" autocomplete="on" novalidate>
                     <input type="hidden" name="access_key" value="397ff88e-3f30-4e1e-9db1-a330f565b886">
                     <div class="form-group">
