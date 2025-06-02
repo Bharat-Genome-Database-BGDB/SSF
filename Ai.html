@@ -1,181 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="shortcut icon" href="logo.ico">     
-        <link rel="stylesheet" href="css/logo.css">
-        <script src="js/modernizr-2.6.2.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI and Deep Learning in Life Sciences - Sivasakthi Science Foundation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="logo.ico">
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/superfish.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('/images/ai.webp'); /* Replace with your background image */
-            background-size: cover;
-            color: #fff;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #2d4059;
-            padding: 15px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        .navbar a:hover {
-            background-color: #575757;
-            border-radius: 4px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #fff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .content1 {
-            padding: 50px;
-            background-color:#1f2045;
-            opacity: 90%;
-            margin: 20px;
-            border-radius: 10px;
-        }
-        h1, h2 {
-            color: #ffdd57;
-        }
-        p {
-            color: #fff;
-            line-height: 1.6;
-        }
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-            }
-        .footer {
-            background-color: rgba(0, 0, 0, 0.265);
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .footer p {
-            margin: 0;
-            color: #fff;
-        }
-    </style>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AI and Deep Learning in Life Sciences - Sivasakthi Science Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.ico">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/superfish.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/logo.css">
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  <style>
+    /* Reset and base styles */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      color: #f5f5f7;
+      min-height: 100vh;
+    }
+    a {
+      color: #ffdd57;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #ffe484;
+    }
+    /* Header Top */
+    .header-top {
+      background: rgba(34, 40, 49, 0.95);
+      font-size: 0.95rem;
+      padding: 0.5rem 0;
+    }
+    .fh5co-link a {
+      margin-right: 1.2rem;
+      color: #ffdd57;
+    }
+    .fh5co-social a {
+      margin-left: 0.8rem;
+      color: #ffdd57;
+      font-size: 1.2rem;
+    }
+    /* Logo and Navigation */
+    #fh5co-header-section {
+      background: rgba(29, 41, 81, 0.98);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    #fh5co-logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffdd57;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    #fh5co-logo img {
+      height: 60px;
+      margin-right: 1rem;
+    }
+    .sf-menu > li > a {
+      color: #fff;
+      font-weight: 500;
+      padding: 1.2rem 1.1rem 1.2rem 1.1rem;
+      font-size: 1.08rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .sf-menu > li > a:hover, .sf-menu > li.sfHover > a {
+      background: #ffdd57;
+      color: #232526;
+    }
+    .sf-menu .fh5co-sub-menu {
+      background: #232526;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    }
+    .sf-menu .fh5co-sub-menu li a {
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+    }
+    .sf-menu .fh5co-sub-menu li a:hover {
+      background: #ffdd57;
+      color: #232526;
+    }
+    /* Main Content */
+    .content1 {
+      max-width: 900px;
+      margin: 2.5rem auto 4.5rem auto;
+      background: rgba(31, 32, 69, 0.93);
+      border-radius: 16px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(2px);
+    }
+    h1, h2 {
+      color: #ffdd57;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.2rem;
+    }
+    h3 {
+      color: #e6cb56;
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      color: #f5f5f7;
+      line-height: 1.7;
+      font-size: 1.08rem;
+      margin-bottom: 1.2rem;
+    }
+    img.center {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+    }
+    /* Footer */
+    .footer {
+      background: rgba(34, 40, 49, 0.92);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem 0;
+      font-size: 1rem;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 99;
+      letter-spacing: 0.5px;
+    }
+    @media (max-width: 900px) {
+      .content1 {
+        padding: 1.2rem 0.7rem;
+      }
+      #fh5co-logo img {
+        height: 45px;
+      }
+    }
+    @media (max-width: 600px) {
+      .content1 {
+        margin: 1rem 0.2rem 4.5rem 0.2rem;
+        padding: 1rem 0.3rem;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+      .footer {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="fh5co-wrapper">
-        <div id="fh5co-page">
-          <div class="header-top">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                  <a href="./blog.html">Blog</a>
-                  <a href="contact-us/index.html">Contact</a>
-                </div>
-                <div class="col-md-6 col-sm-6 text-right fh5co-social">
-                  <a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-                  <a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-                </div>
-              </div>
+  <div id="fh5co-wrapper">
+    <div id="fh5co-page">
+      <!-- Header Top -->
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 text-left fh5co-link">
+              <a href="./blog.html">Blog</a>
+              <a href="contact-us/index.html">Contact</a>
+            </div>
+            <div class="col-md-6 col-sm-6 text-right fh5co-social">
+              <a href="https://x.com/SSF_handle" class="grow" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/ssf.iinsta" class="grow" aria-label="Instagram"><i class="icon-instagram2"></i></a>
+              <a href="https://youtube.com/@sivasakthifoundation" class="grow" aria-label="YouTube"><i class="icon-youtube"></i></a>
             </div>
           </div>
-    <header id="fh5co-header-section" class="sticky-banner">
+        </div>
+      </div>
+      <!-- Navigation -->
+      <header id="fh5co-header-section" class="sticky-banner">
         <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
+          <div class="nav-header" style="display: flex; align-items: center; justify-content: space-between;">
             <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
-
-            </h1>	
+              <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo">
+              <span>Sivasakthi Science Foundation</span>
+            </h1>
             <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
+              <ul class="sf-menu" id="fh5co-primary-menu" style="margin:0;">
+                <li>
                   <a href="#" class="fh5co-sub-ddown">About Us</a>
                   <ul class="fh5co-sub-menu">
                     <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
+                    <li><a href="./Vision Statement copy.html">Our Vision</a></li>
+                    <li><a href="./Missionstatement.html">Mission Statement</a></li>
+                    <li><a href="./History and Background.html">History & Background</a></li>
                     <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
                   </ul>
                 </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
+                <li>
+                  <a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
+                  <ul class="fh5co-sub-menu">
+                    <li class="has-sub-menu">
+                      <a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
+                      <ul class="fh5co-sub-menu">
+                        <li><a href="https://www.bharatgenomedatabase.org/">BGDB Database</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-sub-menu">
+                      <a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
+                      <ul class="fh5co-sub-menu">
+                        <li><a href="Ai.html">AI and Deep Learning</a></li>
+                        <li><a href="./BioInfo.html">Bioinformatics</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
+                  <ul class="fh5co-sub-menu">
+                    <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
+                    <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
+                    <li><a href="./GenDbConsult.html">Genome Database Consulting</a></li>
+                  </ul>
+                </li>
+                <li>
                   <a href="#" class="fh5co-sub-ddown">Get Involved</a>
                   <ul class="fh5co-sub-menu">
                     <li><a href="./GetInvolved.html">Get Involved</a></li>
@@ -183,74 +247,60 @@
                     <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
                   </ul>
                 </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
+                <li><a href="contact-us/index.html">Contact Us</a></li>
               </ul>
             </nav>
           </div>
         </div>
       </header>
-
-    
-    <!-- Navbar --
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Projects</a>
-            <div class="dropdown-content">
-                <a href="#ai-page">AI and Deep Learning Innovation</a>
-            </div>
+      <!-- Main Content -->
+      <main>
+        <div id="ai-page" class="content1">
+          <h1>AI and Deep Learning in Life Sciences Research: Unlocking New Frontiers in Genome Biology</h1>
+          <p>At the Sivasakthi Science Foundation, we believe that the future of life sciences research lies at the intersection of artificial intelligence (AI), deep learning, and biology. As we advance into an era where data-driven insights are crucial, AI and deep learning are revolutionizing the way we understand complex biological systems. Our investment in AI and Deep Learning Innovation aims to harness these cutting-edge technologies to accelerate discoveries in genome biology.</p>
+          
+          <h2>Transforming Genome Annotation with Deep Learning</h2>
+          <p>Deep learning revolutionizes genome annotation by enabling automated, high-precision identification of genes, regulatory elements, and functional regions within complex genomes. Utilizing advanced neural networks, deep learning models can accurately annotate large-scale genomic data, significantly reducing the time and effort required for manual annotation. This innovative approach enhances our understanding of genetic functions and interactions, paving the way for breakthroughs in genomics, personalized medicine, and evolutionary studies.</p>
+          
+          <h3>Gene Prediction and Annotation</h3>
+          <p>Deep learning algorithms can accurately predict the locations and functions of genes within a genome, automating the annotation process and identifying previously unknown genes or regulatory elements.</p>
+          <img src="images/fbrio-03-1326958-g001.jpg" class="center" alt="Gene Prediction Illustration">
+          
+          <h3>Variant Detection and Interpretation</h3>
+          <p>Deep learning models can identify genetic variants, such as single nucleotide polymorphisms (SNPs) and structural variations, and predict their potential impact on gene function and association with diseases.</p>
+          
+          <h3>Gene Expression Analysis</h3>
+          <p>By analyzing gene expression data, deep learning can uncover complex patterns and relationships between genes, helping to understand regulatory networks and identify key drivers of biological processes.</p>
+          <img src="images/40246_2022_396_Fig2_HTML.png" class="center" alt="Gene Expression Analysis">
+          
+          <h3>Evolutionary Genomics</h3>
+          <p>Deep learning can be used to model evolutionary processes, helping to predict how genomes might change over time, understand species divergence, and identify conserved genetic elements across different organisms.</p>
+          
+          <h3>Personalized Medicine</h3>
+          <p>Deep learning enables the integration of genomic data with other biological information, such as epigenomics and proteomics, to predict individual responses to treatments, leading to more effective and personalized medical interventions.</p>
+          
+          <h2>AI-Driven Insights into the Plasticity of Living Systems</h2>
+          <h3>Neural Plasticity and Cognitive Adaptation</h3>
+          <p>Exploring how AI can model and predict changes in neural pathways, offering new insights into how brains adapt to learning, memory, and environmental stimuli.</p>
+          
+          <h3>Cellular and Genetic Plasticity</h3>
+          <p>Utilizing AI to decode the mechanisms behind cellular adaptability, including gene expression changes, epigenetic modifications, and their implications for development and disease.</p>
+          
+          <h3>Adaptive Responses in Ecosystems</h3>
+          <p>Employing AI to study the plasticity of ecosystems in response to environmental changes, focusing on how species interactions and ecological dynamics evolve over time.</p>
+          
+          <h3>Plasticity in Developmental Biology</h3>
+          <p>Investigating how AI can help understand the flexible nature of developmental processes and shed light on how organisms modify their growth patterns in response to internal and external factors.</p>
+          
+          <h3>Plasticity and Regeneration in Tissue Engineering</h3>
+          <p>Using AI to enhance our understanding of tissue plasticity, particularly in regenerative medicine, where the ability to predict and control tissue adaptation is crucial for therapeutic advancements.</p>
         </div>
-        <a href="#">Contact</a>
-    </div>-->
-
-    <!-- Content -->
-    <div id="ai-page" class="content1" class="p">
-        <h1>AI and Deep Learning in Life Sciences Research: Unlocking New Frontiers in Genome Biology</h1>
-        <p>At the Sivasakthi Science Foundation, we believe that the future of life sciences research lies at the intersection of artificial intelligence (AI), deep learning, and biology. As we advance into an era where data-driven insights are crucial, AI and deep learning are revolutionizing the way we understand complex biological systems. Our investment in AI and Deep Learning Innovation aims to harness these cutting-edge technologies to accelerate discoveries in genome biology.</p>
-        
-        <h2>Transforming Genome Annotation with Deep Learning</h2>
-        <p>Deep learning revolutionizes genome annotation by enabling automated, high-precision identification of genes, regulatory elements, and functional regions within complex genomes. Utilizing advanced neural networks, deep learning models can accurately annotate large-scale genomic data, significantly reducing the time and effort required for manual annotation. This innovative approach enhances our understanding of genetic functions and interactions, paving the way for breakthroughs in genomics, personalized medicine, and evolutionary studies.</p>
-        
-        <h3 style="color: #e6cb56;">Gene Prediction and Annotation</h3>
-        <p>Deep learning algorithms can accurately predict the locations and functions of genes within a genome, automating the annotation process and identifying previously unknown genes or regulatory elements.</p>
-        <img src="images/fbrio-03-1326958-g001.jpg" class="center" >
-        <br>
-        <h3 style="color:#e6cb56;">Variant Detection and Interpretation</h3>
-        <p>Deep learning models can identify genetic variants, such as single nucleotide polymorphisms (SNPs) and structural variations, and predict their potential impact on gene function and association with diseases.</p>
-        
-        <h3 style="color: #e6cb56;">Gene Expression Analysis</h3>
-        <p>By analyzing gene expression data, deep learning can uncover complex patterns and relationships between genes, helping to understand regulatory networks and identify key drivers of biological processes.</p>
-        <img src="images/40246_2022_396_Fig2_HTML.png" class="center" >
-
-        <h3 style="color:#e6cb56;">Evolutionary Genomics</h3>
-        <p>Deep learning can be used to model evolutionary processes, helping to predict how genomes might change over time, understand species divergence, and identify conserved genetic elements across different organisms.</p>
-        
-        <h3 style="color:#e6cb56;">Personalized Medicine</h3>
-        <p>Deep learning enables the integration of genomic data with other biological information, such as epigenomics and proteomics, to predict individual responses to treatments, leading to more effective and personalized medical interventions.</p>
-        <br>
-        <br>
-        <h2>AI-Driven Insights into the Plasticity of Living Systems</h2>
-        <h3 style="color: #e6cb56;">Neural Plasticity and Cognitive Adaptation</h3>
-        <p>Exploring how AI can model and predict changes in neural pathways, offering new insights into how brains adapt to learning, memory, and environmental stimuli.</p>
-        <h3 style="color: #e6cb56;">Cellular and Genetic Plasticity  </h3>
-        <p>Utilizing AI to decode the mechanisms behind cellular adaptability, including gene expression changes, epigenetic modifications, and their implications for development and disease.</p>
-        <h3 style="color: #e6cb56;">Adaptive Responses in Ecosystems  </h3>
-        <p>Employing AI to study the plasticity of ecosystems in response to environmental changes, focusing on how species interactions and ecological dynamics evolve over time.</p>
-
-        <h3 style="color: #e6cb56;">Plasticity in Developmental Biology  </h3>
-        <p>Investigating how AI can help understand the flexible nature of developmental processes and shed light on how organisms modify their growth patterns in response to internal and external factors.</p>
-        <h3 style="color: #e6cb56;">Plasticity and Regeneration in Tissue Engineering </h3>
-        <p>Using AI to enhance our understanding of tissue plasticity, particularly in regenerative medicine, where the ability to predict and control tissue adaptation is crucial for therapeutic advancements.</p>
-        
-
-
-      </div>
-
-    <!-- Footer -->
-    <div class="footer">
+      </main>
+      <!-- Footer -->
+      <footer class="footer">
         <p>&copy; 2024 Sivasakthi Science Foundation. All rights reserved.</p>
+      </footer>
     </div>
-
+  </div>
 </body>
 </html>
