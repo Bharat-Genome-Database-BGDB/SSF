@@ -13,12 +13,15 @@
 	<link rel="shortcut icon" href="logo.ico">
 	<style>
 		:root {
-			--violet-dark: #5f2c82;
-			--violet-light: #a4508b;
-			--violet-bg: linear-gradient(135deg, #5f2c82 0%, #a4508b 100%);
-			--white: #fff;
+			--violet-dark: #2a1240;
+			--violet-light: #5f2c82;
+			--violet-bg: linear-gradient(135deg, #2a1240 0%, #5f2c82 100%);
+			--white: #f7f6fb;
 			--accent: #ffd600;
-			--gray-bg: #f7f6fb;
+			--gray-bg: #2a1240;
+			--info-bg: linear-gradient(120deg, #3d1d5c 60%, #5f2c82 100%);
+			--footer-bg: #1a0d28;
+			--footer-text: #e0d7f7;
 		}
 		html, body {
 			height: 100%;
@@ -27,11 +30,11 @@
 			font-family: 'Montserrat', Arial, sans-serif;
 			background: var(--violet-bg), url('images/GetInvolved.jpg') center/cover no-repeat fixed;
 			background-blend-mode: multiply;
-			color: #222;
+			color: var(--white);
 			min-height: 100vh;
 		}
 		.navbar {
-			background: var(--white);
+			background: var(--violet-dark);
 			box-shadow: 0 2px 12px rgba(95,44,130,0.07);
 			padding: 0.7rem 0;
 		}
@@ -40,7 +43,7 @@
 			margin-right: 10px;
 		}
 		.navbar-nav .nav-link {
-			color: var(--violet-dark);
+			color: var(--white);
 			font-weight: 600;
 			letter-spacing: 0.5px;
 			transition: color 0.2s;
@@ -49,13 +52,26 @@
 		.navbar-nav .nav-link:hover {
 			color: var(--accent);
 		}
+		.dropdown-menu {
+			background: var(--violet-dark);
+			border: none;
+		}
+		.dropdown-item {
+			color: var(--white);
+		}
+		.dropdown-item.active,
+		.dropdown-item:active,
+		.dropdown-item:hover {
+			background: var(--violet-light);
+			color: var(--accent);
+		}
 		.hero-section {
-			background: rgba(95,44,130,0.92);
+			background: rgba(42,18,64,0.96);
 			color: var(--white);
 			padding: 80px 0 40px 0;
 			text-align: center;
 			border-radius: 0 0 32px 32px;
-			box-shadow: 0 8px 32px rgba(95,44,130,0.12);
+			box-shadow: 0 8px 32px rgba(42,18,64,0.18);
 			margin-bottom: 0;
 		}
 		.hero-section h1 {
@@ -69,28 +85,29 @@
 			font-size: 1.2rem;
 			font-weight: 400;
 			margin-bottom: 28px;
-			color: #e0d7f7;
+			color: #d1c3e6;
 		}
 		.btn-primary {
-			background: var(--violet-dark);
+			background: var(--accent);
+			color: var(--violet-dark);
 			border: none;
 			border-radius: 30px;
 			padding: 10px 32px;
 			font-weight: 600;
-			transition: background 0.2s, box-shadow 0.2s;
+			transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 			box-shadow: 0 2px 8px rgba(95,44,130,0.13);
 		}
 		.btn-primary:hover {
 			background: var(--violet-light);
-			color: var(--white);
+			color: var(--accent);
 			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
 		}
 		.main-content {
 			max-width: 900px;
 			margin: -40px auto 0 auto;
-			background: var(--white);
+			background: #2a1240;
 			border-radius: 24px;
-			box-shadow: 0 4px 32px rgba(95,44,130,0.10);
+			box-shadow: 0 4px 32px rgba(42,18,64,0.25);
 			padding: 40px 32px 32px 32px;
 			position: relative;
 			z-index: 2;
@@ -98,21 +115,22 @@
 		.section-title {
 			font-size: 1.4rem;
 			font-weight: 700;
-			color: var(--violet-dark);
+			color: var(--accent);
 			margin: 32px 0 18px 0;
 			text-align: left;
 			letter-spacing: 0.5px;
 		}
 		.info-block {
-			background: linear-gradient(120deg, #f7f6fb 60%, #ece2f7 100%);
+			background: var(--info-bg);
 			border-radius: 18px;
-			box-shadow: 0 2px 12px rgba(95,44,130,0.06);
+			box-shadow: 0 2px 12px rgba(42,18,64,0.18);
 			padding: 28px 24px;
 			margin-bottom: 28px;
 			transition: box-shadow 0.2s;
+			color: var(--white);
 		}
 		.info-block:hover {
-			box-shadow: 0 6px 24px rgba(95,44,130,0.13);
+			box-shadow: 0 6px 24px rgba(164,80,139,0.18);
 		}
 		ul {
 			margin-bottom: 1.3rem;
@@ -136,40 +154,47 @@
 			width: 44px;
 			height: 44px;
 			border-radius: 50%;
-			background: #ece2f7;
-			color: var(--violet-dark);
+			background: #3d1d5c;
+			color: var(--accent);
 			font-size: 1.5rem;
 			transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 			box-shadow: 0 2px 8px rgba(95,44,130,0.08);
 		}
 		.social-list a:hover {
-			background: var(--violet-dark);
-			color: var(--accent);
+			background: var(--accent);
+			color: var(--violet-dark);
 			box-shadow: 0 4px 16px rgba(164,80,139,0.18);
 		}
 		.footer {
-			background: var(--violet-dark);
-			color: var(--white);
+			background: var(--footer-bg);
+			color: var(--footer-text);
 			padding: 38px 0 18px 0;
 			text-align: center;
 			border-radius: 32px 32px 0 0;
 			margin-top: 60px;
-			box-shadow: 0 -2px 16px rgba(95,44,130,0.10);
+			box-shadow: 0 -2px 16px rgba(42,18,64,0.18);
 		}
 		.footer a {
-			color: var(--white);
+			color: var(--accent);
 			margin: 0 12px;
 			font-size: 1.35rem;
 			transition: color 0.2s;
 			text-decoration: underline;
 		}
 		.footer a:hover {
-			color: var(--accent);
+			color: var(--white);
 		}
 		.footer .copyright {
 			margin-top: 18px;
 			font-size: 0.97rem;
-			color: #e0d7f7;
+			color: var(--footer-text);
+		}
+		a, a:visited {
+			color: var(--accent);
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #fff;
 		}
 		@media (max-width: 991px) {
 			.main-content {
@@ -205,11 +230,11 @@
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+	<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center" href="index.html">
 				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				<span class="fw-bold" style="color:var(--violet-dark);">Sivasakthi Foundation</span>
+				<span class="fw-bold" style="color:var(--accent);">Sivasakthi Foundation</span>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
 				<span class="navbar-toggler-icon"></span>
@@ -352,7 +377,7 @@
 		</div>
 		<div class="copyright mt-3">
 			&copy; 2024 Sivasakthi Foundation. All Rights Reserved.<br>
-			<a href="Privacy Policy and Terms of Use.html" style="color:var(--accent);">Privacy Policy & Terms and Conditions</a>
+			<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
 		</div>
 	</footer>
 
