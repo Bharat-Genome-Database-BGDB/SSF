@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,52 +10,82 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 	<!-- Bootstrap 5 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-	<!-- Custom Styles -->
 	<style>
-		body {
-			font-family: 'Montserrat', Arial, sans-serif;
-			background: #f8fafc;
-			color: #222;
+		:root {
+			--primary: #0d6efd;
+			--accent: #f8fafc;
+			--dark: #222;
+			--radius: 1.25rem;
+			--shadow: 0 4px 24px rgba(0,0,0,0.07);
+		}
+		html, body {
+			height: 100%;
 			margin: 0;
 			padding: 0;
+			font-family: 'Montserrat', Arial, sans-serif;
+			background: var(--accent);
+			color: var(--dark);
+			scroll-behavior: smooth;
 		}
 		.navbar {
 			background: #fff;
 			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+			padding: 0.75rem 0;
+			transition: box-shadow 0.2s;
 		}
 		.navbar-brand img {
-			height: 60px;
+			height: 48px;
 			margin-right: 10px;
+			transition: transform 0.2s;
+		}
+		.navbar-brand:hover img {
+			transform: scale(1.05) rotate(-2deg);
+		}
+		.nav-link, .navbar-brand span {
+			font-weight: 600;
+			letter-spacing: 0.5px;
+		}
+		.nav-link.active, .nav-link:focus, .nav-link:hover {
+			color: var(--primary) !important;
 		}
 		.hero-section {
-			background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url('images/3696093.jpg') center/cover no-repeat;
+			background: linear-gradient(rgba(13,110,253,0.25),rgba(0,0,0,0.3)), url('images/3696093.jpg') center/cover no-repeat;
 			color: #fff;
-			padding: 100px 0 60px 0;
+			padding: 120px 0 60px 0;
 			text-align: center;
 			position: relative;
+			border-radius: 0 0 var(--radius) var(--radius);
+			box-shadow: var(--shadow);
 		}
 		.hero-section h1 {
-			font-size: 2.8rem;
-			font-weight: 700;
-			margin-bottom: 10px;
-			letter-spacing: 1px;
+			font-size: 3rem;
+			font-weight: 800;
+			margin-bottom: 18px;
+			letter-spacing: 1.5px;
+			text-shadow: 0 2px 12px rgba(0,0,0,0.18);
 		}
 		.hero-section p {
-			font-size: 1.2rem;
+			font-size: 1.25rem;
 			max-width: 600px;
 			margin: 0 auto;
-			opacity: 0.95;
+			opacity: 0.97;
+			font-weight: 500;
+			text-shadow: 0 1px 8px rgba(0,0,0,0.10);
 		}
 		.mission-content {
 			background: #fff;
-			border-radius: 18px;
-			box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-			padding: 40px 32px;
-			margin-top: 24px;
-			margin-bottom: 40px;
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: 48px 40px;
+			margin-top: -40px;
+			margin-bottom: 48px;
 			max-width: 900px;
 			margin-left: auto;
 			margin-right: auto;
+			position: relative;
+			z-index: 2;
+			font-size: 1.08rem;
+			line-height: 1.8;
 		}
 		.mission-content ul {
 			margin-top: 1.5rem;
@@ -66,36 +95,67 @@
 		.mission-content li {
 			margin-bottom: 0.8rem;
 			line-height: 1.7;
+			position: relative;
+			padding-left: 1.5rem;
+		}
+		.mission-content li::before {
+			content: "\f058";
+			font-family: "Font Awesome 6 Free";
+			font-weight: 900;
+			color: var(--primary);
+			position: absolute;
+			left: 0;
+			top: 0.1rem;
+			font-size: 1.1em;
 		}
 		.footer {
-			background: #222;
+			background: var(--dark);
 			color: #fff;
-			padding: 32px 0 16px 0;
+			padding: 40px 0 20px 0;
 			text-align: center;
+			border-radius: var(--radius) var(--radius) 0 0;
+			margin-top: 48px;
 		}
 		.footer .social-icons a {
 			color: #fff;
-			margin: 0 10px;
-			font-size: 1.5rem;
-			transition: color 0.2s;
+			margin: 0 12px;
+			font-size: 1.7rem;
+			transition: color 0.2s, transform 0.2s;
+			display: inline-block;
 		}
 		.footer .social-icons a:hover {
-			color: #0d6efd;
+			color: var(--primary);
+			transform: translateY(-3px) scale(1.1);
 		}
 		.footer a {
-			color: #0d6efd;
+			color: var(--primary);
 			text-decoration: none;
+			font-weight: 500;
 		}
-		@media (max-width: 576px) {
+		.footer a:hover {
+			text-decoration: underline;
+		}
+		@media (max-width: 768px) {
 			.hero-section {
-				padding: 60px 0 30px 0;
-			}
-			.mission-content {
-				padding: 24px 8px;
-				margin-top: 16px;
+				padding: 70px 0 30px 0;
 			}
 			.hero-section h1 {
-				font-size: 2rem;
+				font-size: 2.1rem;
+			}
+			.mission-content {
+				padding: 28px 12px;
+				margin-top: -24px;
+			}
+		}
+		@media (max-width: 576px) {
+			.navbar-brand img {
+				height: 38px;
+			}
+			.hero-section {
+				padding: 48px 0 18px 0;
+			}
+			.mission-content {
+				padding: 18px 4px;
 			}
 		}
 	</style>
@@ -106,7 +166,7 @@
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center" href="index.html">
 				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				<span class="fw-bold">Sivasakthi Foundation</span>
+				<span>Sivasakthi Foundation</span>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -148,155 +208,6 @@
 					<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
 				</ul>
 			</div>
-=======
-<html class="no-js"> 
-	<head>
-
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="logo.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
-	<link rel="stylesheet" href="css/news.css">
-	<link rel="stylesheet" href="css/events.css">
-
-
-	<link rel="stylesheet" href="css/style.css">
-
-	<link rel="stylesheet" href="css/logo.css"
-
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
-						<a href="./blog.html">Blog</a>
-						<a href="contact-us/index.html">Contact</a>
-					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-						<a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-						<a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-<header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
-
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-
-
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/3696093.jpg);">
-				<div class="desc animate-box">
-					<h2><strong>Mission Statement </strong></h2>
-					<!--<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
-					<span><a class="btn btn-primary btn-lg" href="#">blog-text</a></span>-->
-				</div>
-			</div>
-
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
 		</div>
 	</nav>
 
@@ -326,7 +237,6 @@
 		</div>
 	</section>
 
-<<<<<<< HEAD
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
@@ -334,29 +244,6 @@
 				<a href="https://x.com/SSF_handle" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
 				<a href="https://www.instagram.com/ssf.iinsta" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
 				<a href="https://youtube.com/@sivasakthifoundation" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
-=======
-	</div>
-</div>
-
-</div>
-</div>		
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Science Foundation <a href="#"></a>. All Rights Reserved.
-								 <!--Privacy Policy-->
-								  <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
->>>>>>> 3055c69af879df0a7bb09d45c9dbaf7e7e809e54
 			</div>
 			<div>
 				<small>
@@ -366,8 +253,6 @@
 			</div>
 		</div>
 	</footer>
-
-	<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
