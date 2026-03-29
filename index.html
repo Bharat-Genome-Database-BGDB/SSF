@@ -102,7 +102,69 @@
         }
 
         .nav-item.dropdown { position: relative; }
-        
+        /* --- Fixed & Stable Navbar --- */
+.navbar {
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+/* --- Dropdown Logic (Fixed for Stability) --- */
+.nav-item.dropdown { 
+    position: relative; 
+}
+
+@media (min-width: 992px) {
+    /* Main Dropdown appearing on hover */
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 100%; /* Positioned right at the bottom of the nav bar */
+        left: 0;
+        min-width: 220px;
+    }
+
+    /* Submenu (RTE Platforms) appearing on hover */
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+        top: -10px;    /* Slightly offset to align with the text */
+        left: 95%;    /* Slight overlap (95% instead of 100%) to prevent mouse-out */
+        margin-left: 0;
+    }
+
+    /* THE BRIDGE: Creates an invisible hoverable area so the menu doesn't close */
+    .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: transparent;
+    }
+    
+    .dropdown-submenu > .dropdown-menu::before {
+        top: 0;
+        left: -20px;
+        width: 20px;
+        height: 100%;
+    }
+}
+
+.dropdown-menu {
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 0;
+    border-top: 3px solid var(--electric);
+    display: none;
+    animation: fadeIn 0.15s ease-in-out;
+}
         @media (min-width: 992px) {
             .nav-item.dropdown:hover > .dropdown-menu {
                 display: block;
@@ -327,7 +389,7 @@
                         <li><a class="dropdown-item" href="./Vision Statement copy.html">Vision</a></li>
                         <li><a class="dropdown-item" href="./Missionstatement.html">Mission</a></li>
                         <li><a class="dropdown-item" href="./History and Background.html">History</a></li>
-                        <li><a class="dropdown-item" href="./Financial Transparency.html">Transparency</a></li>
+                        <li><a class="dropdown-item" href="./Financial Transparency.html">Financial Transparency</a></li>
                     </ul>
                 </li>
 

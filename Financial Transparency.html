@@ -1,377 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Financial Transparency | Sivasakthi Foundation</title>
-	<meta name="description" content="Sivasakthi Foundation's commitment to financial transparency and accountability.">
-	<link rel="shortcut icon" href="logo.ico">
-	<!-- Google Fonts: Inter for modern, clean typography -->
-	<link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-	<!-- Font Awesome for icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<!-- Bootstrap 5 for responsive layout -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-	<style>
-		:root {
-			--primary: #6c3fd1;
-			--accent: #a259f7;
-			--bg: #f5f3ff;
-			--text: #2d1a4a;
-			--muted: #8f8fa3;
-			--radius: 1.1rem;
-			--shadow: 0 4px 24px rgba(108, 63, 209, 0.08);
-		}
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			font-family: 'Inter', Arial, sans-serif;
-			background: var(--bg);
-			color: var(--text);
-			scroll-behavior: smooth;
-		}
-		body {
-			min-height: 100vh;
-			display: flex;
-			flex-direction: column;
-		}
-		/* Navbar */
-		.navbar {
-			background: #fff;
-			box-shadow: var(--shadow);
-			padding: 1rem 0;
-			border-radius: 0 0 var(--radius) var(--radius);
-			z-index: 10;
-			position: relative;
-		}
-		.navbar-brand img {
-			height: 40px;
-			margin-right: 0.5rem;
-		}
-		.navbar-brand span {
-			font-weight: 700;
-			font-size: 1.25rem;
-			color: var(--primary);
-			letter-spacing: 0.5px;
-		}
-		.navbar-nav .nav-link {
-			font-weight: 500;
-			color: var(--primary);
-			margin-right: 1rem;
-			transition: color 0.2s, background 0.2s;
-			border-radius: 2rem;
-			padding: 0.5rem 1rem;
-		}
-		.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-			color: #fff;
-			background: var(--accent);
-		}
-		/* Hero Section */
-		.hero-section {
-			background: linear-gradient(120deg, #ede9fe 60%, #c7bfff 100%);
-			padding: 6rem 0 3rem 0;
-			text-align: center;
-			position: relative;
-			overflow: hidden;
-		}
-		.hero-section::after {
-			content: "";
-			position: absolute;
-			bottom: -60px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 90vw;
-			height: 120px;
-			background: radial-gradient(circle, #a259f733 0%, transparent 80%);
-			z-index: 0;
-		}
-		.hero-section .container {
-			position: relative;
-			z-index: 1;
-		}
-		.hero-section h1 {
-			font-size: 2.7rem;
-			font-weight: 700;
-			color: var(--primary);
-			margin-bottom: 1rem;
-			letter-spacing: -1px;
-		}
-		.hero-section p {
-			color: var(--muted);
-			font-size: 1.2rem;
-			max-width: 600px;
-			margin: 0 auto;
-		}
-		/* Section */
-		.section {
-			padding: 3.5rem 0 2.5rem 0;
-			position: relative;
-			z-index: 1;
-		}
-		.section-title {
-			font-size: 2rem;
-			font-weight: 600;
-			color: var(--primary);
-			margin-bottom: 1.5rem;
-			text-align: center;
-			letter-spacing: -0.5px;
-		}
-		/* Principles List */
-		.principles-list {
-			list-style: none;
-			padding: 0;
-			margin: 0 auto 2rem auto;
-			max-width: 700px;
-		}
-		.principles-list li {
-			background: #fff;
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			padding: 1.3rem 1.5rem;
-			margin-bottom: 1.1rem;
-			font-size: 1.08rem;
-			display: flex;
-			align-items: flex-start;
-			gap: 1rem;
-			transition: box-shadow 0.2s, transform 0.2s;
-			cursor: pointer;
-		}
-		.principles-list li:hover {
-			box-shadow: 0 8px 32px rgba(108, 63, 209, 0.13);
-			transform: translateY(-2px) scale(1.01);
-		}
-		.principles-list li i {
-			color: var(--accent);
-			font-size: 1.4rem;
-			margin-top: 2px;
-			flex-shrink: 0;
-		}
-		/* Reports List */
-		.reports-list {
-			list-style: none;
-			padding: 0;
-			margin: 0 auto 2rem auto;
-			max-width: 600px;
-			text-align: center;
-		}
-		.reports-list li {
-			background: #fff;
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			padding: 1.1rem 1.3rem;
-			margin-bottom: 1rem;
-			font-size: 1.08rem;
-		}
-		/* CTA Section */
-		.cta-section {
-			background: #fff;
-			box-shadow: var(--shadow);
-			border-radius: var(--radius);
-			max-width: 600px;
-			margin: 2.5rem auto 0 auto;
-			padding: 2rem 1.5rem;
-			text-align: center;
-			z-index: 2;
-			position: relative;
-		}
-		.cta-section h4 {
-			color: var(--primary);
-			font-weight: 600;
-			margin-bottom: 1rem;
-			font-size: 1.2rem;
-		}
-		.cta-section p {
-			color: var(--muted);
-			margin-bottom: 1.5rem;
-		}
-		.cta-section .btn {
-			background: var(--accent);
-			color: #fff;
-			border-radius: 2rem;
-			padding: 0.6rem 2.2rem;
-			font-weight: 600;
-			font-size: 1.1rem;
-			transition: background 0.2s, box-shadow 0.2s;
-			box-shadow: 0 2px 8px rgba(162, 89, 247, 0.08);
-			border: none;
-		}
-		.cta-section .btn:hover {
-			background: #6c3fd1;
-			color: #fff;
-			box-shadow: 0 4px 16px rgba(162, 89, 247, 0.13);
-		}
-		/* Footer */
-		footer {
-			background: #fff;
-			border-top: 1px solid #e9ecef;
-			padding: 2rem 0 1.2rem 0;
-			margin-top: auto;
-			box-shadow: 0 -2px 16px rgba(108, 63, 209, 0.04);
-			position: relative;
-			z-index: 2;
-		}
-		.footer-social a {
-			color: var(--primary);
-			font-size: 1.5rem;
-			margin: 0 0.5rem;
-			transition: color 0.2s, transform 0.2s;
-			display: inline-block;
-		}
-		.footer-social a:hover {
-			color: var(--accent);
-			transform: scale(1.15) translateY(-2px);
-		}
-		.footer-links a {
-			color: var(--muted);
-			text-decoration: none;
-			margin: 0 0.5rem;
-			font-size: 1rem;
-		}
-		.footer-links a:hover {
-			color: var(--primary);
-			text-decoration: underline;
-		}
-		/* Responsive */
-		@media (max-width: 991px) {
-			.navbar-nav .nav-link {
-				margin-right: 0;
-				margin-bottom: 0.5rem;
-			}
-			.hero-section h1 {
-				font-size: 2rem;
-			}
-			.section-title {
-				font-size: 1.3rem;
-			}
-			.hero-section {
-				padding: 3rem 0 1.5rem 0;
-			}
-			.section {
-				padding: 1.5rem 0 1rem 0;
-			}
-		}
-		@media (max-width: 600px) {
-			.hero-section {
-				padding: 2rem 0 1rem 0;
-			}
-			.section {
-				padding: 1rem 0 0.5rem 0;
-			}
-			.cta-section {
-				padding: 1rem 0.5rem;
-			}
-			.principles-list li, .reports-list li {
-				padding: 0.8rem 0.5rem;
-			}
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Transparency — Sivasakthi Science Foundation&#8482;</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:      #1a0530;
+      --deep:      #2b0a52;
+      --royal:     #4a1080;
+      --violet:    #7c3aed;
+      --lavender:  #a78bfa;
+      --lilac:     #c4b5fd;
+      --mist:      #ede9fe;
+      --white:     #ffffff;
+      --ink:       #1e0535;
+      --muted:     #6b5f80;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── SHARED HEADER/NAV ─── */
+    .topbar { background: var(--plum); padding: 8px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--lilac); letter-spacing: 0.04em; }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; text-decoration: none; transition: color .2s; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header { background: var(--white); border-bottom: 1px solid var(--mist); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 30px rgba(74,16,128,0.07); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--violet), var(--royal)); border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); line-height: 1.1; }
+    .logo-text span { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 8px; }
+    nav ul li { position: relative; }
+    nav ul li > a { display: block; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; border-radius: 8px; transition: .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
+
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 4px); left: 0; min-width: 220px; background: var(--white); border: 1px solid var(--mist); border-radius: 14px; padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13); z-index: 200; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; color: var(--ink); text-decoration: none; border-radius: 8px; transition: .15s; }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)); color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; box-shadow: 0 4px 12px rgba(124,58,237,0.25); }
+
+    /* ─── HERO ─── */
+    .hero { position: relative; padding: 100px 40px; background: linear-gradient(135deg, var(--plum), var(--deep)); text-align: center; color: var(--white); overflow: hidden; }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--lilac); }
+    .hero p { font-size: 18px; color: rgba(196,181,253,0.8); max-width: 750px; margin: 0 auto; font-weight: 300; letter-spacing: 0.02em; }
+
+    /* Floating particles */
+    .dots { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .dot { position: absolute; border-radius: 50%; background: rgba(167,139,250,0.15); animation: float linear infinite; }
+    @keyframes float { 0% { transform: translateY(0) scale(1); opacity: 0; } 50% { opacity: 0.3; } 100% { transform: translateY(-120px) scale(0.6); opacity: 0; } }
+
+    /* ─── CONTENT SECTIONS ─── */
+    section { padding: 90px 40px; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--violet); border-radius: 2px; }
+    
+    .text-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--plum); margin-bottom: 24px; line-height: 1.15; }
+    .text-block p { margin-bottom: 24px; font-size: 17px; color: var(--muted); font-weight: 300; }
+
+    /* ─── PRINCIPLES CARDS ─── */
+    .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 50px; }
+    .principle-card { background: var(--white); border: 1px solid var(--mist); border-radius: 20px; padding: 32px; transition: all .3s ease; position: relative; overflow: hidden; }
+    .principle-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(74,16,128,0.08); border-color: var(--lavender); }
+    .principle-icon { width: 48px; height: 48px; background: var(--mist); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--violet); margin-bottom: 20px; transition: .3s; }
+    .principle-card:hover .principle-icon { background: var(--violet); color: var(--white); }
+    .principle-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--plum); margin-bottom: 12px; }
+    .principle-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+    /* ─── REPORTS SECTION ─── */
+    .reports-box { background: #faf8ff; border-radius: 30px; padding: 60px 40px; text-align: center; border: 1px dashed var(--lavender); margin-top: 60px; }
+    .status-badge { display: inline-block; padding: 6px 16px; background: var(--mist); color: var(--violet); border-radius: 100px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
+    
+    /* ─── CTA ─── */
+    .cta-box { background: linear-gradient(135deg, var(--plum), var(--royal)); border-radius: 24px; padding: 60px; text-align: center; color: var(--white); margin-top: 80px; position: relative; overflow: hidden; }
+    .cta-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 16px; }
+    .cta-box p { color: rgba(196,181,253,0.8); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-block; background: var(--white); color: var(--plum); padding: 14px 36px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: .3s; }
+    .cta-btn:hover { transform: scale(1.05); background: var(--lilac); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 80px 40px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-bottom { border-top: 1px solid rgba(167,139,250,0.15); padding-top: 28px; display: flex; justify-content: space-between; font-size: 12px; margin-top: 60px; align-items: center; }
+    .footer-bottom a { color: rgba(167,139,250,0.6); text-decoration: none; transition: .2s; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 20px; }
+      nav ul { display: none; }
+      .cta-box { padding: 40px 20px; }
+      .hero p { font-size: 16px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
-		<div class="container">
-			<a class="navbar-brand d-flex align-items-center" href="index.html">
-				<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-				<span>Sivasakthi Foundation</span>
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="mainNav">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							About Us
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-							<li><a class="dropdown-item" href="./AboutUs.html">About Us</a></li>
-							<li><a class="dropdown-item" href="./History and Background.html">History & Background</a></li>
-							<li><a class="dropdown-item" href="./Missionstatement.html">Our Mission</a></li>
-							<li><a class="dropdown-item" href="./Vision Statement copy.html">Our Vision</a></li>
-							<li><a class="dropdown-item active" href="./Financial Transparency.html">Financial Transparency</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Projects
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-							<li><a class="dropdown-item" href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-							<li><a class="dropdown-item" href="Ai.html">AI and Deep Learning</a></li>
-						</ul>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Get Involved
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
-							<li><a class="dropdown-item" href="./GetInvolved.html">Get Involved</a></li>
-							<li><a class="dropdown-item" href="./events-and-conferences.html">Events & Conferences</a></li>
-							<li><a class="dropdown-item" href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-						</ul>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
-					<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
-	<!-- Hero Section -->
-	<section class="hero-section">
-		<div class="container">
-			<h1>Financial Transparency</h1>
-			<p>
-				Our commitment to openness, accountability, and integrity in all financial matters. Building trust with our donors, partners, and communities.
-			</p>
-		</div>
-	</section>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div>Financial Stewardship · Accountability · Integrity</div>
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
 
-	<!-- Main Content -->
-	<section class="section">
-		<div class="container">
-			<h2 class="section-title">Commitment to Transparency and Accountability</h2>
-			<p class="mb-4" style="max-width:700px;margin:0 auto;text-align:justify;">
-				At Sivasakthi Foundation, we are committed to maintaining the highest standards of financial transparency and accountability. We believe that openness and honesty in our financial practices are essential to building trust with our donors, partners, and the communities we serve.
-			</p>
-			<h3 class="mt-5 mb-3 text-center" style="font-size:1.2rem;color:var(--accent);font-weight:600;">Our Financial Principles</h3>
-			<ul class="principles-list">
-				<li><i class="fa-solid fa-shield-halved"></i> <strong>Integrity:</strong> We adhere to strict ethical standards in all our financial operations.</li>
-				<li><i class="fa-solid fa-hand-holding-dollar"></i> <strong>Accountability:</strong> We are accountable to our donors, partners, and beneficiaries for the use of funds.</li>
-				<li><i class="fa-solid fa-eye"></i> <strong>Transparency:</strong> We provide clear and accessible information about our financial activities.</li>
-				<li><i class="fa-solid fa-users"></i> <strong>Community Focus:</strong> We ensure resources are used for maximum positive impact.</li>
-			</ul>
-			<h3 class="mt-5 mb-3 text-center" style="font-size:1.2rem;color:var(--accent);font-weight:600;">Financial Reports</h3>
-			<ul class="reports-list">
-				<li><strong>Coming Soon</strong></li>
-			</ul>
-			<div class="cta-section mt-5">
-				<h4>Have Questions or Need More Information?</h4>
-				<p>We welcome your inquiries about our financial practices. Please reach out for more details or to request specific reports.</p>
-				<a href="contact-us/index.html" class="btn">Contact Us</a>
-			</div>
-		</div>
-	</section>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo.png" alt="SSF Logo" style="width:100%;height:100%;object-fit:contain;"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation&#8482;</strong>
+          <span>Advancing Research &amp; Education</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:8px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./History and Background.html">History &amp; Background</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+              <a href="./Financial Transparency.html">Financial Transparency</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects <i class="fa-solid fa-chevron-down" style="font-size:8px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">Bharat Genome DB</a>
+              <a href="Ai.html">AI &amp; Deep Learning</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-	<!-- Footer -->
-	<footer>
-		<div class="container text-center">
-			<div class="footer-social mb-3">
-				<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-				<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-				<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-			</div>
-			<div class="footer-links mb-2">
-				<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms</a>
-			</div>
-			<div style="color:var(--muted);font-size:0.97rem;">
-				&copy; 2024 Sivasakthi Foundation. All Rights Reserved.
-			</div>
-		</div>
-	</footer>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="dots">
+      <div class="dot" style="width:8px;height:8px;left:15%;top:70%;animation-duration:6s;"></div>
+      <div class="dot" style="width:12px;height:12px;left:55%;top:85%;animation-duration:8s;"></div>
+      <div class="dot" style="width:5px;height:5px;left:85%;top:30%;animation-duration:5s;"></div>
+    </div>
+    <div class="hero-content">
+      <h1><em>Financial</em> Transparency</h1>
+      <p>Building an enduring foundation of trust through radical openness, institutional accountability, and ethical integrity in all financial matters.</p>
+    </div>
+  </section>
 
-	<!-- Bootstrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- MAIN CONTENT -->
+  <section>
+    <div class="container text-block">
+      <div class="section-eyebrow">Our Commitment</div>
+      <h2>Accountability by Design</h2>
+      <p>At Sivasakthi Science Foundation, we believe that the pursuit of scientific excellence must be matched by a commitment to financial honesty. Every resource entrusted to us—whether from donors, partners, or governmental grants—is treated as a sacred catalyst for discovery and education.</p>
+
+      <!-- PRINCIPLES GRID -->
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Integrity</h3>
+          <p>We adhere to the highest ethical and legal standards in all operational and fiscal activities.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <h3>Accountability</h3>
+          <p>Every rupee is tracked to ensure it serves our mission of advancing science and technology.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Transparency</h3>
+          <p>Providing clear, accessible insights into how we allocate funding across our core RTE programs.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Impact First</h3>
+          <p>Strategic deployment of resources to maximize positive outcomes for the scientific community.</p>
+        </div>
+      </div>
+
+      <!-- REPORTS SECTION -->
+      <div class="reports-box">
+        <span class="status-badge">Upcoming Feature</span>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size:32px; color:var(--plum);">Financial Reporting Portal</h2>
+        <p style="max-width:600px; margin: 16px auto 0;">We are currently finalizing our digital transparency dashboard. Soon, you will be able to view and download our audited financial statements and impact reports directly from this page.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h4>Questions Regarding Stewardship?</h4>
+        <p>Our team is available to provide detailed information regarding our financial policies and resource management.</p>
+        <a href="contact-us/index.html" class="cta-btn">Inquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <strong style="color:white; font-family:'Cormorant Garamond', serif; font-size:24px;">Sivasakthi Science Foundation&#8482;</strong>
+        <p style="font-size:13px; margin-top:8px; color:rgba(196,181,253,0.6);">Advancing Research, Training &amp; Education</p>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Sivasakthi Science Foundation&#8482;. All Rights Reserved.</span>
+        <span>
+          <a href="Privacy Policy.html">Privacy Policy</a> &nbsp;·&nbsp; 
+          <a href="Terms of Use.html">Terms of Use</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple particle effect for hero
+    document.addEventListener('DOMContentLoaded', () => {
+      // Logic for mobile hamburger if needed
+    });
+  </script>
 </body>
 </html>
