@@ -1,607 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Events & Conferences | Sivasakthi Science Foundation</title>
-	<meta name="description" content="Events and conferences at Sivasakthi Science Foundation">
-	<meta property="og:title" content="Events and Conferences - Sivasakthi Science Foundation"/>
-	<meta property="og:image" content="images/logo.png"/>
-	<meta property="og:url" content="https://sivasakthifoundation.org/events-and-conferences.html"/>
-	<meta property="og:site_name" content="Sivasakthi Science Foundation"/>
-	<meta property="og:description" content="Events and conferences at Sivasakthi Science Foundation"/>
-	<meta name="twitter:title" content="Events and Conferences - Sivasakthi Science Foundation" />
-	<meta name="twitter:image" content="images/logo.png" />
-	<meta name="twitter:url" content="https://sivasakthifoundation.org/events-and-conferences.html" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<link rel="shortcut icon" href="logo.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
-	<style>
-		:root {
-			--primary: #2563eb;
-			--primary-dark: #1e40af;
-			--secondary: #38bdf8;
-			--bg: #f8fafc;
-			--white: #fff;
-			--text: #222;
-			--text-light: #374151;
-			--border: #e5e7eb;
-			--footer-bg: #1e293b;
-			--footer-text: #cbd5e1;
-			--radius: 1.25rem;
-			--transition: 0.2s cubic-bezier(.4,0,.2,1);
-		}
-		*, *::before, *::after { box-sizing: border-box; }
-		html, body { height: 100%; }
-		body {
-			min-height: 100vh;
-			font-family: 'Inter', Arial, sans-serif;
-			background: var(--bg);
-			color: var(--text);
-			display: flex;
-			flex-direction: column;
-		}
-		a { color: inherit; text-decoration: none; transition: color var(--transition); }
-		img { max-width: 100%; display: block; }
-		/* Header */
-		header {
-			background: var(--white);
-			box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-			position: sticky;
-			top: 0;
-			z-index: 100;
-		}
-		.container {
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 0 1.5rem;
-		}
-		.navbar {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 1.25rem 0;
-		}
-		.navbar-logo {
-			display: flex;
-			align-items: center;
-			gap: 0.75rem;
-			font-weight: 700;
-			font-size: 1.5rem;
-			color: var(--primary);
-			letter-spacing: -1px;
-			transition: color var(--transition);
-		}
-		.navbar-logo img {
-			height: 48px;
-			width: 48px;
-			border-radius: 8px;
-			background: var(--bg);
-			box-shadow: 0 2px 8px rgba(56,189,248,0.08);
-		}
-		nav {
-			flex: 1;
-			margin-left: 2rem;
-		}
-		.nav-menu {
-			display: flex;
-			align-items: center;
-			gap: 2rem;
-			list-style: none;
-			font-weight: 500;
-			font-size: 1rem;
-		}
-		.nav-menu > li {
-			position: relative;
-		}
-		.nav-menu > li > a {
-			padding: 0.5em 0.2em;
-			color: var(--text-light);
-			border-radius: 0.5em;
-			transition: background var(--transition), color var(--transition);
-		}
-		.nav-menu > li > a:hover,
-		.nav-menu > li > a:focus {
-			color: var(--primary);
-			background: #f1f5f9;
-		}
-		.nav-menu li ul {
-			display: none;
-			position: absolute;
-			top: 2.2em;
-			left: 0;
-			background: var(--white);
-			box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-			border-radius: 0.5em;
-			min-width: 200px;
-			flex-direction: column;
-			z-index: 10;
-			padding: 0.5em 0;
-			animation: fadeIn 0.2s;
-		}
-		.nav-menu li:focus-within > ul,
-		.nav-menu li:hover > ul {
-			display: flex;
-		}
-		.nav-menu li ul li a {
-			padding: 0.75em 1.5em;
-			color: var(--text-light);
-			border-radius: 0.5em;
-			transition: background var(--transition), color var(--transition);
-		}
-		.nav-menu li ul li a:hover,
-		.nav-menu li ul li a:focus {
-			background: #f1f5f9;
-			color: var(--primary);
-		}
-		.navbar-social {
-			display: flex;
-			gap: 1rem;
-			margin-left: 2rem;
-		}
-		.navbar-social a {
-			color: #64748b;
-			font-size: 1.25rem;
-			border-radius: 50%;
-			padding: 0.4em;
-			transition: background var(--transition), color var(--transition), transform var(--transition);
-		}
-		.navbar-social a:hover {
-			color: var(--primary);
-			background: #e0e7ef;
-			transform: translateY(-2px) scale(1.1);
-		}
-		/* Hamburger */
-		.hamburger {
-			display: none;
-			flex-direction: column;
-			justify-content: center;
-			width: 36px;
-			height: 36px;
-			cursor: pointer;
-			gap: 6px;
-			margin-left: 1rem;
-		}
-		.hamburger span {
-			display: block;
-			height: 4px;
-			width: 100%;
-			background: var(--primary);
-			border-radius: 2px;
-			transition: all var(--transition);
-		}
-		/* Hero */
-		.hero {
-			background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
-			color: var(--white);
-			text-align: center;
-			padding: 4rem 1rem 3rem 1rem;
-			position: relative;
-			overflow: hidden;
-		}
-		.hero h1 {
-			font-size: 3.5rem;
-			font-weight: 800;
-			margin-bottom: 1rem;
-			letter-spacing: -1.5px;
-			line-height: 1.05;
-			text-shadow: 0 4px 24px rgba(30,64,175,0.13);
-		}
-		.hero p {
-			font-size: 1.25rem;
-			max-width: 600px;
-			margin: 0 auto;
-			opacity: 0.97;
-		}
-		.hero::after {
-			content: "";
-			background: url('images/bg-events-and-conferences.jpg') center/cover no-repeat;
-			opacity: 0.13;
-			position: absolute;
-			inset: 0;
-			z-index: 0;
-		}
-		.hero > * { position: relative; z-index: 1; }
-		/* Main */
-		main {
-			flex: 1;
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 2.5rem 1.5rem 3rem 1.5rem;
-			background: var(--white);
-			border-radius: var(--radius);
-			box-shadow: 0 4px 32px rgba(0,0,0,0.06);
-			margin-top: -3rem;
-			position: relative;
-			z-index: 2;
-		}
-		section + section { margin-top: 2.5rem; }
-		h2, h3, h4 {
-			font-weight: 700;
-			color: var(--primary);
-			margin-bottom: 0.75rem;
-			letter-spacing: -0.5px;
-		}
-		h2 { font-size: 2rem; }
-		h3 { font-size: 1.25rem; }
-		h4 { font-size: 1.1rem; }
-		p, ul, li {
-			font-size: 1.05rem;
-			line-height: 1.7;
-			color: var(--text-light);
-		}
-		ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-		hr {
-			border: none;
-			border-top: 1px solid var(--border);
-			margin: 2rem 0;
-		}
-		.event-img {
-			width: 100%;
-			border-radius: 0.75rem;
-			margin: 1.5rem 0 0.5rem 0;
-			box-shadow: 0 2px 16px rgba(56,189,248,0.08);
-			transition: transform var(--transition), box-shadow var(--transition);
-		}
-		.event-img:hover {
-			transform: scale(1.025);
-			box-shadow: 0 6px 24px rgba(56,189,248,0.14);
-		}
-		.btn {
-			display: inline-block;
-			background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
-			color: var(--white);
-			font-weight: 600;
-			padding: 0.75em 2em;
-			border-radius: 2em;
-			border: none;
-			text-decoration: none;
-			font-size: 1rem;
-			margin-top: 1.25em;
-			transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
-			box-shadow: 0 2px 8px rgba(37,99,235,0.08);
-			cursor: pointer;
-		}
-		.btn:hover, .btn:focus {
-			background: linear-gradient(90deg, var(--primary-dark) 60%, #0ea5e9 100%);
-			box-shadow: 0 4px 16px rgba(37,99,235,0.12);
-			transform: translateY(-2px) scale(1.04);
-		}
-		.info-list {
-			margin: 1rem 0 1.5rem 0;
-			padding-left: 1.5rem;
-		}
-		.info-list li {
-			margin-bottom: 0.5rem;
-		}
-		.newsletter {
-			background: #f1f5f9;
-			border-radius: 0.75rem;
-			padding: 1.5rem;
-			margin-top: 1.5rem;
-			text-align: center;
-		}
-		.newsletter input[type="email"] {
-			padding: 0.5em 1em;
-			border-radius: 2em;
-			border: 1px solid #cbd5e1;
-			font-size: 1rem;
-			margin-right: 0.5em;
-			outline: none;
-			width: 220px;
-			max-width: 100%;
-			transition: border var(--transition);
-		}
-		.newsletter input[type="email"]:focus {
-			border: 1.5px solid var(--primary);
-		}
-		.newsletter button {
-			background: var(--primary);
-			color: var(--white);
-			border: none;
-			border-radius: 2em;
-			padding: 0.5em 1.5em;
-			font-weight: 600;
-			cursor: pointer;
-			transition: background var(--transition), transform var(--transition);
-		}
-		.newsletter button:hover { background: var(--primary-dark); transform: scale(1.04);}
-		.newsletter .social-links {
-			margin-top: 1em;
-			display: flex;
-			justify-content: center;
-			gap: 1.2rem;
-		}
-		.newsletter .social-links a {
-			color: var(--primary);
-			font-size: 1.4rem;
-			border-radius: 50%;
-			padding: 0.4em;
-			background: #e0e7ef;
-			transition: background var(--transition), color var(--transition), transform var(--transition);
-		}
-		.newsletter .social-links a:hover {
-			background: var(--primary);
-			color: var(--white);
-			transform: scale(1.1);
-		}
-		/* Footer */
-		footer {
-			background: var(--footer-bg);
-			color: var(--footer-text);
-			padding: 2rem 1rem 1rem 1rem;
-			text-align: center;
-			margin-top: auto;
-		}
-		.footer-social {
-			margin-bottom: 1rem;
-			display: flex;
-			justify-content: center;
-			gap: 1.5rem;
-		}
-		.footer-social a {
-			color: var(--secondary);
-			font-size: 1.5rem;
-			border-radius: 50%;
-			padding: 0.4em;
-			transition: background var(--transition), color var(--transition), transform var(--transition);
-		}
-		.footer-social a:hover {
-			color: var(--white);
-			background: var(--primary);
-			transform: scale(1.1);
-		}
-		.footer-links {
-			margin-top: 0.5rem;
-			font-size: 0.98rem;
-		}
-		.footer-links a {
-			color: var(--footer-text);
-			text-decoration: underline;
-			margin: 0 0.5em;
-			transition: color var(--transition);
-		}
-		.footer-links a:hover { color: var(--secondary); }
-		/* Responsive */
-		@media (max-width: 900px) {
-			.container, main { max-width: 100%; }
-			.navbar { flex-direction: column; align-items: stretch; gap: 1rem; }
-			nav { margin-left: 0; }
-			.navbar-social { margin-left: 0; justify-content: flex-end; }
-			main { padding: 1.5rem 0.5rem 2rem 0.5rem; }
-		}
-		@media (max-width: 800px) {
-			.nav-menu {
-				position: absolute;
-				top: 100%;
-				right: 1.5rem;
-				background: var(--white);
-				flex-direction: column;
-				gap: 0.5rem;
-				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-				border-radius: 0.75em;
-				padding: 1em 0;
-				display: none;
-				min-width: 220px;
-				z-index: 100;
-			}
-			.nav-menu.open { display: flex; }
-			.hamburger { display: flex; }
-			nav { position: relative; }
-		}
-		@media (max-width: 600px) {
-			.hero { padding: 2.5rem 1rem 2rem 1rem; }
-			.hero h1 { font-size: 2rem; }
-			main { border-radius: 0.5rem; }
-			.navbar-logo img { height: 36px; width: 36px; }
-		}
-		@keyframes fadeIn {
-			from { opacity: 0; transform: translateY(10px);}
-			to { opacity: 1; transform: none;}
-		}
-		/* Upcoming Events Main Heading */
-		.upcoming-main-heading {
-			font-size: 2.5rem;
-			font-weight: 800;
-			color: var(--primary-dark);
-			margin-bottom: 1.2rem;
-			letter-spacing: -1.2px;
-			text-align: center;
-		}
-		@media (max-width: 600px) {
-			.upcoming-main-heading {
-				font-size: 1.5rem;
-			}
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events & Conferences — Sivasakthi Science Foundation™</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
+    
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 100px 40px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    
+    /* Floating Dots Animation */
+    .dots { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .dot { position: absolute; border-radius: 50%; background: rgba(167,139,250,0.25); animation: float linear infinite; }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(-120px) scale(0.6); opacity: 0; }
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 7px 18px;
+      font-size: 12px; color: var(--lilac); text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--lavender); }
+    .hero-sub { max-width: 800px; margin: 0 auto; font-size: 18px; color: rgba(196,181,253,0.86); }
+
+    /* ─── CONTENT ─── */
+    section { padding: 80px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--violet); }
+    
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--plum); margin-bottom: 20px; }
+
+    /* ─── CARDS & GRID ─── */
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-top: 40px; }
+    .pillar-card {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 22px;
+      padding: 40px; transition: transform .22s ease, box-shadow .22s ease;
+      display: flex; flex-direction: column;
+      box-shadow: 0 10px 30px rgba(74,16,128,0.04);
+    }
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 16px 42px rgba(74,16,128,0.11); border-color: var(--lavender); }
+    .pillar-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--mist); display: flex; align-items: center; justify-content: center; color: var(--violet); margin-bottom: 20px; font-size: 20px; }
+    .pillar-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--plum); margin-bottom: 15px; }
+    .pillar-card p { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+    
+    .info-list { list-style: none; margin-bottom: 20px; }
+    .info-list li { font-size: 14px; color: var(--muted); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .info-list li i { color: var(--violet); width: 16px; text-align: center; }
+
+    .event-img { width: 100%; border-radius: 14px; margin: 15px 0; border: 1px solid var(--mist); transition: transform .3s; }
+    .event-img:hover { transform: scale(1.02); }
+
+    /* ─── BUTTONS ─── */
+    .btn-gradient {
+      display: inline-block; padding: 12px 28px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      color: white; text-decoration: none; font-weight: 600; font-size: 14px;
+      transition: all 0.2s; align-self: flex-start; border: none; cursor: pointer;
+    }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(124,58,237,0.3); }
+
+    .btn-outline {
+      display: inline-block; padding: 10px 24px; border-radius: 10px;
+      border: 1.5px solid var(--violet); color: var(--violet);
+      text-decoration: none; font-weight: 600; font-size: 14px;
+      transition: all 0.2s; align-self: flex-start;
+    }
+    .btn-outline:hover { background: var(--violet); color: white; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+  </style>
 </head>
 <body>
-	<header>
-		<div class="container">
-			<div class="navbar">
-				<a href="index.html" class="navbar-logo">
-					<img src="images/logo.png" alt="Sivasakthi Foundation Logo">
-					Sivasakthi Foundation
-				</a>
-				<nav aria-label="Main navigation">
-					<div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<ul class="nav-menu" id="main-menu">
-						<li>
-							<a href="#" aria-haspopup="true" aria-expanded="false">About Us</a>
-							<ul>
-								<li><a href="./AboutUs.html">About Us</a></li>
-								<li><a href="./History and Background.html">History & Background</a></li>
-								<li><a href="./Missionstatement.html">Our Mission</a></li>
-								<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-								<li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" aria-haspopup="true" aria-expanded="false">Projects</a>
-							<ul>
-								<li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-								<li><a href="Ai.html">AI and Deep Learning</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#" aria-haspopup="true" aria-expanded="false">Get Involved</a>
-							<ul>
-								<li><a href="./GetInvolved.html">Get Involved</a></li>
-								<li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-								<li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-							</ul>
-						</li>
-						<li><a href="contact-us/index.html">Contact Us</a></li>
-					</ul>
-				</nav>
-				<div class="navbar-social">
-					<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-					<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-					<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-				</div>
-			</div>
-		</div>
-	</header>
 
-	<section class="hero">
-		<h1>Events and Conferences</h1>
-		<p>
-			Fostering a vibrant community of scientists, educators, and enthusiasts through impactful events and conferences.
-		</p>
-	</section>
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
 
-	<main>
-		<section>
-			<p>
-				At Sivasakthi Science Foundation, our events and conferences provide opportunities for networking, learning, and collaboration, advancing our mission to support science research, training, and education.
-			</p>
-		</section>
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Events & Conferences</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./History and Background.html">History & Background</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Focus Areas <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a>
+              <a href="Ai.html">AI & Deep Learning</a>
+              <a href="./BioInfo.html">Bioinformatics</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-		<hr>
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="dots">
+      <div class="dot" style="width:8px;height:8px;left:15%;top:70%;animation-duration:6s;"></div>
+      <div class="dot" style="width:5px;height:5px;left:30%;top:80%;animation-duration:8s;animation-delay:1.5s;"></div>
+      <div class="dot" style="width:10px;height:10px;left:55%;top:85%;animation-duration:7s;animation-delay:0.7s;"></div>
+    </div>
+    <div class="container fade-up">
+      <div class="hero-badge"><i class="fa-solid fa-calendar-star"></i> Knowledge Sharing</div>
+      <h1>Events & <em>Conferences</em></h1>
+      <p class="hero-sub">Fostering a vibrant community of scientists and educators through impactful dialogue, collaborative workshops, and global scientific forums.</p>
+    </div>
+  </section>
 
-		<!-- New Upcoming Events Page Section -->
-		<section>
-			<h1 class="upcoming-main-heading">Upcoming Events</h1>
-			<p style="text-align:center;">
-				Stay informed about our upcoming events and mark your calendars. Join us to engage with leading experts, participate in workshops, and stay updated on the latest developments in science.
-			</p>
-			<ul class="info-list" style="text-align:center; list-style: none; padding-left: 0;">
-				<li><strong>No upcoming events at this time.</strong> Please check back soon or follow us on social media for updates.</li>
-			</ul>
-		</section>
+  <section style="background: var(--soft-bg);">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+        <div class="section-eyebrow" style="justify-content: center;">Upcoming Schedule</div>
+        <h2 class="section-title">Stay Informed</h2>
+        <p>Join us to engage with leading experts and participate in specialized workshops. Mark your calendars for the following sessions.</p>
+        
+        <div style="margin-top: 30px; padding: 30px; border: 1px dashed var(--lavender); border-radius: 20px; color: var(--muted); background: white;">
+          <i class="fa-solid fa-calendar-day" style="font-size: 2rem; color: var(--lilac); margin-bottom: 10px;"></i>
+          <p><strong>No upcoming events at this time.</strong><br>Please check back soon or follow us on social media for real-time updates.</p>
+        </div>
+      </div>
 
-		<hr>
+      <div class="section-eyebrow">Program Highlights</div>
+      <h2 class="section-title">Foundation Initiatives</h2>
 
-		<section>
-			<h2>Past Events</h2>
-			<p>
-				Explore some of our past events to see the impact and reach of our initiatives. We have hosted numerous conferences, workshops, and seminars that have brought together the brightest minds in science and education.
-			</p>
-			<h4>BGDB at PAG31</h4>
-			<a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html">
-				<img src="./images/pag31-poster.png" alt="PAG31 poster" class="event-img" loading="lazy">
-			</a>
-			<a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html" class="btn">Learn More</a>
-		</section>
+      <div class="grid-container">
+        
+        <!-- Past Event Pillar -->
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <h3>Past Events</h3>
+          <p>Explore the impact of our previous initiatives. We have hosted numerous conferences that brought together the brightest minds in genomics.</p>
+          <div style="margin-top: auto;">
+            <p><strong>Featured: BGDB at PAG31</strong></p>
+            <a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html">
+              <img src="./images/pag31-poster.png" alt="PAG31 poster" class="event-img">
+            </a>
+            <a href="https://www.bharatgenomedatabase.org/About-Us/PAG-DEV/BGDB@PAG31/index.html" class="btn-outline">Learn More</a>
+          </div>
+        </div>
 
-		<hr>
+        <!-- Annual Conference Pillar -->
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-podium"></i></div>
+          <h3>Annual Conference</h3>
+          <p>Our flagship event bringing together researchers, educators, and industry leaders to discuss the future of science and education.</p>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-calendar"></i> Date: Coming Soon</li>
+            <li><i class="fa-solid fa-location-dot"></i> Location: To be announced</li>
+          </ul>
+          <p>Registration will open 3 months prior to the event.</p>
+        </div>
 
-		<section>
-			<h2>Annual Conference</h2>
-			<p>
-				Our Annual Conference is the cornerstone of our event calendar. This flagship event brings together researchers, educators, students, and industry leaders to share knowledge, present research findings, and discuss the future of science and education.
-			</p>
-			<ul class="info-list">
-				<li><strong>Date:</strong> Coming Soon</li>
-				<li><strong>Location:</strong> To be announced</li>
-			</ul>
-		</section>
+        <!-- Workshops Pillar -->
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Workshops & Training</h3>
+          <p>Variety of hands-on programs throughout the year to enhance skills in specific areas of bioinformatics and life sciences.</p>
+          <ul class="info-list">
+            <li><i class="fa-solid fa-check"></i> Hands-on training with experts</li>
+            <li><i class="fa-solid fa-laptop"></i> Online and in-person sessions</li>
+            <li><i class="fa-solid fa-award"></i> Certification upon completion</li>
+          </ul>
+          <a href="https://forms.gle/H4EwXs8z7QE5DUcM9" class="btn-gradient" target="_blank">Register Interest</a>
+        </div>
 
-		<hr>
+      </div>
 
-		<section>
-			<h2>Workshops and Training Programs</h2>
-			<p>
-				We offer a variety of workshops and training programs throughout the year to enhance skills and knowledge in specific areas of science and education.
-			</p>
-			<ul class="info-list">
-				<li>Hands-on training with experts</li>
-				<li>Online and in-person sessions</li>
-				<li>Certification upon completion</li>
-			</ul>
-		</section>
+    </div>
+  </section>
 
-		<hr>
+  <section>
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+        <div class="fade-up">
+          <div class="section-eyebrow">Engagement</div>
+          <h2 class="section-title">Support & Sponsorship</h2>
+          <p>We offer various sponsorship opportunities for our events. If your organization is interested in supporting scientific advancement, please contact our team for a sponsorship prospectus.</p>
+          <div style="margin-top: 25px;">
+             <a href="mailto:sponsorship@sivasakthifoundation.org" class="btn-outline"><i class="fa-solid fa-envelope"></i> Contact Sponsorship Team</a>
+          </div>
+        </div>
+        <div class="pillar-card fade-up" style="background: var(--plum); color: white;">
+           <h3 style="color: white;">Stay Updated</h3>
+           <p style="color: rgba(196,181,253,0.7);">Sign up for our upcoming newsletter to receive alerts about registration dates and speaker announcements.</p>
+           <div style="display: flex; gap: 10px; margin-top: 20px;">
+              <input type="email" placeholder="Your email address" style="flex: 1; padding: 12px; border-radius: 8px; border: none; outline: none;">
+              <button class="btn-gradient" style="white-space: nowrap;">Notify Me</button>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<section>
-			<h2>How to Register</h2>
-			<p>
-				To register for any of our events or to learn more, please visit our registration page or contact us at <a href="mailto:education@sivasakthifoundation.org">education@sivasakthifoundation.org</a>.
-				Early registration is encouraged as spaces are limited.
-			</p>
-			<a href="https://forms.gle/H4EwXs8z7QE5DUcM9" class="btn" target="_blank" rel="noopener">Register Here</a>
-		</section>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Vision Statement copy.html">Our Vision</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="Privacy Policy and Terms of Use.html">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
 
-		<hr>
-
-		<section>
-			<h2>Sponsorship Opportunities</h2>
-			<p>
-				We offer various sponsorship opportunities for our events. If your organization is interested in sponsoring an event, please contact us at <a href="mailto:sponsorship@sivasakthifoundation.org">sponsorship@sivasakthifoundation.org</a> for more information.
-			</p>
-		</section>
-
-		<hr>
-
-		<section>
-			<h2>Stay Updated</h2>
-			<div class="newsletter">
-				<p><strong>Newsletter Sign-Up:</strong> Coming soon</p>
-				<div class="social-links">
-					<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-					<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-					<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-				</div>
-			</div>
-		</section>
-	</main>
-
-	<footer>
-		<div class="footer-social">
-			<a href="https://x.com/SSF_handle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-			<a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-			<a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-		</div>
-		<div>
-			&copy; 2024 Sivasakthi Foundation. All Rights Reserved.
-		</div>
-		<div class="footer-links">
-			<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms and Conditions</a>
-		</div>
-	</footer>
-	<script>
-		// Hamburger menu toggle for mobile
-		const hamburger = document.getElementById('hamburger');
-		const menu = document.getElementById('main-menu');
-		hamburger.addEventListener('click', () => {
-			menu.classList.toggle('open');
-		});
-		hamburger.addEventListener('keypress', (e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				menu.classList.toggle('open');
-			}
-		});
-		// Close menu when clicking outside
-		document.addEventListener('click', (e) => {
-			if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-				menu.classList.remove('open');
-			}
-		});
-	</script>
 </body>
 </html>

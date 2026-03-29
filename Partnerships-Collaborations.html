@@ -1,390 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Partners & Collaborators - Sivasakthi Science Foundation</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<style>
-		:root {
-			--primary: #1a237e;
-			--accent: #ffd600;
-			--bg: #f7f9fb;
-			--white: #fff;
-			--shadow: 0 4px 24px rgba(26,35,126,0.10);
-			--radius: 18px;
-			--font-main: 'Montserrat', Arial, sans-serif;
-		}
-		body {
-			font-family: var(--font-main);
-			background: var(--bg);
-			color: #23233b;
-			margin: 0;
-			padding: 0;
-		}
-		.navbar {
-			background: var(--primary);
-			box-shadow: var(--shadow);
-			padding: 0.7rem 0;
-		}
-		.navbar-brand {
-			display: flex;
-			align-items: center;
-			font-weight: 700;
-			font-size: 1.2rem;
-			color: var(--white);
-			text-decoration: none;
-			letter-spacing: 1px;
-		}
-		.navbar-brand img {
-			height: 44px;
-			margin-right: 12px;
-		}
-		.navbar-nav {
-			display: flex;
-			gap: 1.2rem;
-			margin-left: auto;
-		}
-		.nav-link {
-			color: var(--white);
-			text-decoration: none;
-			font-weight: 500;
-			transition: color 0.2s;
-			padding: 0.3rem 0.7rem;
-			border-radius: 8px;
-		}
-		.nav-link:hover, .nav-item.active .nav-link {
-			background: var(--accent);
-			color: var(--primary);
-		}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partners & Collaborators — Sivasakthi Science Foundation™</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-		/* Hero Section */
-		.hero-section {
-			background: linear-gradient(rgba(26,35,126,0.85), rgba(26,35,126,0.85)), url('images/partnership-handshake-innovation-corporate-business-concept.jpg') center/cover no-repeat;
-			color: var(--white);
-			padding: 110px 0 100px 0;
-			text-align: center;
-			position: relative;
-		}
-		.hero-section h1 {
-			font-size: 3rem;
-			font-weight: 700;
-			letter-spacing: 2px;
-			margin-bottom: 18px;
-		}
-		.hero-section p {
-			font-size: 1.25rem;
-			max-width: 700px;
-			margin: 0 auto 32px auto;
-			line-height: 1.7;
-			color: #e3e6f3;
-		}
-		.hero-section .btn {
-			background: var(--accent);
-			color: var(--primary);
-			font-weight: 700;
-			border-radius: 30px;
-			padding: 14px 38px;
-			font-size: 1.1rem;
-			box-shadow: 0 2px 10px rgba(26,35,126,0.10);
-			border: none;
-			transition: background 0.2s, color 0.2s, transform 0.2s;
-			cursor: pointer;
-			margin-top: 10px;
-			outline: none;
-		}
-		.hero-section .btn:hover {
-			background: #fff176;
-			color: var(--primary);
-			transform: translateY(-2px) scale(1.04);
-		}
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		/* Partners Grid */
-		.partners-section {
-			max-width: 1200px;
-			margin: 40px auto 0 auto;
-			padding: 0 20px 60px 20px;
-			position: relative;
-			z-index: 2;
-		}
-		.section-title {
-			font-size: 2.2rem;
-			font-weight: 700;
-			margin: 40px 0 18px 0;
-			text-align: center;
-			color: var(--primary);
-			letter-spacing: 1px;
-		}
-		.partners-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-			gap: 32px;
-			margin-top: 32px;
-		}
-		.partner-card {
-			background: var(--white);
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			padding: 32px 22px 24px 22px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			transition: box-shadow 0.2s, transform 0.2s;
-			position: relative;
-			overflow: hidden;
-		}
-		.partner-card:hover {
-			box-shadow: 0 8px 32px rgba(26,35,126,0.16);
-			transform: translateY(-6px) scale(1.03);
-		}
-		.partner-logo {
-			width: 90px;
-			height: 90px;
-			object-fit: contain;
-			margin-bottom: 18px;
-			border-radius: 12px;
-			background: #f3f3f3;
-			box-shadow: 0 2px 10px rgba(26,35,126,0.06);
-			transition: filter 0.2s;
-			filter: grayscale(0.18);
-			padding: 8px;
-		}
-		.partner-card:hover .partner-logo {
-			filter: grayscale(0) drop-shadow(0 2px 12px #b3b3b3);
-		}
-		.partner-name {
-			font-size: 1.18rem;
-			font-weight: 700;
-			color: var(--primary);
-			margin-bottom: 8px;
-		}
-		.partner-desc {
-			font-size: 1rem;
-			color: #444;
-			margin-bottom: 12px;
-			min-height: 48px;
-		}
-		.partner-link {
-			color: var(--accent);
-			font-weight: 600;
-			text-decoration: underline;
-			font-size: 0.98rem;
-			transition: color 0.2s;
-		}
-		.partner-link:hover {
-			color: #ffea00;
-		}
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
 
-		/* Call to Action */
-		.cta-section {
-			background: linear-gradient(90deg, var(--primary) 60%, #3949ab 100%);
-			color: var(--white);
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			padding: 44px 30px 36px 30px;
-			max-width: 700px;
-			margin: 0 auto 40px auto;
-			text-align: center;
-			margin-top: 30px;
-		}
-		.cta-section .cta-title {
-			font-size: 2rem;
-			font-weight: 700;
-			color: var(--accent);
-			margin-bottom: 16px;
-		}
-		.cta-section a {
-			color: var(--accent);
-			font-weight: bold;
-			text-decoration: underline;
-			font-size: 1.08rem;
-		}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
 
-		/* Footer */
-		.footer {
-			background: var(--primary);
-			color: var(--white);
-			padding: 32px 0 12px 0;
-			text-align: center;
-			border-top-left-radius: 32px;
-			border-top-right-radius: 32px;
-			margin-top: 60px;
-		}
-		.footer .social-icons a {
-			color: var(--white);
-			margin: 0 12px;
-			font-size: 1.6rem;
-			transition: color 0.2s;
-		}
-		.footer .social-icons a:hover {
-			color: var(--accent);
-		}
-		.footer a {
-			color: var(--accent);
-			text-decoration: underline;
-		}
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
 
-		/* Responsive */
-		@media (max-width: 900px) {
-			.partners-grid {
-				grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-				gap: 22px;
-			}
-			.hero-section h1 {
-				font-size: 2.1rem;
-			}
-			.hero-section {
-				padding: 70px 0 40px 0;
-			}
-		}
-		@media (max-width: 600px) {
-			.partners-section {
-				padding: 0 4px 40px 4px;
-			}
-			.partners-grid {
-				grid-template-columns: 1fr;
-				gap: 14px;
-			}
-			.partner-card {
-				padding: 22px 8px 18px 8px;
-			}
-			.hero-section {
-				padding: 48px 0 24px 0;
-			}
-		}
-	</style>
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
+    
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 100px 40px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    
+    .dots { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .dot { position: absolute; border-radius: 50%; background: rgba(167,139,250,0.25); animation: float linear infinite; }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(-120px) scale(0.6); opacity: 0; }
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 7px 18px;
+      font-size: 12px; color: var(--lilac); text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--lavender); }
+    .hero-sub { max-width: 800px; margin: 0 auto; font-size: 18px; color: rgba(196,181,253,0.86); }
+
+    /* ─── CONTENT ─── */
+    section { padding: 80px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; justify-content: center; }
+    .section-eyebrow::before, .section-eyebrow::after { content: ''; width: 24px; height: 2px; background: var(--violet); }
+    
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--plum); margin-bottom: 20px; text-align: center; }
+    .section-desc { text-align: center; max-width: 700px; margin: 0 auto 50px auto; color: var(--muted); font-size: 16px; }
+
+    /* ─── PARTNER GRID ─── */
+    .partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    
+    .partner-card {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 20px;
+      padding: 40px 30px; display: flex; flex-direction: column; align-items: center; text-align: center;
+      transition: all 0.3s ease; box-shadow: 0 10px 35px rgba(74,16,128,0.03);
+    }
+    .partner-card:hover {
+      transform: translateY(-5px); border-color: var(--lavender);
+      box-shadow: 0 16px 45px rgba(74,16,128,0.08);
+    }
+    
+    .partner-logo-wrap {
+      height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+    }
+    .partner-logo {
+      max-height: 100%; max-width: 140px; object-fit: contain;
+      filter: grayscale(1); opacity: 0.6; transition: all 0.3s ease;
+    }
+    .partner-card:hover .partner-logo { filter: grayscale(0); opacity: 1; }
+    
+    .partner-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--plum); margin-bottom: 12px; }
+    .partner-card p { font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; flex-grow: 1; }
+    
+    .btn-outline {
+      display: inline-block; padding: 8px 20px; border-radius: 8px;
+      border: 1px solid var(--mist); color: var(--violet); text-decoration: none;
+      font-weight: 600; font-size: 13px; transition: all 0.2s;
+    }
+    .partner-card:hover .btn-outline { border-color: var(--violet); background: var(--soft-bg); }
+    .btn-outline:hover { background: var(--violet) !important; color: white !important; }
+
+    /* ─── CTA SECTION ─── */
+    .cta-box {
+      margin-top: 80px; padding: 50px 40px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--deep), var(--royal));
+      color: white; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;
+      box-shadow: 0 20px 50px rgba(74,16,128,0.15);
+    }
+    .cta-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 16px; }
+    .cta-box p { color: rgba(196,181,253,0.86); font-size: 16px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .btn-cta { 
+      display: inline-block; background: white; color: var(--royal); 
+      padding: 14px 34px; border-radius: 12px; text-decoration: none; 
+      font-weight: 600; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+  </style>
 </head>
 <body>
 
-	<!-- Navbar -->
-	<nav class="navbar">
-		<div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;">
-			<a class="navbar-brand" href="index.html">
-				<img src="images/logo.png" alt="SSF Logo">
-				Sivasakthi Science Foundation
-			</a>
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="./AboutUs.html">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="./GetInvolved.html">Get Involved</a></li>
-				<li class="nav-item active"><a class="nav-link" href="#">Partners</a></li>
-				<li class="nav-item"><a class="nav-link" href="contact-us/index.html">Contact</a></li>
-			</ul>
-		</div>
-	</nav>
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
 
-	<!-- Hero Section -->
-	<section class="hero-section">
-		<h1>Partners & Collaborators</h1>
-		<p>
-			Building strong alliances for impactful science.<br>
-			We believe in the power of collaboration to advance research, training, and education. Our partners span leading universities, research centers, non-profits, government, and industry.
-		</p>
-		<a href="#cta" class="btn">Become a Partner</a>
-	</section>
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Partners & Collaborators</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./History and Background.html">History & Background</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Get Involved <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./GetInvolved.html">Get Involved</a>
+              <a href="./events-and-conferences.html">Events & Conferences</a>
+              <a href="./Partnerships-Collaborations.html" style="color:var(--violet); font-weight:600;">Partners & Collabs</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-	<!-- Partners Grid Section -->
-	<section class="partners-section">
-		<div class="section-title">Our Esteemed Partners</div>
-		<div class="partners-grid">
-			<!-- Partner Card 1 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/UCB.png" alt="UC Berkeley Logo" />
-				<div class="partner-name">UC Berkeley</div>
-				<div class="partner-desc">World-leading research university fostering innovation and global impact.</div>
-				<a class="partner-link" href="https://www.berkeley.edu" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 2 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/UA.png" alt="University of Arizona Logo" />
-				<div class="partner-name">University of Arizona</div>
-				<div class="partner-desc">Pioneering research and education in science and technology.</div>
-				<a class="partner-link" href="https://www.arizona.edu" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 3 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/cornell.png" alt="Cornell University Logo" />
-				<div class="partner-name">Cornell University</div>
-				<div class="partner-desc">Ivy League institution advancing knowledge and societal progress.</div>
-				<a class="partner-link" href="https://www.cornell.edu" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 4 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/WSU.png" alt="Washington State University Logo" />
-				<div class="partner-name">Washington State University</div>
-				<div class="partner-desc">Driving innovation and research for a better tomorrow.</div>
-				<a class="partner-link" href="https://www.wsu.edu" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 5 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/cyverse.png" alt="CyVerse Logo" />
-				<div class="partner-name">CyVerse</div>
-				<div class="partner-desc">Empowering life science research with advanced cyberinfrastructure.</div>
-				<a class="partner-link" href="https://www.cyverse.org" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 6 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/mcgill.png" alt="McGill University Logo" />
-				<div class="partner-name">McGill University</div>
-				<div class="partner-desc">Global leader in research, teaching, and innovation.</div>
-				<a class="partner-link" href="https://www.mcgill.ca" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 7 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/rk.jpeg" alt="Ramakrishna Mission Hospital Logo" />
-				<div class="partner-name">Ramakrishna Mission Hospital</div>
-				<div class="partner-desc">Delivering compassionate healthcare and community service.</div>
-				<a class="partner-link" href="https://rkmshospitalvrindavan.rkmm.org/" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 8 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/vit.png" alt="VIT Logo" />
-				<div class="partner-name">VIT</div>
-				<div class="partner-desc">Excellence in technical education and research innovation.</div>
-				<a class="partner-link" href="https://vit.ac.in/" target="_blank">Visit Website</a>
-			</div>
-			<!-- Partner Card 9 -->
-			<div class="partner-card">
-				<img class="partner-logo" src="images/AmUni.png" alt="Amrita University Logo" />
-				<div class="partner-name">Amrita University</div>
-				<div class="partner-desc">Advancing biotechnology and interdisciplinary research.</div>
-				<a class="partner-link" href="https://www.amrita.edu/school/biotechnology/" target="_blank">Visit Website</a>
-			</div>
-			<!-- Example Placeholder Partner
-			<div class="partner-card">
-				<img class="partner-logo" src="https://via.placeholder.com/90x90?text=Logo" alt="Partner Logo" />
-				<div class="partner-name">Your Organization</div>
-				<div class="partner-desc">Join us as a partner and make a difference in science and society.</div>
-				<a class="partner-link" href="#cta">Become a Partner</a> -->
-			</div>
-		</div>
-	</section>
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="dots">
+      <div class="dot" style="width:8px;height:8px;left:20%;top:60%;animation-duration:5s;"></div>
+      <div class="dot" style="width:6px;height:6px;left:75%;top:75%;animation-duration:7s;animation-delay:1s;"></div>
+    </div>
+    <div class="container fade-up">
+      <div class="hero-badge"><i class="fa-solid fa-globe"></i> Global Network</div>
+      <h1>Partners & <em>Collaborators</em></h1>
+      <p class="hero-sub">Building strong alliances for impactful science. We believe in the power of collaboration to advance global research, training, and education.</p>
+    </div>
+  </section>
 
-	<!-- Call to Action Section -->
-	<section id="cta" class="cta-section">
-		<div class="cta-title">Let's Collaborate!</div>
-		<p>
-			Interested in partnering or collaborating with us?<br>
-			Email us at <a href="mailto:partnerships@ssf.org">partnerships@ssf.org</a> or use our <a href="contact-us/index.html">contact form</a>.<br>
-			Together, we can create a brighter future through science.
-		</p>
-		<a href="mailto:partnerships@ssf.org" class="btn" style="margin-top:18px;background:var(--accent);color:var(--primary);padding:12px 32px;border-radius:30px;display:inline-block;font-weight:700;text-decoration:none;">Contact Us</a>
-	</section>
+  <section style="background: var(--soft-bg);">
+    <div class="container">
+      
+      <div class="fade-up">
+        <div class="section-eyebrow">A Unified Vision</div>
+        <h2 class="section-title">Our Esteemed Partners</h2>
+        <p class="section-desc">Our partners span leading universities, research centers, non-profits, government, and industry. Together, we are pushing the boundaries of scientific discovery.</p>
+      </div>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="social-icons mb-2">
-			<a href="https://x.com/SSF_handle" target="_blank" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-			<a href="https://www.instagram.com/ssf.iinsta" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-			<a href="https://youtube.com/@sivasakthifoundation" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-		</div>
-		<div>
-			&copy; 2024 Sivasakthi Science Foundation. All Rights Reserved.<br>
-			<a href="Privacy Policy and Terms of Use.html">Privacy Policy & Terms</a>
-		</div>
-	</footer>
+      <div class="partners-grid">
+        
+        <!-- Partner 1 -->
+        <div class="partner-card fade-up">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/UCB.png" alt="UC Berkeley Logo" />
+          </div>
+          <h3>UC Berkeley</h3>
+          <p>World-leading research university fostering innovation, computational sciences, and global impact.</p>
+          <a class="btn-outline" href="https://www.berkeley.edu" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="partner-card fade-up delay-1">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/UA.png" alt="University of Arizona Logo" />
+          </div>
+          <h3>University of Arizona</h3>
+          <p>Pioneering research and education in life sciences, genomics, and technology.</p>
+          <a class="btn-outline" href="https://www.arizona.edu" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 3 -->
+        <div class="partner-card fade-up delay-2">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/cornell.png" alt="Cornell University Logo" />
+          </div>
+          <h3>Cornell University</h3>
+          <p>Ivy League institution advancing knowledge, agricultural sciences, and societal progress.</p>
+          <a class="btn-outline" href="https://www.cornell.edu" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 4 -->
+        <div class="partner-card fade-up">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/WSU.png" alt="Washington State University Logo" />
+          </div>
+          <h3>Washington State University</h3>
+          <p>Driving innovation and interdisciplinary research for a more sustainable tomorrow.</p>
+          <a class="btn-outline" href="https://www.wsu.edu" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 5 -->
+        <div class="partner-card fade-up delay-1">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/cyverse.png" alt="CyVerse Logo" />
+          </div>
+          <h3>CyVerse</h3>
+          <p>Empowering global life science research with advanced, scalable cyberinfrastructure.</p>
+          <a class="btn-outline" href="https://www.cyverse.org" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 6 -->
+        <div class="partner-card fade-up delay-2">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/mcgill.png" alt="McGill University Logo" />
+          </div>
+          <h3>McGill University</h3>
+          <p>A global leader in research, teaching, and pioneering bioinformatics innovation.</p>
+          <a class="btn-outline" href="https://www.mcgill.ca" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 7 -->
+        <div class="partner-card fade-up">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/rk.jpeg" alt="Ramakrishna Mission Hospital Logo" />
+          </div>
+          <h3>Ramakrishna Mission Hospital</h3>
+          <p>Delivering compassionate healthcare, medical research, and community service.</p>
+          <a class="btn-outline" href="https://rkmshospitalvrindavan.rkmm.org/" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 8 -->
+        <div class="partner-card fade-up delay-1">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/vit.png" alt="VIT Logo" />
+          </div>
+          <h3>VIT</h3>
+          <p>Excellence in technical education, engineering, and research innovation.</p>
+          <a class="btn-outline" href="https://vit.ac.in/" target="_blank">Visit Website</a>
+        </div>
+
+        <!-- Partner 9 -->
+        <div class="partner-card fade-up delay-2">
+          <div class="partner-logo-wrap">
+             <img class="partner-logo" src="images/AmUni.png" alt="Amrita University Logo" />
+          </div>
+          <h3>Amrita University</h3>
+          <p>Advancing biotechnology, deep learning, and interdisciplinary scientific research.</p>
+          <a class="btn-outline" href="https://www.amrita.edu/school/biotechnology/" target="_blank">Visit Website</a>
+        </div>
+
+      </div>
+
+      <!-- CTA Box -->
+      <div class="cta-box fade-up">
+        <h2>Let's Collaborate</h2>
+        <p>Are you an institution or researcher interested in partnering with us? Together, we can create a brighter future through science.</p>
+        <a href="mailto:partnerships@sivasakthifoundation.org" class="btn-cta">Contact Partnerships Team</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Vision Statement copy.html">Our Vision</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="Privacy Policy and Terms of Use.html">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
