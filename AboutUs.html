@@ -1,440 +1,967 @@
 <!DOCTYPE html>
-<html lang
-<html class="no-js"> 
-	<head>
-		<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Sivasakthi Science Foundation&#8482;</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="logo.ico">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
-	<link rel="stylesheet" href="css/news.css">
-	<link rel="stylesheet" href="css/events.css">
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --glass:      rgba(255,255,255,0.07);
+      --glass-b:    rgba(255,255,255,0.18);
+    }
 
+    html { scroll-behavior: smooth; }
 
-	<link rel="stylesheet" href="css/style.css">
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
 
-	<link rel="stylesheet" href="css/logo.css"
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--lilac);
+      letter-spacing: 0.04em;
+    }
+    .topbar a { color: var(--lilac); text-decoration: none; margin-right: 20px; transition: color .2s; }
+    .topbar a:hover { color: var(--white); }
+    .topbar-social a { margin-right: 0; margin-left: 16px; font-size: 15px; }
 
+    /* ─── HEADER / NAV ─── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: white;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--plum);
+      letter-spacing: 0.01em;
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
-						<a href="./blog.html">Blog</a>
-						<a href="contact-us/index.html">Contact</a>
-					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<!--<a href="#" class="grow"><i class="icon-facebook2"></i></a>-->
-						<a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-						<a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-<header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a {
+      display: block;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all .2s;
+      letter-spacing: 0.01em;
+    }
+    nav ul li > a:hover,
+    nav ul li > a.active { background: var(--mist); color: var(--violet); }
 
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
+    .dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 14px;
+      box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+      padding: 8px;
+      z-index: 200;
+    }
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: 0;
+        right: 0;
+        height: 12px;
+      }
+    .dropdown.open .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block;
+      padding: 9px 16px;
+      font-size: 13.5px;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      font-weight: 400;
+    }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--violet), var(--royal)) !important;
+      color: var(--white) !important;
+      border-radius: 10px !important;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 14px rgba(124,58,237,0.3);
+      transition: transform .2s, box-shadow .2s !important;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,58,237,0.4) !important; background: var(--mist) !important; color: var(--white) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--plum) 0%, var(--deep) 40%, var(--royal) 100%);
+    }
+
+    /* Decorative orbs */
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+    }
+    .hero::before {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--violet), transparent 70%);
+      top: -120px; right: -80px;
+    }
+    .hero::after {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #9333ea, transparent 70%);
+      bottom: -100px; left: -60px;
+    }
+
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 12px;
+      color: var(--lilac);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .hero-badge i { font-size: 10px; }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--lavender), var(--lilac));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(196,181,253,0.8);
+      margin-top: 18px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* Floating dots */
+    .dots {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    }
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(167,139,250,0.25);
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0%   { transform: translateY(0) scale(1); opacity: 0.3; }
+      50%  { opacity: 0.7; }
+      100% { transform: translateY(-120px) scale(0.6); opacity: 0; }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 80px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--violet);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      color: var(--plum);
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-top: 12px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ─── ORG SECTION ─── */
+    .org-section {
+      background: #faf8ff;
+    }
+    .org-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .org-header .section-eyebrow { justify-content: center; }
+    .org-header .section-eyebrow::before { display: none; }
+    .org-header .section-sub { margin: 12px auto 0; }
+
+    /* Card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .org-card {
+      background: var(--white);
+      border: 1px solid #ede9fe;
+      border-radius: 20px;
+      padding: 28px 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all .25s ease;
+      position: relative;
+      overflow: hidden;
+      group: true;
+    }
+    .org-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--mist), transparent);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .org-card:hover {
+      border-color: var(--lavender);
+      box-shadow: 0 12px 40px rgba(124,58,237,0.12);
+      transform: translateY(-3px);
+    }
+    .org-card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 44px; height: 44px;
+      background: var(--mist);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      color: var(--violet);
+      transition: background .25s, color .25s;
+      position: relative; z-index: 1;
+    }
+    .org-card:hover .card-icon {
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      color: var(--white);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--plum);
+      position: relative; z-index: 1;
+      transition: color .2s;
+    }
+    .org-card:hover .card-title { color: var(--violet); }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      position: relative; z-index: 1;
+    }
+
+    .card-arrow {
+      margin-top: auto;
+      font-size: 12px;
+      color: var(--lavender);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative; z-index: 1;
+      transition: gap .2s, color .2s;
+    }
+    .org-card:hover .card-arrow { gap: 10px; color: var(--violet); }
+
+    /* ─── FEATURE STRIP ─── */
+    .feature-strip {
+      background: linear-gradient(135deg, var(--deep), var(--royal));
+      padding: 70px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(167,139,250,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(124,58,237,0.2) 0%, transparent 50%);
+    }
+    .feature-grid {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-item { text-align: center; }
+    .feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--lavender), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .feature-label {
+      font-size: 13px;
+      color: rgba(196,181,253,0.85);
+      letter-spacing: 0.06em;
+      font-weight: 400;
+    }
+
+    /* ─── PLATFORMS SECTION ─── */
+    .platforms-section { background: var(--white); }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .platform-visual {
+      background: linear-gradient(135deg, var(--plum), var(--royal));
+      border-radius: 24px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .platform-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(167,139,250,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(124,58,237,0.4) 0%, transparent 50%);
+    }
+    .platform-visual-inner {
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .platform-visual-inner i {
+      font-size: 64px;
+      background: linear-gradient(135deg, var(--lavender), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .platform-visual-inner p {
+      color: rgba(196,181,253,0.8);
+      font-size: 13px;
+      margin-top: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .platform-list { list-style: none; margin-top: 28px; }
+    .platform-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--mist);
+    }
+    .platform-list li:last-child { border-bottom: none; }
+    .pill-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--mist);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--violet); font-size: 15px;
+    }
+    .platform-list li strong { display: block; font-size: 14px; font-weight: 600; color: var(--plum); }
+    .platform-list li span { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--plum);
+      color: rgba(196,181,253,0.7);
+      padding: 60px 40px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(167,139,250,0.15);
+    }
+    .footer-brand strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .footer-brand span { font-size: 13px; }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(167,139,250,0.25);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--lavender);
+      font-size: 15px;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .footer-social a:hover {
+      background: rgba(167,139,250,0.15);
+      border-color: var(--lavender);
+      color: var(--white);
+    }
+    .footer-links h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lilac);
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      display: block;
+      color: rgba(196,181,253,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(167,139,250,0.5);
+    }
+    .footer-bottom a { color: rgba(167,139,250,0.6); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--lavender); }
+
+    /* ─── HAMBURGER (mobile) ─── */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--plum); border-radius: 2px; transition: all .3s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+      .platform-visual { display: none; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 700px) {
+      .topbar { padding: 8px 20px; }
+      .nav-inner { padding: 0 20px; }
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 60px 20px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      footer { padding: 40px 20px 24px; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div>
+      
+    </div>
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Sivasakthi Science Foundation" style="width: 100%; height: 100%; object-fit: contain;"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation&#8482;</strong>
+          <span>Advancing Research &amp; Education</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+              <a href="./Missionstatement.html">Mission Statement</a>
+              <a href="./History and Background.html">History &amp; Background</a>
+              <a href="./Financial Transparency.html">Financial Transparency</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Funding <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">BGDB Database</a>
+              <a href="Ai.html">AI &amp; Deep Learning</a>
+              <a href="./BioInfo.html">Bioinformatics</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Advisory <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./IncResFund.html">Incubator Research Fund</a>
+              <a href="./SustConsult.html">Sustainability Consulting</a>
+              <a href="./GenDbConsult.html">Genome Database Consulting</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Get Involved <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./GetInvolved.html">Get Involved</a>
+              <a href="./events-and-conferences.html">Events &amp; Conferences</a>
+              <a href="./Partnerships-Collaborations.html">Partnerships &amp; Collabs</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamburger" onclick="this.classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+
+    <!-- Floating particles -->
+    <div class="dots">
+      <div class="dot" style="width:8px;height:8px;left:15%;top:70%;animation-duration:6s;animation-delay:0s;"></div>
+      <div class="dot" style="width:5px;height:5px;left:30%;top:80%;animation-duration:8s;animation-delay:1.5s;"></div>
+      <div class="dot" style="width:10px;height:10px;left:55%;top:85%;animation-duration:7s;animation-delay:0.7s;"></div>
+      <div class="dot" style="width:6px;height:6px;left:75%;top:65%;animation-duration:9s;animation-delay:2s;"></div>
+      <div class="dot" style="width:4px;height:4px;left:88%;top:78%;animation-duration:5s;animation-delay:0.3s;"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge fade-up">
+        <i class="fa-solid fa-circle" style="color:var(--lavender);"></i>
+        Science · Research · Education
+      </div>
+      <h1 class="fade-up delay-1">About <em>Our Organization</em></h1>
+      <p class="hero-sub fade-up delay-2">Empowering the future through knowledge, innovation, and collaboration.</p>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <div class="feature-strip">
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-num">10+</div>
+        <div class="feature-label">Years of Impact</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">50+</div>
+        <div class="feature-label">Research Programs</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">200+</div>
+        <div class="feature-label">Collaborators</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">∞</div>
+        <div class="feature-label">Scientific Curiosity</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR ORGANIZATION -->
+  <section class="org-section">
+    <div class="container">
+      <div class="org-header">
+        <div class="section-eyebrow">Our Organization</div>
+        <h2 class="section-title">Learn more about who we are</h2>
+        <p class="section-sub">Explore our mission, vision, and the people who drive our work forward in science and education.</p>
+      </div>
+
+      <div class="card-grid">
+
+        <a href="Vision Statement copy.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+          <div class="card-title">Our Vision</div>
+          <div class="card-desc">A world where scientific knowledge empowers communities and drives meaningful change.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Missionstatement.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <div class="card-title">Mission Statement</div>
+          <div class="card-desc">Our commitment to fostering research, training, and education across emerging sciences.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="History and Background.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+          <div class="card-title">History &amp; Background</div>
+          <div class="card-desc">Tracing our roots and the milestones that have shaped our journey in science.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="GetInvolved.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+          <div class="card-title">Call to Action</div>
+          <div class="card-desc">Join our growing community of researchers, educators, and change-makers.</div>
+          <div class="card-arrow">Get Involved <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Partnerships-Collaborations.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="card-title">Partnerships &amp; Collaborations</div>
+          <div class="card-desc">Building bridges with leading institutions, researchers, and industry partners.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="events-and-conferences.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <div class="card-title">Events &amp; Conferences</div>
+          <div class="card-desc">Connecting minds at symposiums, workshops, and global scientific gatherings.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Programs & Initiatives.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+          <div class="card-title">Programs &amp; Initiatives</div>
+          <div class="card-desc">Our structured programs driving advancement in bioinformatics, AI, and genome research.</div>
+          <div class="card-arrow">Explore <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Board of Trustees.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+          <div class="card-title">Board of Trustees</div>
+          <div class="card-desc">Meet the visionary leaders guiding our foundation's strategic direction.</div>
+          <div class="card-arrow">Meet the Team <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Financial Transparency.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="card-title">Financial Transparency</div>
+          <div class="card-desc">Our commitment to open, accountable stewardship of every resource entrusted to us.</div>
+          <div class="card-arrow">View Reports <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="contact-us/index.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="card-title">Contact Us</div>
+          <div class="card-desc">Reach out to our team — we'd love to hear from researchers, donors, and collaborators.</div>
+          <div class="card-arrow">Get in Touch <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Privacy Policy.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="card-title">Privacy Policy</div>
+          <div class="card-desc">How we collect, use, and protect your personal information.</div>
+          <div class="card-arrow">Read Policy <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <a href="Terms of Use.html" class="org-card">
+          <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div class="card-title">Terms of Use</div>
+          <div class="card-desc">The guidelines governing use of our platforms and digital resources.</div>
+          <div class="card-arrow">Read Terms <i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS DEEP DIVE -->
+  <section class="platforms-section">
+    <div class="container">
+      <div class="two-col">
+        <div class="platform-visual">
+          <div class="platform-visual-inner">
+            <img src="/images/ai.webp" style="width: auto; height: auto; object-fit: contain;">
+            <p>Research · Training · Education</p>
           </div>
         </div>
-      </header>
+        <div>
+          <div class="section-eyebrow">Funding Priorities</div>
+          <h2 class="section-title">Where we direct<br/>our resources</h2>
+          <p class="section-sub">From genome databases to cutting-edge AI, we invest in platforms that define tomorrow's science.</p>
 
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/about.jpg);">
-				<div class="desc animate-box">
-					<h2><strong>About Us </strong></h2>
-					<!--<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
-					<span><a class="btn btn-primary btn-lg" href="#">blog-text</a></span>-->
-				</div>
-			</div>
+          <ul class="platform-list">
+            <li>
+              <div class="pill-icon"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <strong><a href="https://www.bharatgenomedatabase.org/" style="color:var(--plum);text-decoration:none;">BGDB Database</a></strong>
+                <span>The Bharat Genome Database — a landmark RTE platform for genomic research in India.</span>
+              </div>
+            </li>
+            <li>
+              <div class="pill-icon"><i class="fa-solid fa-brain"></i></div>
+              <div>
+                <strong><a href="Ai.html" style="color:var(--plum);text-decoration:none;">AI &amp; Deep Learning</a></strong>
+                <span>Funding intelligent systems that accelerate discovery across biological and computational sciences.</span>
+              </div>
+            </li>
+            <li>
+              <div class="pill-icon"><i class="fa-solid fa-microscope"></i></div>
+              <div>
+                <strong><a href="./BioInfo.html" style="color:var(--plum);text-decoration:none;">Bioinformatics</a></strong>
+                <span>Supporting computational tools and pipelines that decode the language of life.</span>
+              </div>
+            </li>
+            <li>
+              <div class="pill-icon"><i class="fa-solid fa-seedling"></i></div>
+              <div>
+                <strong><a href="./SustConsult.html" style="color:var(--plum);text-decoration:none;">Sustainability Consulting</a></strong>
+                <span>Strategic advisory ensuring science is done responsibly, equitably, and with long-term vision.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		</div>
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2 class="section-title">Our Organization</h2>
-						<p class="section-subtitle">Learn more about our mission, vision, and the people behind our work.</p>
-						<div class="menu-list">
-							<ul style="text-align: justify; list-style: none; padding: 0;">
-								<li class="menu-item">
-									<h3><a href="Vision Statement copy.html">Our Vision</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Missionstatement.html">Mission Statement</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="History and Background.html">History and Background</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="GetInvolved.html">Call to Action</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Partnerships-Collaborations.html">Partnerships & Collaborations</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="events-and-conferences.html">Events-and-conferences</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Programs & Initiatives.html">Programs & Initiatives</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="contact-us/index.html">Contact us</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Board of Trustees.html"> Board of Trustees</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Financial Transparency.html">Financial Transparency</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Privacy Policy.html">Privacy Policy</a></h3>
-								</li>
-								<li class="menu-item">
-									<h3><a href="Terms of Use.html">Terms of Use</a></h3>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<style>
-			.fh5co-section-gray {
-				background-color: #f7f7f7;
-				padding: 50px 0;
-			}
-		
-			.section-title {
-				font-size: 2.5em;
-				font-weight: 700;
-				margin-bottom: 20px;
-				color: #333;
-			}
-		
-			.section-subtitle {
-				font-size: 1.25em;
-				margin-bottom: 40px;
-				color: #777;
-			}
-		
-			.menu-list {
-				text-align: center;
-			}
-		
-			.menu-item {
-				margin-bottom: 20px;
-			}
-		
-			.menu-item h3 {
-				font-size: 1.5em;
-				font-weight: 600;
-				margin: 0;
-				color: #555;
-			}
-		
-			.menu-item a {
-				text-decoration: none;
-				color: #2d4059;
-				transition: color 0.3s ease;
-			}
-		
-			.menu-item a:hover {
-				color: #0056b3;
-			}
-		</style>
-		><!--
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-				</div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>Sivasakthi Science Foundation&#8482;</strong>
+          <span>Advancing Research, Training &amp; Education</span>
+          <div class="footer-social">
+            <a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/ssf.iinsta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@sivasakthifoundation"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
 
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-					</div>
-				</div>
+        <div class="footer-links">
+          <h4>Organization</h4>
+          <a href="./AboutUs.html">About Us</a>
+          <a href="./Vision Statement copy.html">Our Vision</a>
+          <a href="./History and Background.html">History &amp; Background</a>
+          <a href="./Board of Trustees.html">Board of Trustees</a>
+        </div>
 
-			</div>
-		</div>
-		<!-- fh5co-blog-section -->-->
+        <div class="footer-links">
+          <h4>Programs</h4>
+          <a href="Ai.html">AI &amp; Deep Learning</a>
+          <a href="./BioInfo.html">Bioinformatics</a>
+          <a href="./IncResFund.html">Incubator Research Fund</a>
+          <a href="https://www.bharatgenomedatabase.org/">BGDB Database</a>
+        </div>
 
-		
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Science Foundation <a href="#"></a>. All Rights Reserved.
-								 <!--Privacy Policy-->
-								  <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	
+        <div class="footer-links">
+          <h4>Engage</h4>
+          <a href="./GetInvolved.html">Get Involved</a>
+          <a href="./events-and-conferences.html">Events &amp; Conferences</a>
+          <a href="./Partnerships-Collaborations.html">Partnerships</a>
+          <a href="contact-us/index.html">Contact Us</a>
+        </div>
+      </div>
 
-	</div>
-	<!-- END fh5co-page -->
+      <div class="footer-bottom">
+        <span>© 2024 Sivasakthi Science Foundation&#8482;. All rights reserved.</span>
+        <span>
+          <a href="Privacy Policy.html">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="Terms of Use.html">Terms of Use</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+<script>
+  (function () {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(function (dd) {
+      let closeTimer = null;
 
-	</div>
-	<!-- END fh5co-wrapper -->
+      function openMenu() {
+        clearTimeout(closeTimer);
+        dropdowns.forEach(function (other) {
+          if (other !== dd) other.classList.remove('open');
+        });
+        dd.classList.add('open');
+      }
 
-	<!-- jQuery -->
+      function scheduleClose() {
+        closeTimer = setTimeout(function () {
+          dd.classList.remove('open');
+        }, 120);
+      }
 
+      dd.addEventListener('mouseenter', openMenu);
+      dd.addEventListener('mouseleave', scheduleClose);
 
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
+      const menu = dd.querySelector('.dropdown-menu');
+      if (menu) {
+        menu.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+        menu.addEventListener('mouseleave', scheduleClose);
+      }
+    });
 
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-	
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown')) {
+        dropdowns.forEach(function (dd) { dd.classList.remove('open'); });
+      }
+    });
+  })();
+</script>
+</body>
 </html>
-
