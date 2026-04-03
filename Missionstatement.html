@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
+    /* ─── THEME CORE ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -21,8 +22,6 @@
       --white: #ffffff;
       --ink: #1e0535;
       --muted: #6b5f80;
-      --glass: rgba(255,255,255,0.08);
-      --glass-b: rgba(255,255,255,0.18);
     }
 
     html { scroll-behavior: smooth; }
@@ -34,6 +33,7 @@
       overflow-x: hidden;
     }
 
+    /* ─── TOPBAR ─── */
     .topbar {
       background: var(--plum);
       padding: 8px 48px;
@@ -48,6 +48,7 @@
     .topbar a:hover { color: var(--white); }
     .topbar-social a { margin-right: 0; margin-left: 16px; font-size: 15px; }
 
+    /* ─── HEADER & NAVIGATION ─── */
     header {
       background: var(--white);
       border-bottom: 1px solid var(--mist);
@@ -71,633 +72,196 @@
       align-items: center;
       gap: 14px;
       text-decoration: none;
-      min-width: 0;
     }
     .logo-icon {
-      width: 48px;
-      height: 48px;
+      width: 48px; height: 48px;
       background: linear-gradient(135deg, var(--violet), var(--royal));
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 4px 16px rgba(124,58,237,0.35);
-      overflow: hidden;
       flex-shrink: 0;
     }
-    .logo-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .logo-text { line-height: 1.1; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
     .logo-text strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--plum);
-      letter-spacing: 0.01em;
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 700; color: var(--plum); line-height: 1.1;
     }
-    .logo-text span {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+    .logo-text span { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 
     nav ul { list-style: none; display: flex; gap: 6px; align-items: center; }
     nav ul li { position: relative; }
     nav ul li > a {
-      display: block;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all .2s;
-      letter-spacing: 0.01em;
+      display: block; padding: 10px 16px; font-size: 14px; font-weight: 500;
+      color: var(--ink); text-decoration: none; border-radius: 8px; transition: all .2s;
     }
-    nav ul li > a:hover,
-    nav ul li > a.active { background: var(--mist); color: var(--violet); }
+    nav ul li > a:hover, nav ul li > a.active { background: var(--mist); color: var(--violet); }
 
     .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 4px);
-      left: 0;
-      min-width: 220px;
-      background: var(--white);
-      border: 1px solid var(--mist);
-      border-radius: 14px;
-      box-shadow: 0 16px 48px rgba(74,16,128,0.13);
-      padding: 8px;
-      z-index: 200;
+      display: none; position: absolute; top: calc(100% + 4px); left: 0;
+      min-width: 220px; background: var(--white); border: 1px solid var(--mist);
+      border-radius: 14px; box-shadow: 0 16px 48px rgba(74,16,128,0.13); padding: 8px; z-index: 200;
     }
-    .dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: 0;
-      right: 0;
-      height: 12px;
-    }
-    .dropdown.open .dropdown-menu { display: block; }
+    .dropdown.open .dropdown-menu, .dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu a {
-      display: block;
-      padding: 9px 16px;
-      font-size: 13.5px;
-      color: var(--ink);
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background .15s, color .15s;
-      font-weight: 400;
+      display: block; padding: 9px 16px; font-size: 13.5px; color: var(--ink);
+      text-decoration: none; border-radius: 8px; transition: background .15s, color .15s;
     }
-    .dropdown-menu a:hover,
-    .dropdown-menu a.active { background: var(--mist); color: var(--violet); }
+    .dropdown-menu a:hover, .dropdown-menu a.active { background: var(--mist); color: var(--violet); }
 
     .nav-cta {
       background: linear-gradient(135deg, var(--violet), var(--royal)) !important;
-      color: var(--white) !important;
-      border-radius: 10px !important;
-      padding: 10px 20px !important;
-      font-weight: 600 !important;
-      box-shadow: 0 4px 14px rgba(124,58,237,0.3);
-      transition: transform .2s, box-shadow .2s !important;
+      color: var(--white) !important; border-radius: 10px !important;
+      padding: 10px 20px !important; font-weight: 600 !important;
+      box-shadow: 0 4px 14px rgba(124,58,237,0.3); transition: transform .2s, box-shadow .2s;
     }
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(124,58,237,0.4) !important;
-      background: linear-gradient(135deg, var(--violet), var(--royal)) !important;
-      color: var(--white) !important;
-    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,58,237,0.4); }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      background: transparent;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--plum);
-      border-radius: 2px;
-      transition: all .3s;
-    }
-
+    /* ─── HERO SECTION ─── */
     .hero {
-      position: relative;
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--plum) 0%, var(--deep) 42%, var(--royal) 100%);
-    }
-    .hero::before, .hero::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.5;
-    }
-    .hero::before {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, var(--violet), transparent 70%);
-      top: -120px;
-      right: -80px;
-    }
-    .hero::after {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #9333ea, transparent 70%);
-      bottom: -100px;
-      left: -60px;
+      position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--plum) 0%, var(--deep) 42%, var(--royal) 100%);
     }
     .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px);
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px);
       background-size: 40px 40px;
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 84px 40px;
-      max-width: 980px;
-    }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 84px 40px; max-width: 980px; }
+    
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 100px;
-      padding: 7px 18px;
-      font-size: 12px;
-      color: var(--lilac);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px;
+      padding: 7px 18px; font-size: 12px; color: var(--lilac); letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 500; margin-bottom: 28px;
     }
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 5.3rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5.3rem);
+      font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 8px;
     }
     .hero h1 em {
-      font-style: italic;
-      background: linear-gradient(90deg, var(--lavender), var(--lilac));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-style: italic; background: linear-gradient(90deg, var(--lavender), var(--lilac));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .hero-sub {
-      font-size: 16px;
-      color: rgba(196,181,253,0.82);
-      margin-top: 18px;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 16px; color: rgba(196,181,253,0.82); margin-top: 18px; font-weight: 300;
+      max-width: 760px; margin-left: auto; margin-right: auto; line-height: 1.7;
     }
 
-    .dots {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .dot {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(167,139,250,0.25);
-      animation: float linear infinite;
-    }
+    /* ─── DYNAMIC DOTS ─── */
+    .dots { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .dot { position: absolute; border-radius: 50%; background: rgba(167,139,250,0.25); animation: float linear infinite; }
     @keyframes float {
       0% { transform: translateY(0) scale(1); opacity: 0.3; }
       50% { opacity: 0.7; }
       100% { transform: translateY(-120px) scale(0.6); opacity: 0; }
     }
 
-    section { padding: 80px 40px; }
-    .container { max-width: 1200px; margin: 0 auto; }
-
-    .section-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--violet);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--violet);
-      border-radius: 2px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 600;
-      color: var(--plum);
-      line-height: 1.15;
-    }
-    .section-sub {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 620px;
-      margin-top: 12px;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    .mission-section {
-      background: #faf8ff;
-    }
-    .mission-shell {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .mission-main,
-    .mission-side {
-      background: var(--white);
-      border: 1px solid #ede9fe;
-      border-radius: 24px;
-      box-shadow: 0 16px 50px rgba(74,16,128,0.08);
-    }
-    .mission-main {
-      padding: 36px 34px;
-    }
-    .mission-main p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 18px;
-      text-align: justify;
-    }
-    .mission-main p:last-child {
-      margin-bottom: 0;
-    }
-
-    .mission-list {
-      list-style: none;
-      margin: 26px 0;
-      display: grid;
-      gap: 14px;
-    }
-    .mission-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 18px 18px;
-      border: 1px solid var(--mist);
-      border-radius: 18px;
-      background: linear-gradient(180deg, #ffffff, #fbf9ff);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    .mission-list li:hover {
-      transform: translateY(-2px);
-      border-color: var(--lavender);
-      box-shadow: 0 12px 32px rgba(124,58,237,0.10);
-    }
-    .list-icon {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      background: var(--mist);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--violet);
-      font-size: 15px;
-      margin-top: 2px;
-    }
-    .mission-list strong {
-      display: block;
-      font-size: 14px;
-      color: var(--plum);
-      margin-bottom: 4px;
-    }
-    .mission-list span {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .mission-side {
-      padding: 28px;
-      display: grid;
-      gap: 22px;
-      position: sticky;
-      top: 110px;
-    }
-    .side-panel {
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--mist);
-      background: linear-gradient(180deg, #fff, #fbf9ff);
-    }
-    .side-visual {
-      min-height: 220px;
-      background:
-        linear-gradient(rgba(26,5,48,0.26), rgba(26,5,48,0.26)),
-        url('images/3696093.jpg') center/cover no-repeat;
-      position: relative;
-    }
-    .side-visual::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 25%, rgba(167,139,250,0.35), transparent 42%);
-    }
-    .side-copy {
-      padding: 24px;
-    }
-    .side-copy h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem;
-      color: var(--plum);
-      margin-bottom: 10px;
-    }
-    .side-copy p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .quote-card {
-      padding: 24px;
-      background: linear-gradient(135deg, var(--deep), var(--royal));
-      color: rgba(255,255,255,0.9);
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .quote-card::before {
-      content: '\201C';
-      position: absolute;
-      top: 10px;
-      right: 18px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 90px;
-      line-height: 1;
-      color: rgba(255,255,255,0.08);
-    }
-    .quote-card p {
-      position: relative;
-      z-index: 1;
-      font-size: 15px;
-      line-height: 1.9;
-      margin-bottom: 12px;
-    }
-    .quote-card span {
-      position: relative;
-      z-index: 1;
-      display: block;
-      color: var(--lilac);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .action-card {
-      padding: 22px 24px;
-      border: 1px solid var(--mist);
-      border-radius: 20px;
-      background: var(--white);
-    }
-    .action-card h4 {
-      font-size: 18px;
-      color: var(--plum);
-      margin-bottom: 8px;
-    }
-    .action-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 18px;
-    }
-    .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--violet), var(--royal));
-      color: var(--white);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      box-shadow: 0 8px 22px rgba(124,58,237,0.24);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .action-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(124,58,237,0.32);
-    }
-
+    /* ─── FEATURE STRIP ─── */
     .feature-strip {
       background: linear-gradient(135deg, var(--deep), var(--royal));
-      padding: 70px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .feature-strip::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(167,139,250,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(124,58,237,0.2) 0%, transparent 50%);
+      padding: 60px 40px; position: relative; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .feature-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+      position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px; max-width: 1200px; margin: 0 auto;
     }
     .feature-item { text-align: center; }
     .feature-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700;
       background: linear-gradient(135deg, var(--lavender), var(--white));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 8px;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 8px;
     }
-    .feature-label {
-      font-size: 13px;
-      color: rgba(196,181,253,0.85);
-      letter-spacing: 0.06em;
-      font-weight: 400;
-    }
+    .feature-label { font-size: 13px; color: rgba(196,181,253,0.85); letter-spacing: 0.06em; font-weight: 400; text-transform: uppercase; }
 
-    footer {
-      background: var(--plum);
-      color: rgba(196,181,253,0.7);
-      padding: 60px 40px 32px;
+    /* ─── MISSION SECTION ─── */
+    .mission-section { background: #faf8ff; padding: 80px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .section-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--violet); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: var(--plum); line-height: 1.15; }
+    .section-sub { font-size: 16px; color: var(--muted); max-width: 620px; margin-top: 12px; line-height: 1.7; font-weight: 300; }
+
+    .mission-shell { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; align-items: start; margin-top: 40px;}
+    
+    .mission-main, .mission-side {
+      background: var(--white); border: 1px solid var(--mist);
+      border-radius: 24px; box-shadow: 0 16px 50px rgba(74,16,128,0.05);
     }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+    .mission-main { padding: 40px 34px; }
+    .mission-main p { font-size: 15.5px; color: var(--muted); line-height: 1.9; margin-bottom: 18px; text-align: justify; }
+
+    .mission-list { list-style: none; margin: 30px 0; display: grid; gap: 14px; }
+    .mission-list li {
+      display: flex; align-items: flex-start; gap: 16px; padding: 20px;
+      border: 1px solid var(--mist); border-radius: 18px; background: linear-gradient(180deg, #ffffff, #fbf9ff);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(167,139,250,0.15);
+    .mission-list li:hover { transform: translateY(-3px); border-color: var(--lavender); box-shadow: 0 12px 32px rgba(124,58,237,0.10); }
+    .list-icon {
+      width: 44px; height: 44px; flex-shrink: 0; background: var(--mist); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; color: var(--violet); font-size: 18px;
     }
-    .footer-brand strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      color: var(--white);
-      font-weight: 600;
-      margin-bottom: 6px;
+    .mission-list strong { display: block; font-size: 15px; color: var(--plum); margin-bottom: 4px; }
+    .mission-list span { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── SIDE PANEL ─── */
+    .mission-side { padding: 28px; display: grid; gap: 22px; position: sticky; top: 110px; }
+    .side-panel { border-radius: 20px; overflow: hidden; border: 1px solid var(--mist); background: linear-gradient(180deg, #fff, #fbf9ff); }
+    .side-visual {
+      min-height: 220px; position: relative;
+      background: linear-gradient(rgba(26,5,48,0.26), rgba(26,5,48,0.26)), url('images/hero-bg.jpg') center/cover no-repeat;
+      background-color: var(--royal); /* Fallback */
     }
-    .footer-brand span { font-size: 13px; }
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
+    .side-copy { padding: 24px; }
+    .side-copy h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--plum); margin-bottom: 10px; }
+    .side-copy p { font-size: 14.5px; color: var(--muted); line-height: 1.8; }
+
+    .quote-card {
+      padding: 30px; background: linear-gradient(135deg, var(--deep), var(--royal));
+      color: rgba(255,255,255,0.9); border-radius: 20px; position: relative; overflow: hidden;
     }
-    .footer-social a {
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(167,139,250,0.25);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--lavender);
-      font-size: 15px;
-      text-decoration: none;
-      transition: all .2s;
+    .quote-card::before {
+      content: '\201C'; position: absolute; top: 10px; right: 18px; font-family: 'Cormorant Garamond', serif;
+      font-size: 90px; line-height: 1; color: rgba(255,255,255,0.08);
     }
-    .footer-social a:hover {
-      background: rgba(167,139,250,0.15);
-      border-color: var(--lavender);
-      color: var(--white);
+    .quote-card p { position: relative; z-index: 1; font-size: 16px; line-height: 1.8; margin-bottom: 15px; font-style: italic; }
+    .quote-card span { position: relative; z-index: 1; display: block; color: var(--lilac); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;}
+
+    .action-card { padding: 24px; border: 1px solid var(--mist); border-radius: 20px; background: var(--white); text-align: center;}
+    .action-card h4 { font-size: 18px; color: var(--plum); margin-bottom: 8px; }
+    .action-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+    .action-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--violet), var(--royal)); color: var(--white); text-decoration: none;
+      font-size: 14px; font-weight: 600; box-shadow: 0 8px 22px rgba(124,58,237,0.24); transition: transform .2s, box-shadow .2s; width: 100%;
     }
-    .footer-links h4 {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--lilac);
-      margin-bottom: 16px;
-    }
-    .footer-links a {
-      display: block;
-      color: rgba(196,181,253,0.65);
-      text-decoration: none;
-      font-size: 13px;
-      margin-bottom: 10px;
-      transition: color .2s;
-    }
+    .action-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(124,58,237,0.32); color: white;}
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
-    .footer-bottom {
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      color: rgba(167,139,250,0.5);
-    }
-    .footer-bottom a { color: rgba(167,139,250,0.6); text-decoration: none; }
-    .footer-bottom a:hover { color: var(--lavender); }
+    
+    .hamburger { display: none; background: none; border: none; font-size: 24px; color: var(--plum); cursor: pointer; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { animation: fadeUp 0.6s ease both; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
+    /* ─── SCROLL ANIMATIONS (INTERSECTION OBSERVER) ─── */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
 
     @media (max-width: 980px) {
-      .mission-shell {
-        grid-template-columns: 1fr;
-      }
-      .mission-side {
-        position: static;
-      }
-      .footer-top {
-        flex-direction: column;
-      }
+      .mission-shell { grid-template-columns: 1fr; }
+      .mission-side { position: static; }
     }
-
     @media (max-width: 760px) {
-      .topbar { padding: 8px 20px; }
-      .nav-inner {
-        padding: 0 20px;
-        flex-wrap: wrap;
-      }
-      .hamburger { display: flex; }
-      nav {
-        width: 100%;
-        display: none;
-      }
-      nav.show { display: block; padding-bottom: 18px; }
-      nav ul {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-      }
-      nav ul li > a {
-        padding: 12px 14px;
-      }
-      .dropdown-menu {
-        position: static;
-        min-width: 100%;
-        box-shadow: none;
-        border-radius: 12px;
-        margin-top: 6px;
-      }
-      section { padding: 60px 20px; }
-      .feature-strip { padding: 56px 20px; }
-      footer { padding: 40px 20px 24px; }
-      .mission-main { padding: 26px 20px; }
-      .mission-side { padding: 20px; }
-      .feature-grid { gap: 30px; }
+      nav ul { display: none; }
+      .hamburger { display: block; }
     }
   </style>
 </head>
@@ -721,45 +285,23 @@
           <span>Advancing Research &amp; Education</span>
         </div>
       </a>
-
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
       <nav id="siteNav">
         <ul>
           <li class="dropdown">
-            <a href="#" class="active">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <a href="#" class="active">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
             <div class="dropdown-menu">
               <a href="./AboutUs.html">About Us</a>
               <a href="./Vision Statement copy.html">Our Vision</a>
               <a href="./Missionstatement.html" class="active">Mission Statement</a>
-              <a href="./History and Background.html">History &amp; Background</a>
               <a href="./Financial Transparency.html">Financial Transparency</a>
             </div>
           </li>
           <li class="dropdown">
-            <a href="#">Funding <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
+            <a href="#">Funding <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
             <div class="dropdown-menu">
               <a href="https://www.bharatgenomedatabase.org/">BGDB Database</a>
               <a href="Ai.html">AI &amp; Deep Learning</a>
-              <a href="./BioInfo.html">Bioinformatics</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#">Advisory <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
-            <div class="dropdown-menu">
-              <a href="./IncResFund.html">Incubator Research Fund</a>
-              <a href="./SustConsult.html">Sustainability Consulting</a>
-              <a href="./GenDbConsult.html">Genome Database Consulting</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#">Get Involved <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:3px;"></i></a>
-            <div class="dropdown-menu">
-              <a href="./GetInvolved.html">Get Involved</a>
-              <a href="./events-and-conferences.html">Events &amp; Conferences</a>
-              <a href="./Partnerships-Collaborations.html">Partnerships &amp; Collabs</a>
             </div>
           </li>
           <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
@@ -772,16 +314,15 @@
     <div class="hero-grid"></div>
 
     <div class="dots">
-      <div class="dot" style="width:8px;height:8px;left:15%;top:70%;animation-duration:6s;animation-delay:0s;"></div>
+      <div class="dot" style="width:8px;height:8px;left:15%;top:70%;animation-duration:6s;"></div>
       <div class="dot" style="width:5px;height:5px;left:30%;top:80%;animation-duration:8s;animation-delay:1.5s;"></div>
       <div class="dot" style="width:10px;height:10px;left:55%;top:85%;animation-duration:7s;animation-delay:0.7s;"></div>
       <div class="dot" style="width:6px;height:6px;left:75%;top:65%;animation-duration:9s;animation-delay:2s;"></div>
-      <div class="dot" style="width:4px;height:4px;left:88%;top:78%;animation-duration:5s;animation-delay:0.3s;"></div>
     </div>
 
     <div class="hero-content">
       <div class="hero-badge fade-up">
-        <i class="fa-solid fa-circle" style="color:var(--lavender);"></i>
+        <i class="fa-solid fa-circle" style="color:var(--lavender); font-size: 8px;"></i>
         Science · Research · Education
       </div>
       <h1 class="fade-up delay-1">Our <em>Mission</em></h1>
@@ -793,28 +334,28 @@
 
   <div class="feature-strip">
     <div class="feature-grid">
-      <div class="feature-item">
+      <div class="feature-item fade-up">
         <div class="feature-num">6</div>
         <div class="feature-label">Mission Commitments</div>
       </div>
-      <div class="feature-item">
+      <div class="feature-item fade-up delay-1">
         <div class="feature-num">1</div>
         <div class="feature-label">Shared Scientific Purpose</div>
       </div>
-      <div class="feature-item">
+      <div class="feature-item fade-up delay-2">
         <div class="feature-num">∞</div>
         <div class="feature-label">Lifelong Learning</div>
       </div>
-      <div class="feature-item">
-        <div class="feature-num">Global</div>
-        <div class="feature-label">Collaborative Outlook</div>
+      <div class="feature-item fade-up delay-3">
+        <div class="feature-num"><i class="fa-solid fa-globe"></i></div>
+        <div class="feature-label">Global Outlook</div>
       </div>
     </div>
   </div>
 
   <section class="mission-section">
     <div class="container">
-      <div style="margin-bottom: 34px;">
+      <div style="margin-bottom: 34px;" class="fade-up">
         <div class="section-eyebrow">Mission Statement</div>
         <h2 class="section-title">A commitment to knowledge, access, and measurable impact</h2>
         <p class="section-sub">
@@ -823,57 +364,52 @@
       </div>
 
       <div class="mission-shell">
-        <div class="mission-main">
+        
+        <div class="mission-main fade-up delay-1">
           <p>
             At the Sivasakthi Science Foundation, our unwavering mission is to ignite a brighter future through the relentless promotion of science and education. We are driven by the belief that knowledge is the cornerstone of progress, and access to quality education and scientific exploration is the key to unlocking the boundless potential within every individual and society.
           </p>
-
           <p>
             Our foundation is dedicated to fostering a world where curiosity knows no bounds and where the pursuit of knowledge is a shared and inclusive journey. To fulfill our mission, we commit to:
           </p>
 
           <ul class="mission-list">
-            <li>
+            <li class="fade-up">
               <div class="list-icon"><i class="fa-solid fa-flask"></i></div>
               <div>
                 <strong>Advancing Scientific Discovery</strong>
                 <span>We support groundbreaking research, innovation, and scientific exploration, empowering scientists and thinkers to tackle the most pressing challenges facing humanity.</span>
               </div>
             </li>
-
-            <li>
+            <li class="fade-up delay-1">
               <div class="list-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
               <div>
                 <strong>Empowering Educators</strong>
-                <span>We champion educators as catalysts of change by providing the tools, resources, and opportunities needed to inspire the next generation of critical thinkers and problem solvers.</span>
+                <span>We champion educators as catalysts of change by providing the tools, resources, and opportunities needed to inspire the next generation of critical thinkers.</span>
               </div>
             </li>
-
-            <li>
+            <li class="fade-up">
               <div class="list-icon"><i class="fa-solid fa-graduation-cap"></i></div>
               <div>
                 <strong>Expanding Access to Education</strong>
-                <span>We strive to break down barriers to education by providing scholarships, resources, and mentorship to underserved and marginalized communities, ensuring that education is a universal right.</span>
+                <span>We strive to break down barriers to education by providing scholarships, resources, and mentorship to underserved communities, ensuring education is a universal right.</span>
               </div>
             </li>
-
-            <li>
+            <li class="fade-up delay-1">
               <div class="list-icon"><i class="fa-solid fa-book-open-reader"></i></div>
               <div>
                 <strong>Promoting Lifelong Learning</strong>
-                <span>We foster a culture of continuous learning, encouraging individuals of all ages to engage with science and education throughout their lives and deepen their understanding of the world around them.</span>
+                <span>We foster a culture of continuous learning, encouraging individuals of all ages to engage with science and deepen their understanding of the world.</span>
               </div>
             </li>
-
-            <li>
+            <li class="fade-up">
               <div class="list-icon"><i class="fa-solid fa-handshake-angle"></i></div>
               <div>
                 <strong>Building Collaborative Partnerships</strong>
-                <span>We collaborate with like-minded organizations, institutions, and individuals to amplify our impact and create a global network of changemakers committed to science and education.</span>
+                <span>We collaborate with like-minded organizations to amplify our impact and create a global network of changemakers committed to science.</span>
               </div>
             </li>
-
-            <li>
+            <li class="fade-up delay-1">
               <div class="list-icon"><i class="fa-solid fa-scale-balanced"></i></div>
               <div>
                 <strong>Advocating for Evidence-Based Policy</strong>
@@ -885,40 +421,31 @@
           <p>
             As stewards of this mission, we are committed to transparency, accountability, and a relentless pursuit of excellence in all our endeavors. We invite all who share our vision to join us on this transformative journey toward a world where the light of knowledge guides us forward.
           </p>
-
-          <p>
-            Sivasakthi Science Foundation is dedicated to making this mission a reality, driven by our passion for science, education, and the limitless possibilities they hold for the betterment of humanity. Together, we aspire to create a world where the pursuit of knowledge is a beacon of hope and progress for all.
-          </p>
         </div>
 
         <aside class="mission-side">
-          <div class="side-panel">
+          
+          <div class="side-panel fade-up delay-2">
             <div class="side-visual"></div>
             <div class="side-copy">
               <h3>Purpose in action</h3>
-              <p>
-                Our mission is not only philosophical. It guides how we fund ideas, support educators, build platforms, and create pathways for broader scientific participation.
-              </p>
+              <p>Our mission is not only philosophical. It guides how we fund ideas, support educators, build platforms, and create pathways for broader scientific participation.</p>
             </div>
           </div>
 
-          <div class="quote-card">
-            <p>
-              Knowledge becomes transformative when it is shared widely, pursued responsibly, and used to expand opportunity for individuals and communities alike.
-            </p>
+          <div class="quote-card fade-up delay-2">
+            <p>Knowledge becomes transformative when it is shared widely, pursued responsibly, and used to expand opportunity for individuals and communities alike.</p>
             <span>Sivasakthi Science Foundation™</span>
           </div>
 
-          <div class="action-card">
+          <div class="action-card fade-up delay-2">
             <h4>Join the mission</h4>
-            <p>
-              Collaborate with us through research, education, partnerships, or community engagement as we work toward a more informed and empowered future.
-            </p>
+            <p>Collaborate with us through research, education, partnerships, or community engagement.</p>
             <a href="./GetInvolved.html" class="action-btn">
-              Get Involved
-              <i class="fa-solid fa-arrow-right"></i>
+              Get Involved <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
+
         </aside>
       </div>
     </div>
@@ -926,111 +453,42 @@
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <strong>Sivasakthi Science Foundation™</strong>
-          <span>Advancing Research, Training &amp; Education</span>
-          <div class="footer-social">
-            <a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com/ssf.iinsta"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@sivasakthifoundation"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <h4>Organization</h4>
-          <a href="./AboutUs.html">About Us</a>
-          <a href="./Vision Statement copy.html">Our Vision</a>
-          <a href="./Missionstatement.html">Mission Statement</a>
-          <a href="./History and Background.html">History &amp; Background</a>
-        </div>
-
-        <div class="footer-links">
-          <h4>Programs</h4>
-          <a href="Ai.html">AI &amp; Deep Learning</a>
-          <a href="./BioInfo.html">Bioinformatics</a>
-          <a href="./IncResFund.html">Incubator Research Fund</a>
-          <a href="https://www.bharatgenomedatabase.org/">BGDB Database</a>
-        </div>
-
-        <div class="footer-links">
-          <h4>Engage</h4>
-          <a href="./GetInvolved.html">Get Involved</a>
-          <a href="./events-and-conferences.html">Events &amp; Conferences</a>
-          <a href="./Partnerships-Collaborations.html">Partnerships</a>
-          <a href="contact-us/index.html">Contact Us</a>
-        </div>
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
       </div>
-
-      <div class="footer-bottom">
-        <span>© 2024 Sivasakthi Science Foundation™. All rights reserved.</span>
-        <span>
-          <a href="Privacy Policy.html">Privacy Policy</a>
-          &nbsp;·&nbsp;
-          <a href="Terms of Use.html">Terms of Use</a>
-        </span>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Vision Statement copy.html">Our Vision</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="Privacy Policy and Terms of Use.html">Privacy & Terms</a>
       </div>
     </div>
   </footer>
 
   <script>
-    (function () {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const siteNav = document.getElementById('siteNav');
-
-      dropdowns.forEach(function (dd) {
-        let closeTimer = null;
-
-        function openMenu() {
-          if (window.innerWidth <= 760) return;
-          clearTimeout(closeTimer);
-          dropdowns.forEach(function (other) {
-            if (other !== dd) other.classList.remove('open');
-          });
-          dd.classList.add('open');
-        }
-
-        function scheduleClose() {
-          if (window.innerWidth <= 760) return;
-          closeTimer = setTimeout(function () {
-            dd.classList.remove('open');
-          }, 120);
-        }
-
-        dd.addEventListener('mouseenter', openMenu);
-        dd.addEventListener('mouseleave', scheduleClose);
-
-        const trigger = dd.querySelector('a');
-        const menu = dd.querySelector('.dropdown-menu');
-
-        if (trigger) {
-          trigger.addEventListener('click', function (e) {
-            if (window.innerWidth <= 760) {
-              e.preventDefault();
-              dd.classList.toggle('open');
-            }
-          });
-        }
-
-        if (menu) {
-          menu.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
-          menu.addEventListener('mouseleave', scheduleClose);
-        }
-      });
-
-      document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-          dropdowns.forEach(function (dd) { dd.classList.remove('open'); });
-        }
-      });
-
-      if (hamburgerBtn && siteNav) {
-        hamburgerBtn.addEventListener('click', function () {
-          siteNav.classList.toggle('show');
+    // Scroll Reveal Animation Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once it's visible
+          }
         });
-      }
-    })();
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up').forEach((el) => {
+        observer.observe(el);
+      });
+    });
   </script>
+
 </body>
 </html>

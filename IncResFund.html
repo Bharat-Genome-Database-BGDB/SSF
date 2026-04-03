@@ -1,238 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="shortcut icon" href="logo.ico">     
-        <link rel="stylesheet" href="css/logo.css">
-        <script src="js/modernizr-2.6.2.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incubator Research Fund Program - Sivasakthi Science Foundation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="logo.ico">
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/superfish.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incubator Research Fund — Sivasakthi Science Foundation™</title>
+  
+  <meta property="og:title" content="Incubator Research Fund | Sivasakthi Science Foundation"/>
+  <meta property="og:description" content="Accelerating innovative ideas into impactful research."/>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('/images/ai.webp'); /* Replace with your background image */
-            background-size: cover;
-            color: #fff;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #2d4059;
-            padding: 15px;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-        .navbar a:hover {
-            background-color: #575757;
-            border-radius: 4px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #fff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .content1 {
-            padding: 50px;
-            background-color:#1f2045;
-            opacity: 90%;
-            margin: 20px;
-            border-radius: 10px;
-        }
-        h1, h2 {
-            color: #ffdd57;
-        }
-        p {
-            color: #fff;
-            line-height: 1.6;
-        }
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-            }
-        .footer {
-            background-color: rgba(0, 0, 0, 0.265);
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .footer p {
-            margin: 0;
-            color: #fff;
-        }
-    </style>
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
     
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 100px 40px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; margin-bottom: 20px; position: relative; z-index: 2; line-height: 1.1;}
+    .hero h1 em { font-style: italic; color: var(--lavender); }
+    .hero-sub { max-width: 700px; margin: 0 auto; font-size: 18px; color: rgba(196,181,253,0.86); position: relative; z-index: 2;}
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 7px 18px;
+      font-size: 12px; color: var(--lilac); text-transform: uppercase; margin-bottom: 24px; position: relative; z-index: 2;
+    }
+
+    /* ─── CONTENT BLOCKS ─── */
+    section { padding: 80px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    
+    .intro-card {
+      background: var(--white);
+      padding: 50px;
+      border-radius: 24px;
+      border: 1px solid var(--mist);
+      box-shadow: 0 15px 45px rgba(74,16,128,0.05);
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; justify-content: center; }
+    .section-eyebrow::before, .section-eyebrow::after { content: ''; width: 24px; height: 2px; background: var(--violet); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--plum); margin-bottom: 20px; }
+    .intro-card p { font-size: 16.5px; color: var(--muted); max-width: 800px; margin: 0 auto; }
+
+    /* ─── PILLAR GRID ─── */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .pillar-card:hover { transform: translateY(-5px); border-color: var(--lavender); box-shadow: 0 16px 40px rgba(74,16,128,0.08); }
+    .pillar-icon { width: 50px; height: 50px; border-radius: 14px; background: var(--mist); color: var(--violet); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .pillar-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--plum); margin-bottom: 15px; }
+    .pillar-card p { font-size: 15px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+    
+    .custom-list { list-style: none; padding: 0; margin-top: auto; }
+    .custom-list li { font-size: 14.5px; color: var(--muted); margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .custom-list li i { color: var(--violet); font-size: 12px; margin-top: 4px; }
+
+    /* ─── CTA BOX ─── */
+    .cta-box {
+      margin-top: 60px; padding: 50px 40px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--deep), var(--royal));
+      color: white; text-align: center;
+      box-shadow: 0 20px 50px rgba(74,16,128,0.15);
+    }
+    .cta-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 15px; }
+    .cta-box p { color: rgba(196,181,253,0.85); font-size: 16px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .btn-cta { 
+      display: inline-block; background: white; color: var(--royal); 
+      padding: 14px 30px; border-radius: 10px; text-decoration: none; 
+      font-weight: 600; transition: transform 0.2s;
+    }
+    .btn-cta:hover { transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; margin-top: auto; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+  </style>
 </head>
 <body>
-    <div id="fh5co-wrapper">
-        <div id="fh5co-page">
-          <div class="header-top">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                  <a href="./blog.html">Blog</a>
-                  <a href="contact-us/index.html">Contact</a>
-                </div>
-                <div class="col-md-6 col-sm-6 text-right fh5co-social">
-                  <a href="https://x.com/SSF_handle" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.instagram.com/ssf.iinsta" class="grow"><i class="icon-instagram2"></i></a>
-                  <a href="https://youtube.com/@sivasakthifoundation" class="grow"><i class="icon-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-    <header id="fh5co-header-section" class="sticky-banner">
-        <div class="container">
-          <div class="nav-header">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark" style="padding-top: 3rem;"><i></i></a>
-            <h1 id="fh5co-logo">
-              <a href="index.html">
-                <img src="images/logo.png" alt="Sivasakthi Science Foundation Logo" style="height: 90px; vertical-align: middle;">
-		<br>Sivasakthi Science Foundation
-              </a>
 
-            </h1>	
-            <nav id="fh5co-menu-wrap" role="navigation">
-              <ul class="sf-menu" id="fh5co-primary-menu">
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">About Us</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./AboutUs.html">About Us</a></li>
-					<li><a href="./Vision Statement copy.html">Our Vision</a></li>
-                    <li><a href="./Missionstatement.html"> Mission Statement</a></li>
-					<li><a href="./History and Background.html">History & Background</a></li>
-                    <li><a href="./Financial Transparency.html">Financial Transparency</a></li>
-                  </ul>
-                </li>
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Funding Priorities</a>
-					<ul class="fh5co-sub-menu">
-						<!-- RTE Platforms Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown" title="RTE stands for Research, Training, and Education">RTE Platforms</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="https://www.bharatgenomedatabase.org/"> BGDB Database</a></li>
-							</ul>
-						</li>
-						
-						<!-- Emerging Sciences Section as a Nested Dropdown -->
-						<li class="has-sub-menu">
-							<a href="#" class="fh5co-sub-ddown">Emerging Sciences</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="Ai.html"> AI and Deep Learning</a></li>
-								<li><a href="./BioInfo.html"> Bioinformatics </a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				
-				<li style="padding-top:3rem;">
-					<a href="#" class="fh5co-sub-ddown">Strategic Advisory</a>
-					<ul class="fh5co-sub-menu">				  
-					  <li><a href="./IncResFund.html">Incubator Research Fund</a></li>
-					  <li><a href="./SustConsult.html">Sustainability Consulting</a></li>
-					  <li><a href="./GenDbConsult.html">Genome Database <br> Consulting</a></li>
-					</ul>
-				  </li>	
-				  
-				  
-                <li style="padding-top:3rem;">
-                  <a href="#" class="fh5co-sub-ddown">Get Involved</a>
-                  <ul class="fh5co-sub-menu">
-                    <li><a href="./GetInvolved.html">Get Involved</a></li>
-                    <li><a href="./events-and-conferences.html">Events & Conferences</a></li>
-                    <li><a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a></li>
-                  </ul>
-                </li>
-                <li style="padding-top:3rem;"><a href="contact-us/index.html">Contact Us</a></li>
-              </ul>
-            </nav>
-          </div>
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Strategic Advisory Services</span>
         </div>
-      </header>
-
-    
-    <!-- Navbar --
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <div class="dropdown">
-            <a href="#" class="dropbtn">Projects</a>
-            <div class="dropdown-content">
-                <a href="#ai-page">AI and Deep Learning Innovation</a>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
             </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Funding <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="Ai.html">AI & Deep Learning</a>
+              <a href="./BioInfo.html">Bioinformatics</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" style="color:var(--violet); font-weight:600;">Advisory <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./IncResFund.html" style="color:var(--violet); font-weight:600;">Incubator Research Fund</a>
+              <a href="./SustConsult.html">Sustainability Consulting</a>
+              <a href="./GenDbConsult.html">Genome Database Consulting</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container fade-up">
+      <div class="hero-badge"><i class="fa-solid fa-flask"></i> Seed Funding & Advisory</div>
+      <h1>Incubator <em>Research Fund</em></h1>
+      <p class="hero-sub">Accelerating innovative ideas into impactful research. We provide the resources and mentorship needed to bridge the critical gap between concept and proof-of-concept.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--soft-bg);">
+    <div class="container">
+      
+      <div class="intro-card fade-up">
+        <div class="section-eyebrow">Program Overview</div>
+        <h2 class="section-title">Nurturing Early-Stage Potential</h2>
+        <p>The Sivasakthi Science Foundation (SSF) is committed to nurturing early-stage, high-potential research through our Incubator Research Fund Program. This initiative provides seed funding, strategic guidance, and collaborative opportunities to accelerate promising research ideas in the life sciences, bioinformatics, and AI-driven genomics.</p>
+      </div>
+
+      <div class="grid-container">
+        
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <h3>What We Offer</h3>
+          <p>Transformative research often struggles at the earliest stages. We provide the resources to de-risk early ideas.</p>
+          <ul class="custom-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Seed Funding:</strong> Microgrants to test innovative hypotheses.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Mentorship:</strong> Strategic guidance from SSF’s expert network.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Platforms:</strong> Partner with Bharat Genome Database & GenAi Labs.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Capacity Building:</strong> Support in skills development and research design.</li>
+          </ul>
         </div>
-        <a href="#">Contact</a>
-    </div>-->
 
-    <!-- Content -->
-    <div id="ai-page" class="content1" class="p">
-        <h1>Accelerating Innovative Ideas into Impactful Research</h1>
-        <p>The Sivasakthi Science Foundation (SSF) is committed to nurturing early-stage, high-potential research through our Incubator Research Fund Program. Designed to bridge the critical gap between concept and proof-of-concept, this initiative provides seed funding, strategic guidance, and collaborative opportunities to accelerate promising research ideas in the life sciences, bioinformatics, and AI-driven genomics.</p>
-        
-        <h2>What We Offer</h2>
-        <p><ul><li>Seed Funding: Microgrants and starter funds to test innovative hypotheses or pilot novel research tools.</li><li>Mentorship & Advisory: Access to SSF’s network of experts for strategic guidance on project development, technical execution, and long-term planning.</li><li>Collaborative Platforms: Opportunities to partner with SSF’s research labs, including Bharat Genome Database and GenAi Research Labs.</li><li>Capacity Building: Support in skills development, research design, and proposal preparation to enable future large-scale funding.</li></ul></p>
-        
-        <br>
-        <h2>Who Can Apply</h2>
-	<p>The program is open to: <br><ul><li>Early-career researchers and innovators.</li><li>University faculty and research groups exploring new directions.</li><li>Nonprofit and startup teams developing pioneering solutions in genomics, AI, and bioinformatics.</li><li>Student-led initiatives with high potential for societal or scientific impact.</li></ul></p>
+        <div class="pillar-card fade-up delay-1">
+          <div class="pillar-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Who Can Apply</h3>
+          <p>We are looking for passionate innovators ready to make a scalable impact in the scientific community.</p>
+          <ul class="custom-list">
+            <li><i class="fa-solid fa-check"></i> Early-career researchers and innovators.</li>
+            <li><i class="fa-solid fa-check"></i> University faculty exploring new academic directions.</li>
+            <li><i class="fa-solid fa-check"></i> Nonprofit & startup teams in genomics, AI, and bioinformatics.</li>
+            <li><i class="fa-solid fa-check"></i> Student-led initiatives with high scientific potential.</li>
+          </ul>
+        </div>
 
-	 <br>
-        <h2>Areas of Focus</h2>
-	<p>We prioritize research aligned with SSF’s mission: <br><ul><li>Genomics & Bioinformatics Innovation</li><li>AI in Life Sciences</li><li>Biodiversity and Conservation Genomics</li><li>Sustainable Biotechnology Solutions</li><li>Healthcare and Precision Medicine Tools</li></ul></p>
-		 <br>
-        <h2>Why It Matters</h2>
-	<p>Transformative research often struggles at the earliest stages due to lack of resources and mentorship. SSF’s Incubator Research Fund is designed to de-risk early ideas, fast-track innovation, and lay the foundation for scalable impact—ensuring that promising concepts don't get left behind.</p>
-
-		 <br>
-        <h2>Apply or Collaborate</h2>
-	<p>We welcome inquiries from individuals and institutions interested in applying for funding or collaborating on incubator-supported projects. To learn more about eligibility criteria, deadlines, and application guidelines, contact us at info@sivasakthifoundation.org.</p>
+        <div class="pillar-card fade-up delay-2">
+          <div class="pillar-icon"><i class="fa-solid fa-microscope"></i></div>
+          <h3>Areas of Focus</h3>
+          <p>We prioritize seed funding for research that aligns directly with the core mission of the Foundation.</p>
+          <ul class="custom-list">
+            <li><i class="fa-solid fa-check"></i> Genomics & Bioinformatics Innovation.</li>
+            <li><i class="fa-solid fa-check"></i> Artificial Intelligence in Life Sciences.</li>
+            <li><i class="fa-solid fa-check"></i> Biodiversity and Conservation Genomics.</li>
+            <li><i class="fa-solid fa-check"></i> Healthcare & Precision Medicine Tools.</li>
+          </ul>
+        </div>
 
       </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 Sivasakthi Science Foundation. All rights reserved.</p>
+      <div class="cta-box fade-up">
+        <h2>Apply or Collaborate</h2>
+        <p>We welcome inquiries from individuals and institutions interested in applying for funding or collaborating on incubator-supported projects. Learn more about eligibility criteria and application deadlines today.</p>
+        <a href="mailto:info@sivasakthifoundation.org" class="btn-cta">Email Program Director</a>
+      </div>
+
     </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Advisory</h4>
+        <a href="./IncResFund.html">Incubator Research Fund</a>
+        <a href="./SustConsult.html">Sustainability Consulting</a>
+        <a href="./GenDbConsult.html">Genome Database Consulting</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="./blog.html">Blog</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
