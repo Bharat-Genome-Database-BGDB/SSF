@@ -1,446 +1,558 @@
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frequently Asked Questions — Sivasakthi Science Foundation™</title>
+  
+  <meta property="og:title" content="FAQ - Sivasakthi Science Foundation"/>
+  <meta property="og:site_name" content="Sivasakthi Science Foundation"/>
 
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sivasakthi Foundation </title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 
-	//////////////////////////////////////////////////////
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	//////////////////////////////////////////////////////
-	 -->
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.css" integrity="sha512-/0+jCMeks7Sm7B2Jai6K8JDYQqiwWiY73tw+G6BQkisKhUC0fqKt9Sd8noZvHPHl5rm9/cJ5hcuzzONlFvLMQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="FAQ/style.css" />
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--soft-bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a {
+      color: var(--lilac);
+      margin-left: 16px;
+      font-size: 15px;
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .topbar-social a:hover { color: var(--white); }
 
-	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .logo-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--plum);
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
 
-	<link rel="stylesheet" href="css/style.css">
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 6px;
+    }
+    nav ul li { position: relative; }
+    nav ul li > a {
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--ink);
+      border-radius: 8px;
+      transition: all .2s;
+    }
+    nav ul li > a:hover {
+      background: var(--mist);
+      color: var(--violet);
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 14px;
+      padding: 8px;
+      box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block;
+      padding: 9px 16px;
+      font-size: 13.5px;
+      text-decoration: none;
+      border-radius: 8px;
+      color: var(--ink);
+    }
+    .dropdown-menu a:hover {
+      background: var(--mist);
+      color: var(--violet);
+    }
 
+    .nav-cta {
+      background: linear-gradient(135deg, var(--violet), var(--royal)) !important;
+      color: var(--white) !important;
+      border-radius: 10px;
+      padding: 10px 20px !important;
+      font-weight: 600;
+    }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      padding: 80px 40px 100px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--lavender);
+    }
+    .hero-sub {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: rgba(196,181,253,0.86);
+      position: relative;
+      z-index: 2;
+    }
 
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 text-left fh5co-link">
-						<a href="#">FAQ</a>
-						<a href="#">Forum</a>
-						<a href="#">Contact</a>
-					</div>
-					<div class="col-md-6 col-sm-6 text-right fh5co-social">
-						<a href="#" class="grow"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="#" class="grow"><i class="icon-instagram2"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo">
-						<a href="index.html">
-							<img src="images/logo.png" alt="Siva Sakthi Foundation Logo" style="height: 50px; vertical-align: middle;">
-							Sivasakthi Foundation
-						</a>
-					</h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li>
-								<a href="index.html">Home</a>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Get Involved</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Donate</a></li>
-									<li><a href="#">Fundraise</a></li>
-									<li><a href="#">Campaign</a></li>
-									<li><a href="#">Philantrophy</a></li>
-									<li><a href="#">Volunteer</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Projects</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a></li>
-									 <li><a href="Ai.html">AI and Deep Learning  </a></li>								 	<li><a href="#">Labs</a></li>
-								</ul>
-							</li>
-							<li><a href="blog.html">About</a></li>
-							<li class="active"><a href="FAQ.html">FAQ</a></li>
-							<li><a href="contact-us/index.html">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-		
-		
+    /* ─── FAQ MAIN ─── */
+    main {
+      flex: 1;
+      padding: 0 40px 80px;
+      position: relative;
+      z-index: 5;
+      margin-top: -50px;
+    }
+    .faq-container {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(74,16,128,0.04);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      border-color: var(--lavender);
+      box-shadow: 0 15px 40px rgba(74,16,128,0.08);
+      transform: translateY(-2px);
+    }
+    
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      padding: 24px 30px;
+      background: none;
+      border: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--plum);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.3s;
+    }
+    .faq-btn:hover { color: var(--violet); }
+    
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--soft-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet);
+      font-size: 13px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--violet);
+      color: white;
+    }
+    .faq-item.active .faq-btn { color: var(--royal); }
 
-		<!--<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
-				<div class="desc animate-box">
-					<h2>Frequently Asked Questions  <strong>  </strong></h2>
-					<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>-->
-					<!--<span><a class="btn btn-primary btn-lg" href="#">blog-text</a></span>
-				</div>
-			</div>
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+      background: var(--soft-bg);
+    }
+    .faq-item.active .faq-content {
+      max-height: 1000px;
+      transition: max-height 0.4s ease-in-out;
+    }
+    
+    .faq-inner {
+      padding: 0 30px 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      border-top: 1px solid transparent;
+    }
+    .faq-item.active .faq-inner {
+      border-top-color: var(--mist);
+      padding-top: 20px;
+    }
 
-		</div>-->
-		
-		<div id="fh5co-blog-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Frequently Asked Questions</h3><!--
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>-->
-					</div>
-				</div>
-			</div>
-			<body>
-				<div class="wrapper">
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text">What is Sivasakthi Foundation</div>
-					 
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Sivasakthi Foundation is a Public Charitable Trust designed to carry out Education & Research.
-					  </p>
-					</div>
-				  </div>
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text"> How does it work?</div>
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-						saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-						ullam, iure eligendi harum eaque hic corporis debitis porro
-						consectetur voluptate rem officiis architecto.
-					  </p>
-					</div>
-				  </div>
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text"> What are the major Projects of Sivasakthi Foundation ?</div>
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-						saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-						ullam, iure eligendi harum eaque hic corporis debitis porro
-						consectetur voluptate rem officiis architecto.
-					  </p>
-					</div>
-				  </div>
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text"> How does the Sivasakthi Foundation help students ?</div>
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-						saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-						ullam, iure eligendi harum eaque hic corporis debitis porro
-						consectetur voluptate rem officiis architecto.
-					  </p>
-					</div>
-				  </div>
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text">How can I be a part of Sivasakthi Foundation?</div>
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-						saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-						ullam, iure eligendi harum eaque hic corporis debitis porro
-						consectetur voluptate rem officiis architecto.
-					  </p>
-					</div>
-				  </div>
-			
-				  <div class="faq">
-					<button class="accordion">
-						<div class="faq-text">What Voluteer Activity are done By Sivasakthi Foundation</div>
-					  <i class="fa-solid fa-chevron-down"></i>
-					</button>
-					<div class="pannel">
-					  <p>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-						saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-						ullam, iure eligendi harum eaque hic corporis debitis porro
-						consectetur voluptate rem officiis architecto.
-					  </p>
-					</div>
-				  </div>
-				</div> 
-				<script>
-					var acc = document.getElementsByClassName("accordion");
-					var i;
-			  
-					for (i = 0; i < acc.length; i++) {
-					  acc[i].addEventListener("click", function () {
-						this.classList.toggle("active");
-						this.parentElement.classList.toggle("active");
-			  
-						var pannel = this.nextElementSibling;
-			  
-						if (pannel.style.display === "block") {
-						  pannel.style.display = "none";
-						} else {
-						  pannel.style.display = "block";
-						}
-					  });
-					}
-				  </script>
-				<!--
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_2.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
-							<div class="blog-text">
-								<div class="prod-title">
-									<h3><a href=""#>Medical Mission in Southern Kenya</a></h3>
-									<span class="posted_by">Sep. 15th</span>
-									<span class="comment"><a href="">21<i class="icon-bubble2"></i></a></span>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p><a href="#">Learn More...</a></p>
-								</div>
-							</div> 
-						</div>
-					</div>
-				</div>
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--plum);
+      color: rgba(196,181,253,0.7);
+      padding: 60px 40px 32px;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .footer-brand strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-links h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--lilac);
+      margin-bottom: 16px;
+      letter-spacing: 0.12em;
+    }
+    .footer-links a {
+      display: block;
+      color: rgba(196,181,253,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
 
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4 text-center animate-box">
-						<a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-					</div>
-				</div>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
 
-			</div>-->
-		</div>
-		<!-- fh5co-blog-section -->
+    @media (max-width: 900px) {
+      .nav-inner {
+        padding: 0 20px;
+        height: auto;
+        min-height: 80px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
 
-		
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></i></a>
-								<a href="https://www.instagram.com/ssf.iinsta"><i class="icon-instagram"></i></a>
-								<a href="https://youtube.com/@sivasakthifoundation"><i class="icon-youtube"></i></a>
-							</p>
-							<p>Copyright 2024 Sivasakthi Foundation <a href="#"></a>. All Rights Reserved. <!--<br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>-->
-              <!--Privacy Policy-->
-              <a href="Privacy Policy and Terms of Use.html"><p>Privacy Policy & Terms and Conditions</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	
+      nav ul {
+        flex-wrap: wrap;
+      }
 
-	</div>
-	<!-- END fh5co-page -->
+      .hero,
+      main,
+      footer,
+      .topbar {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
-	</div>
-	<!-- END fh5co-wrapper -->
+      .faq-btn {
+        font-size: 1.35rem;
+        padding: 20px 22px;
+      }
 
-	<!-- jQuery -->
+      .faq-inner {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
 
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
 
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/sticky.js"></script>
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Advancing Research & Education</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" style="color:var(--violet); font-weight:600;">About <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="blog.html">Blog</a>
+              <a href="FAQ.html" style="color:var(--violet); font-weight:600;">FAQ</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Get Involved <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="#">Donate</a>
+              <a href="#">Volunteer</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a>
+              <a href="Ai.html">AI & Deep Learning</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Superfish -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
-	
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <h1 class="fade-up">Frequently Asked <em>Questions</em></h1>
+    <p class="hero-sub fade-up">
+      Learn more about Sivasakthi Science Foundation, our mission, focus areas, and the ways we create impact through education, research, and collaboration.
+    </p>
+  </section>
 
-	</body>
+  <main>
+    <div class="faq-container">
+
+      <div class="faq-item fade-up">
+        <button class="faq-btn">
+          What is Sivasakthi Science Foundation?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            Sivasakthi Science Foundation is a public charitable trust dedicated to advancing education, research, and scientific innovation. The foundation works across disciplines to encourage knowledge creation, support meaningful learning, and connect academic ideas with practical, real-world impact.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up delay-1">
+        <button class="faq-btn">
+          How does the foundation operate?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            The foundation operates through research initiatives, educational programs, collaborative projects, and public outreach activities. By bringing together students, educators, researchers, and professionals, we create opportunities for learning, discovery, and applied scientific engagement that benefit both individuals and communities.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up delay-2">
+        <button class="faq-btn">
+          What are the foundation’s major focus areas?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            Our focus areas include scientific research, student development, innovation-driven learning, and interdisciplinary work in emerging fields such as genomics, artificial intelligence, and deep learning. We also support initiatives that strengthen science education and expand access to knowledge, training, and research opportunities.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-btn">
+          How does Sivasakthi Science Foundation support students?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            The foundation supports students by encouraging scientific curiosity, strengthening academic and practical skills, and promoting research-oriented thinking. Through mentorship, learning resources, workshops, and project-based opportunities, we help students build confidence and prepare for future pathways in science, technology, and innovation.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up delay-1">
+        <button class="faq-btn">
+          How can I get involved with the foundation?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            There are several ways to get involved, including volunteering, participating in outreach efforts, collaborating on projects, supporting institutional initiatives, or engaging with our educational programs. We welcome individuals and organizations who share our commitment to science, learning, and long-term social impact.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up delay-2">
+        <button class="faq-btn">
+          What kinds of volunteer opportunities does the foundation offer?
+          <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </button>
+        <div class="faq-content">
+          <div class="faq-inner">
+            Volunteer opportunities may include assisting with science awareness campaigns, educational workshops, student engagement programs, community outreach activities, and project support. Volunteers play an important role in helping the foundation extend its reach and deliver meaningful scientific and educational value to a wider audience.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Missionstatement.html">Mission Statement</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="Privacy Policy and Terms of Use.html">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqs = document.querySelectorAll(".faq-item");
+
+      faqs.forEach(faq => {
+        const btn = faq.querySelector(".faq-btn");
+
+        btn.addEventListener("click", () => {
+          const isActive = faq.classList.contains("active");
+
+          faqs.forEach(f => f.classList.remove("active"));
+
+          if (!isActive) {
+            faq.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>
-
