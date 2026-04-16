@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foundation Insights — Sivasakthi Science Foundation™</title>
+  
+  <meta property="og:title" content="Bharat Genome Database | Sivasakthi Foundation"/>
+  <meta property="og:image" content="images/BGDB.png"/>
+  <meta property="og:description" content="Unlocking the genetic secrets of Bharat's indigenous species."/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--soft-bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
+    
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 80px 40px 100px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; margin-bottom: 15px; position: relative; z-index: 2;}
+    .hero h1 em { font-style: italic; color: var(--lavender); }
+    .hero-sub { max-width: 700px; margin: 0 auto; font-size: 17px; color: rgba(196,181,253,0.86); position: relative; z-index: 2;}
+
+    /* ─── BLOG MAIN ─── */
+    main { flex: 1; padding: 0 40px 80px; position: relative; z-index: 5; margin-top: -60px; }
+    .blog-container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+    
+    .article-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--mist);
+      padding: 50px;
+      box-shadow: 0 20px 50px rgba(74,16,128,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .article-card:hover { transform: translateY(-3px); box-shadow: 0 25px 60px rgba(74,16,128,0.1); }
+    
+    .article-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 13px; color: var(--violet); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .article-meta span { color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: normal; }
+    
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--plum); margin-bottom: 25px; line-height: 1.2; text-decoration: none; display: block; }
+    .article-title:hover { color: var(--violet); }
+    
+    .article-img { width: 100%; height: 400px; object-fit: cover; border-radius: 14px; margin-bottom: 30px; border: 1px solid var(--mist); }
+    
+    .article-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--royal); margin: 30px 0 15px; }
+    .article-content p { color: var(--ink); font-size: 16px; margin-bottom: 20px; line-height: 1.8; }
+    .article-content a { color: var(--violet); text-decoration: underline; font-weight: 500; }
+    .article-content a:hover { color: var(--plum); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 10px;
+      border: 1.5px solid var(--violet); color: var(--violet); text-decoration: none;
+      font-weight: 600; font-size: 14px; transition: all 0.2s; margin-top: 10px;
+    }
+    .btn-outline:hover { background: var(--violet); color: white; }
+
+    /* ─── COMMENT SECTION ─── */
+    .comment-section {
+      background: var(--soft-bg);
+      border-radius: 20px;
+      border: 1px solid var(--mist);
+      padding: 40px;
+      margin-top: 20px;
+    }
+    .comment-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--plum); margin-bottom: 20px; }
+    
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--plum); text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-group input, .form-group textarea {
+      padding: 12px 16px; border: 1.5px solid var(--mist); border-radius: 10px;
+      font-size: 15px; font-family: inherit; background: var(--white); transition: all 0.2s ease;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--lavender); outline: none; box-shadow: 0 0 0 4px rgba(167,139,250,0.1); }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      color: white; border: none; padding: 14px 28px; border-radius: 10px;
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; margin-top: 10px;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(124,58,237,0.3); }
+
+    .success-msg { display: none; color: var(--violet); font-weight: 600; margin-top: 15px; font-size: 14px; padding: 10px; background: rgba(124,58,237,0.1); border-radius: 8px; text-align: center; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; margin-top: auto; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-brand p { margin-bottom: 5px; font-size: 13px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    
+    @media (max-width: 768px) {
+      .article-card { padding: 30px 20px; }
+      .article-img { height: 250px; }
+      .comment-section { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Advancing Research & Education</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">About <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+            </div>
+          </li>
+          <li><a href="https://www.bharatgenomedatabase.org/">BGDB</a></li>
+          <li><a href="blog.html" style="color:var(--violet); font-weight:600;">Blog</a></li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <h1 class="fade-up">Foundation <em>Insights</em></h1>
+    <p class="hero-sub fade-up">Explore perspectives on scientific innovation, modern education models, and our ongoing genetic research initiatives.</p>
+  </section>
+
+  <main>
+    <div class="blog-container">
+
+      <article class="article-card fade-up">
+        <div class="article-meta">
+          <i class="fa-solid fa-feather"></i> Sabarinath Subramaniam <span>• May 06, 2025</span>
+        </div>
+        <a href="https://medium.com/@sshabari/philanthropic-entrepreneurship-in-science-education-a-new-model-for-sustainable-impact-f65d40537631" class="article-title" target="_blank">
+          Philanthropic Entrepreneurship in Science Education: A New Model for Sustainable Impact
+        </a>
+        <a href="https://medium.com/@sshabari/philanthropic-entrepreneurship-in-science-education-a-new-model-for-sustainable-impact-f65d40537631" target="_blank">
+          <img src="images/EntPhilan.png" alt="Philanthropic Entrepreneurship" class="article-img">
+        </a>
+        <div class="article-content">
+          <p>Discover a new framework for driving sustainable, long-term impact in science education by bridging the gap between philanthropic funding and entrepreneurial scalability.</p>
+          <a href="https://medium.com/@sshabari/philanthropic-entrepreneurship-in-science-education-a-new-model-for-sustainable-impact-f65d40537631" target="_blank" class="btn-outline">
+            Read full article on Medium <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="article-card fade-up">
+        <div class="article-meta">
+          <i class="fa-solid fa-dna"></i> Editorial Team <span>• June 28, 2023</span>
+        </div>
+        <h1 class="article-title">Bharat Genome Database: Unlocking Indigenous Genetic Secrets</h1>
+        <img src="images/BGDB.png" alt="Bharat Genome Database" class="article-img">
+        
+        <div class="article-content">
+          <p>At the Bharat Genome Database, we are on a mission to unlock the genetic secrets of Bharat's most diverse and unique life forms – our indigenous species. Our commitment to preserving the biological heritage of our planet is rooted in a deep reverence for the natural world and a profound understanding of its interconnectedness.</p>
+          
+          <h2>Our Vision</h2>
+          <p>Our vision is to create a comprehensive and accessible repository of genomic information for indigenous species from every corner of Bharat. We believe that by unraveling the genetic code of these remarkable organisms, we can contribute to the preservation of biodiversity, foster scientific discovery, and support conservation efforts worldwide.</p>
+          
+          <h2>Why Indigenous Species Matter</h2>
+          <p>Indigenous species are the bedrock of our ecosystems. They have evolved over millennia, adapting to their unique environments and playing crucial roles in maintaining ecological balance. However, these species are facing unprecedented challenges, from habitat loss and climate change to poaching and invasive species.</p>
+          <p>Understanding the genomes of indigenous species is pivotal to their conservation. It equips us with the knowledge needed to develop effective conservation strategies, mitigate threats, and restore ecosystems that have been disrupted.</p>
+          
+          <h2>Join Us in Preserving Our Planet's Genetic Heritage</h2>
+          <p>We invite you to explore our database, engage with our research, and join us in our commitment to preserving the genetic heritage of indigenous species. Together, we can make a difference and ensure a more sustainable and harmonious future for our planet.</p>
+          <p>Thank you for being a part of our journey towards a world where indigenous species thrive, and their genetic legacy is protected for generations to come. If you have any questions, suggestions, or would like to collaborate, please don't hesitate to mail us at <a href="mailto:research@bgdb.org">research@bgdb.org</a>.</p>
+        </div>
+
+        <div class="comment-section">
+          <h2>Join the Discussion</h2>
+          <form id="commentForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your email address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comment">Comment</label>
+              <textarea id="comment" name="comment" required placeholder="Share your thoughts..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Post Comment</button>
+            <div id="commentSuccess" class="success-msg">
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your comment has been submitted for review.
+            </div>
+          </form>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>Register number: 156/IV/2024</p>
+        <p>7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, India</p>
+        <p style="margin-top: 15px;">© 2026. All Rights Reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Missionstatement.html">Mission Statement</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="./Privacy Policy and Terms of Use.html">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Modern Vanilla JS for the comment form
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const successMsg = document.getElementById('commentSuccess');
+      successMsg.style.display = 'block';
+      this.reset();
+      
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

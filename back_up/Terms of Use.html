@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use — Sivasakthi Science Foundation™</title>
+  
+  <meta property="og:title" content="Terms of Use | Sivasakthi Science Foundation"/>
+  <meta property="og:description" content="Terms of Use and Privacy Policy for the Sivasakthi Science Foundation."/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--soft-bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover, nav ul li > a.active { background: var(--mist); color: var(--violet); }
+    
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 80px 40px 100px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; margin-bottom: 10px; position: relative; z-index: 2; line-height: 1.1;}
+    .hero h1 em { font-style: italic; color: var(--lavender); }
+    .hero-sub { max-width: 700px; margin: 0 auto; font-size: 16px; color: rgba(196,181,253,0.86); position: relative; z-index: 2;}
+
+    /* ─── DOCUMENT LAYOUT ─── */
+    main { flex: 1; padding: 0 40px 80px; position: relative; z-index: 5; margin-top: -60px; }
+    .doc-wrapper {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 300px 1fr; gap: 40px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR / TOC ─── */
+    .doc-sidebar {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 20px;
+      padding: 30px; position: sticky; top: 110px;
+      box-shadow: 0 15px 40px rgba(74,16,128,0.03);
+    }
+    .doc-sidebar h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--plum); margin-bottom: 20px; border-bottom: 1px solid var(--mist); padding-bottom: 15px; }
+    .doc-sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .doc-sidebar a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; display: block; }
+    .doc-sidebar a:hover, .doc-sidebar a.active { color: var(--violet); }
+    
+    .doc-sidebar .date { margin-top: 30px; font-size: 12px; color: var(--muted); padding-top: 15px; border-top: 1px solid var(--mist); }
+
+    /* ─── DOCUMENT CONTENT ─── */
+    .doc-content {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 20px;
+      padding: 60px 70px; box-shadow: 0 15px 50px rgba(74,16,128,0.05);
+    }
+    .doc-section { margin-bottom: 50px; padding-top: 80px; margin-top: -80px; } /* Offset for sticky header */
+    .doc-section:last-child { margin-bottom: 0; }
+    
+    .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--plum); margin-bottom: 30px; text-align: center; }
+    
+    .doc-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--royal); margin-bottom: 15px; }
+    .doc-content p { font-size: 15.5px; color: var(--ink); line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+    .doc-content ul { margin-left: 20px; margin-bottom: 20px; color: var(--ink); font-size: 15.5px; line-height: 1.8; }
+    .doc-content li { margin-bottom: 10px; }
+    .doc-content strong { color: var(--plum); }
+    .doc-content a { color: var(--violet); text-decoration: none; }
+    .doc-content a:hover { text-decoration: underline; }
+    
+    hr { border: none; border-top: 1px dashed var(--mist); margin: 40px 0; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; margin-top: auto; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    
+    @media (max-width: 980px) {
+      .doc-wrapper { grid-template-columns: 1fr; }
+      .doc-sidebar { position: static; margin-bottom: 30px; }
+      .doc-content { padding: 40px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Advancing Research & Education</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a>
+              <a href="Ai.html">AI & Deep Learning</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Get Involved <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./GetInvolved.html">Get Involved</a>
+              <a href="./events-and-conferences.html">Events & Conferences</a>
+              <a href="./Partnerships-Collaborations.html">Partnerships & Collabs</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container fade-up">
+      <h1>Legal & <em>Compliance</em></h1>
+      <p class="hero-sub">Please review the Terms of Use and Privacy Policy governing your interaction with the Sivasakthi Science Foundation.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="doc-wrapper fade-up">
+      
+      <aside class="doc-sidebar">
+        <h4>Table of Contents</h4>
+        <ul>
+          <li><a href="#privacy">1. Privacy Policy</a></li>
+          <li><a href="#info-collect">2. Information We Collect</a></li>
+          <li><a href="#info-use">3. How We Use Your Info</a></li>
+          <li><a href="#security">4. Data Security</a></li>
+          <li><a href="#terms">5. Terms of Use</a></li>
+          <li><a href="#intellectual">6. Intellectual Property</a></li>
+          <li><a href="#liability">7. Limitation of Liability</a></li>
+        </ul>
+        <div class="date">
+          <strong>Last Updated:</strong> April 3, 2026
+        </div>
+      </aside>
+
+      <article class="doc-content">
+        
+        <h2 class="doc-title" id="privacy">Privacy Policy</h2>
+        
+        <div class="doc-section">
+          <h3>Introduction</h3>
+          <p>Welcome to Sivasakthi Science Foundation. Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to ensure its protection.</p>
+        </div>
+
+        <div class="doc-section" id="info-collect">
+          <h3>Information We Collect</h3>
+          <p>We may collect the following types of information:</p>
+          <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, and mailing address when you sign up for newsletters, make donations, or register for events.</li>
+            <li><strong>Non-Personal Information:</strong> Browser type, IP address, and browsing behavior collected through cookies and similar technologies.</li>
+          </ul>
+        </div>
+
+        <div class="doc-section" id="info-use">
+          <h3>How We Use Your Information</h3>
+          <p>We use the information we collect for the following purposes:</p>
+          <ul>
+            <li><strong>Communication:</strong> To send you updates, newsletters, and information about our programs and events.</li>
+            <li><strong>Donations:</strong> To process your donations and send you acknowledgments and receipts.</li>
+            <li><strong>Improvement:</strong> To analyze website usage and improve our services and user experience.</li>
+            <li><strong>Compliance:</strong> To comply with legal obligations and protect our rights and interests.</li>
+          </ul>
+          <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with third-party vendors who assist us in operating our website, or when required by law.</p>
+        </div>
+
+        <div class="doc-section" id="security">
+          <h3>Data Security & Your Rights</h3>
+          <p>We implement a variety of security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include encryption, access controls, and secure servers.</p>
+          <p>You have the right to access, review, and request corrections to your personal information. You may also opt-out of receiving communications from us or request the deletion of your data. To exercise these rights, please contact us at <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a>.</p>
+        </div>
+
+        <hr>
+
+        <h2 class="doc-title" id="terms">Terms of Use</h2>
+
+        <div class="doc-section">
+          <h3>Acceptance of Terms</h3>
+          <p>By accessing and using the Sivasakthi Science Foundation website, you agree to comply with and be bound by these Terms of Use. If you do not agree with these terms, please do not use our website. You agree to use our website for lawful purposes only and in a way that does not infringe upon the rights of others.</p>
+        </div>
+
+        <div class="doc-section" id="intellectual">
+          <h3>Intellectual Property</h3>
+          <p>All content on this website, including text, graphics, logos, images, and software, is the property of Sivasakthi Science Foundation or its content suppliers and is protected by copyright, trademark, and other intellectual property laws. Unauthorized use of any content is prohibited.</p>
+          <p>By submitting content to our website (such as comments, feedback, or suggestions), you grant Sivasakthi Science Foundation a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, and publish such content.</p>
+        </div>
+
+        <div class="doc-section" id="liability">
+          <h3>Disclaimers & Limitation of Liability</h3>
+          <p>The information on our website is provided "as is" without warranties of any kind, either express or implied. Sivasakthi Science Foundation does not warrant that the website will be available at all times or that the content is accurate, complete, or current.</p>
+          <p>Sivasakthi Science Foundation shall not be liable for any damages arising from the use or inability to use our website, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+        </div>
+
+        <div class="doc-section">
+          <h3>Governing Law & Contact</h3>
+          <p>These Terms of Use are governed by and construed in accordance with the laws of India, without regard to its conflict of law principles. We reserve the right to modify these Terms of Use at any time.</p>
+          <p>If you have any questions about these Terms of Use, please contact us at:</p>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:info@sivasakthifoundation.org">info@sivasakthifoundation.org</a></li>
+            <li><strong>Mailing Address:</strong> 7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, Kerala, India</li>
+          </ul>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>Register number: [156/IV/2024]</p>
+        <p>7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, India</p>
+        <p style="margin-top: 15px;">© 2026. All Rights Reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Missionstatement.html">Mission Statement</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Engage</h4>
+        <a href="./GetInvolved.html">Get Involved</a>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="Privacy Policy and Terms of Use.html" style="color: var(--white);">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('.doc-sidebar a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.doc-sidebar a').forEach(a => a.classList.remove('active'));
+        // Add active class to clicked link
+        this.classList.add('active');
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 20, // Offset for sticky header
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Scroll Reveal Animation Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-up').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>

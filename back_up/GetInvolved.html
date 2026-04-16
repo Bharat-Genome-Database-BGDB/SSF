@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Involved — Sivasakthi Science Foundation™</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── THEME CORE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:       #1a0530;
+      --deep:       #2b0a52;
+      --royal:      #4a1080;
+      --violet:     #7c3aed;
+      --lavender:   #a78bfa;
+      --lilac:      #c4b5fd;
+      --mist:       #ede9fe;
+      --white:      #ffffff;
+      --ink:        #1e0535;
+      --muted:      #6b5f80;
+      --soft-bg:    #faf8ff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ─── NAVIGATION ─── */
+    .topbar {
+      background: var(--plum);
+      padding: 8px 48px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .topbar-social a { color: var(--lilac); margin-left: 16px; font-size: 15px; transition: color .2s; text-decoration: none; }
+    .topbar-social a:hover { color: var(--white); }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 30px rgba(74,16,128,0.07);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--violet), var(--royal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.35);
+    }
+    .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .logo-text strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--plum); }
+    .logo-text span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    nav ul { list-style: none; display: flex; gap: 6px; }
+    nav ul li { position: relative; }
+    nav ul li > a { padding: 10px 16px; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--ink); border-radius: 8px; transition: all .2s; }
+    nav ul li > a:hover { background: var(--mist); color: var(--violet); }
+    
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; min-width: 220px;
+      background: var(--white); border: 1px solid var(--mist); border-radius: 14px;
+      padding: 8px; box-shadow: 0 16px 48px rgba(74,16,128,0.13);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 16px; font-size: 13.5px; text-decoration: none; border-radius: 8px; color: var(--ink); }
+    .dropdown-menu a:hover { background: var(--mist); color: var(--violet); }
+
+    .nav-cta { background: linear-gradient(135deg, var(--violet), var(--royal)) !important; color: var(--white) !important; border-radius: 10px; padding: 10px 20px !important; font-weight: 600; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; padding: 100px 40px; text-align: center;
+      background: linear-gradient(135deg, var(--plum), var(--deep), var(--royal));
+      color: var(--white); overflow: hidden;
+    }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 7px 18px;
+      font-size: 12px; color: var(--lilac); text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--lavender); text-shadow: none; }
+    .hero-sub { max-width: 800px; margin: 0 auto; font-size: 18px; color: rgba(196,181,253,0.86); }
+
+    /* ─── CONTENT BLOCKS ─── */
+    section { padding: 80px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--violet); }
+    
+    .intro-card {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 24px;
+      padding: 48px; margin-bottom: 60px; box-shadow: 0 16px 50px rgba(74,16,128,0.06);
+    }
+    .intro-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--plum); margin-bottom: 20px; }
+
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+    .pillar-card {
+      background: var(--white); border: 1px solid var(--mist); border-radius: 22px;
+      padding: 35px; transition: transform .22s ease, box-shadow .22s ease;
+      display: flex; flex-direction: column;
+    }
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 16px 42px rgba(74,16,128,0.11); border-color: var(--lavender); }
+    .pillar-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--mist); display: flex; align-items: center; justify-content: center; color: var(--violet); margin-bottom: 20px; font-size: 20px; }
+    .pillar-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--plum); margin-bottom: 15px; }
+    .pillar-card p { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+    .pillar-card ul { list-style: none; padding: 0; }
+    .pillar-card ul li { font-size: 14px; color: var(--muted); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; }
+    .pillar-card ul li::before { content: '•'; color: var(--violet); font-weight: bold; }
+
+    .btn-secondary {
+      display: inline-block; padding: 10px 20px; border: 1.5px solid var(--violet);
+      color: var(--violet); border-radius: 10px; text-decoration: none; font-weight: 600;
+      font-size: 14px; transition: all 0.2s; align-self: flex-start; margin-top: auto;
+    }
+    .btn-secondary:hover { background: var(--violet); color: white; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--plum); color: rgba(196,181,253,0.7); padding: 60px 40px 32px; margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .footer-brand strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .footer-links h4 { font-size: 11px; text-transform: uppercase; color: var(--lilac); margin-bottom: 16px; letter-spacing: 0.12em; }
+    .footer-links a { display: block; color: rgba(196,181,253,0.65); text-decoration: none; font-size: 13px; margin-bottom: 10px; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-social">
+      <a href="https://x.com/SSF_handle"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/ssf.iinsta"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@sivasakthifoundation"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="images/logo1.png" alt="Logo"></div>
+        <div class="logo-text">
+          <strong>Sivasakthi Science Foundation™</strong>
+          <span>Advancing Research & Education</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About Us <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="./AboutUs.html">About Us</a>
+              <a href="./History and Background.html">History & Background</a>
+              <a href="./Missionstatement.html">Our Mission</a>
+              <a href="./Vision Statement copy.html">Our Vision</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Projects <i class="fa-solid fa-chevron-down" style="font-size:9px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="https://www.bharatgenomedatabase.org/">Bharat Genome Database</a>
+              <a href="Ai.html">AI and Deep Learning</a>
+              <a href="./BioInfo.html">Bioinformatics</a>
+            </div>
+          </li>
+          <li><a href="contact-us/index.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container fade-up">
+      <div class="hero-badge"><i class="fa-solid fa-hands-holding"></i> Collaborative Growth</div>
+      <h1>Get <em>Involved</em></h1>
+      <p class="hero-sub">Contribute to the advancement of scientific research, training, and education. Join us in making a meaningful impact on the global knowledge ecosystem.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--soft-bg);">
+    <div class="container">
+      
+      <div class="intro-card fade-up">
+        <div class="section-eyebrow">Community & Impact</div>
+        <h2>A shared commitment to progress</h2>
+        <p>Sivasakthi Science Foundation welcomes individuals and organizations committed to the progress of science. Whether you are a researcher, educator, student, or supporter, your involvement is vital to our mission of promoting scientific discovery and meaningful education.</p>
+      </div>
+
+      <div class="grid-container">
+        
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3>Volunteer Opportunities</h3>
+          <p>Support our initiatives by volunteering your expertise. Volunteers play a key role in the successful execution of our global programs.</p>
+          <ul>
+            <li>Complete the upcoming volunteer application</li>
+            <li>Attend orientation and strategy sessions</li>
+            <li>Engage in specialized research or outreach projects</li>
+          </ul>
+          <p><small><strong>Focus:</strong> Event Coordination, Admin, Research Assistance.</small></p>
+        </div>
+
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Partnerships</h3>
+          <p>We collaborate with organizations that share our dedication to scientific advancement through joint research and event sponsorship.</p>
+          <ul>
+            <li>Collaborative Research Initiatives</li>
+            <li>Educational Workshops and Programs</li>
+            <li>Event and Conference Sponsorship</li>
+          </ul>
+          <a href="mailto:info@sivasakthifoundation.org" class="btn-secondary">Inquire Now</a>
+        </div>
+
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h3>Events & Conferences</h3>
+          <p>Participate in our global gatherings to engage with the scientific community and contribute to ongoing discussions in science.</p>
+          <a href="./events-and-conferences.html" class="btn-secondary">Upcoming Events</a>
+        </div>
+
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Fellowships</h3>
+          <p>Structured internship and fellowship programs for students and early-career professionals seeking experience in non-profit management.</p>
+          <p><em>Application details for the 2026 cycle will be announced soon.</em></p>
+        </div>
+
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <h3>Outreach</h3>
+          <p>Help us extend our reach by sharing our mission within your professional network and on social media platforms.</p>
+          <div class="topbar-social" style="margin-top: 15px;">
+            <a href="https://x.com/SSF_handle" style="color:var(--violet); font-size: 20px; margin-right: 15px;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/ssf.iinsta" style="color:var(--violet); font-size: 20px; margin-right: 15px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@sivasakthifoundation" style="color:var(--violet); font-size: 20px;"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="pillar-card fade-up">
+          <div class="pillar-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <h3>Contact Info</h3>
+          <p>Reach out directly to our coordination team for custom collaboration proposals or specific inquiries.</p>
+          <ul>
+            <li><strong>Email:</strong> info@sivasakthifoundation.org</li>
+            <li><strong>Mailing:</strong> 7, Belhaven Gardens, Kawdiar, Thiruvananthapuram, India</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="text-center fade-up" style="margin-top: 60px; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--plum);">
+        <strong>Together, we can advance the frontiers of scientific research, training, and education.</strong>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Sivasakthi Science Foundation™</strong>
+        <p>© 2026. Advancing Research, Training & Education.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Organization</h4>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./Vision Statement copy.html">Our Vision</a>
+        <a href="./Financial Transparency.html">Transparency</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="contact-us/index.html">Contact Us</a>
+        <a href="./blog.html">Foundation Blog</a>
+        <a href="Privacy Policy and Terms of Use.html">Privacy & Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
